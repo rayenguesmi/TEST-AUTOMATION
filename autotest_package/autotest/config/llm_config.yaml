@@ -28,9 +28,9 @@ providers:
     temperature: 0.2
   
   groq:
-    analysis_model: "meta-llama/llama-4-scout-17b-16e-instruct"
-    selenium_model: "meta-llama/llama-4-maverick-17b-128e-instruct"
-    result_analysis_model: "meta-llama/llama-4-scout-17b-16e-instruct"
+    analysis_model: "llama-3.1-8b-instant"
+    selenium_model: "llama-3.1-8b-instant"
+    result_analysis_model: "llama-3.1-8b-instant"
     temperature: 0.2
   
   google-gemini:

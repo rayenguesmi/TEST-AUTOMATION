@@ -6,7 +6,7 @@ from datetime import datetime
 from zoneinfo import ZoneInfo
 
 def get_local_time():
-    return datetime.now(ZoneInfo("Asia/Kolkata"))
+    return datetime.now()
 
 class Page(Base):
     __tablename__ = "page"
