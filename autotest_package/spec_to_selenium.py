@@ -85,7 +85,14 @@ class SeleniumGenerator:
         logger.info("Generating Page Object files...")
         url_cible = getattr(self, 'url_cible', 'https://demowebshop.tricentis.com/electronics')
         system_prompt = f"""
-        Tu es un expert QA Selenium. Pour le projet fourni, génère UNIQUEMENT le contenu des classes Page Object nécessaires.
+        Tu es un expert QA Selenium. Pour le projet fourni, génère UNIQUEMENT le contenu des classes Page Object nécessaires en Python 3.12.
+        
+        Règles d'or :
+        1. CHAQUE fichier Page Object doit commencer par : from selenium.webdriver.remote.webdriver import WebDriver.
+        2. CHAQUE constructeur __init__ doit utiliser l'annotation de type : def __init__(self, driver: WebDriver):.
+        3. Importe 'base_page' si nécessaire : from .base_page import BasePage (ou from base_page import BasePage selon la structure).
+        4. Utilise la vraie URL du site : {url_cible}
+        
         Structure de réponse attendue :
         FILE: login_page.py
         ```python
@@ -93,11 +100,6 @@ class SeleniumGenerator:
         ```
         FILE: dashboard_page.py
         ...
-        Règles :
-        1. Utilise 'base_page' comme classe mère.
-        2. Utilise la vraie URL du site si possible : {url_cible}
-        3. Ne génère QUE du code Python valide.
-        4. Ne fais PAS 'from selenium.webdriver import WebDriver'. Utilise 'from selenium.webdriver.remote.webdriver import WebDriver' à la place.
         """
         cases_json = json.dumps(test_cases[:5], indent=2) # Take first 5 cases to avoid token overflow
         response = self.llm_client.call(system_prompt, f"Génère les pages pour ces cas de test : {cases_json}")

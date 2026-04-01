@@ -1,4 +1,5 @@
-from base_page import BasePage
+from selenium.webdriver.remote.webdriver import WebDriver
+from .base_page import BasePage
 
 class ElectronicsPage(BasePage):
     def __init__(self, driver: WebDriver):
