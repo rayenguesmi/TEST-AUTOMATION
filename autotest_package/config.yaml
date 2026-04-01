@@ -1,0 +1,56 @@
+llm:
+  provider: "ollama"
+  model: "llama3:latest"
+  base_url: "http://localhost:11434"
+  temperature: 0.2
+  max_tokens: 8192
+
+prompts:
+  spec_parsing: |
+    Tu es un expert QA qui analyse des spécifications fonctionnelles.
+    Extrait toutes les fonctionnalités testables du document fourni.
+    IMPORTANT : Tu DOIS utiliser exactement ces clés JSON (en anglais) dans ta réponse :
+    - "project_name": le nom du projet
+    - "url_cible": l'URL cible du site web
+    - "features": une liste d'objets, chaque objet ayant :
+        - "id": identifiant unique (ex: F-001)
+        - "titre": le titre de la fonctionnalité
+        - "description": description détaillée
+        - "criteres_acceptance": une liste de chaînes (critères d'acceptation)
+        - "flux_positif": une chaîne décrivant le flux utilisateur nominal
+        - "flux_negatif": une liste de chaînes décrivant les flux d'erreurs
+    Réponds UNIQUEMENT en JSON valide, sans texte additionnel, sans commentaires.
+  
+  test_generation: |
+    Tu es un expert QA Selenium. Pour chaque feature fonctionnelle fournie,
+    génère des cas de test exhaustifs incluant :
+    - 1 cas positif (flux nominal)
+    - 2 à 3 cas négatifs (données invalides, permissions, limites)
+    - 1 cas edge case si pertinent
+    Chaque cas doit être précis, autonome et exécutable par Selenium.
+    Inclus des données de test concrètes (emails, mots de passe, valeurs...).
+    Réponds UNIQUEMENT en JSON valide.
+  
+  selenium_generation: |
+    Tu es un expert en automatisation de tests Selenium Python.
+    Génère un script pytest complet pour le cas de test fourni.
+    Règles obligatoires :
+    1. Utilise le pattern Page Object Model (POM)
+    2. Utilise WebDriverWait avec des sélecteurs CSS ou XPath robustes
+    3. Ajoute des assertions claires et descriptives
+    4. Capture un screenshot nommé '{test_id}_failure.png' en cas d'échec
+    7. Utilise obligatoirement la fixture 'driver' fournie (ne pas créer d'instance de WebDriver)
+    8. Utilise des sélecteurs CSS ou XPath précis (ex: #username, #password, button[type='submit'])
+    Génère UNIQUEMENT du code Python valide, sans explication.
+
+selenium:
+  browser: "chrome"
+  headless: true
+  window_size: "1920,1080"
+  implicit_wait: 10
+  page_load_timeout: 30
+
+report:
+  format: ["html", "json"]
+  include_screenshots: true
+  open_after_generation: false

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rapport de Test - {{ summary.project_name }}</title>
+    <style>
+        :root {
+            --primary-bg: #f8f9fa;
+            --header-bg: #343a40;
+            --success-color: #28a745;
+            --failure-color: #dc3545;
+            --card-bg: #fff;
+            --border-color: #dee2e6;
+        }
+
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--primary-bg); margin: 0; padding: 0; }
+        header { background: var(--header-bg); color: white; padding: 1.5rem 2rem; text-align: center; }
+        .container { max-width: 1200px; margin: 2rem auto; padding: 0 1.5rem; }
+        
+        .summary-box { display: flex; justify-content: space-between; background: var(--card-bg); padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 2rem; }
+        .summary-item { text-align: center; flex: 1; }
+        .summary-label { font-size: 0.9rem; color: #6c757d; margin-bottom: 0.5rem; }
+        .summary-value { font-size: 1.5rem; font-weight: bold; }
+        
+        .feature-card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 2rem; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+        .feature-header { display: flex; justify-content: space-between; align-items: center; padding: 1rem 1.5rem; border-bottom: 1px solid var(--border-color); }
+        .feature-status { padding: 0.2rem 0.8rem; border-radius: 20px; font-size: 0.85rem; font-weight: bold; }
+        .status-pass { background: #d4edda; color: var(--success-color); }
+        .status-fail { background: #f8d7da; color: var(--failure-color); }
+
+        .test-table { width: 100%; border-collapse: collapse; }
+        .test-table th { background: #f1f3f5; text-align: left; padding: 0.8rem 1.5rem; font-size: 0.9rem; border-bottom: 1px solid var(--border-color); }
+        .test-table td { padding: 0.8rem 1.5rem; font-size: 0.9rem; border-bottom: 1px solid var(--border-color); }
+        
+        .error-message { background: #fff5f5; color: #c92a2a; padding: 0.5rem; border-radius: 4px; font-family: monospace; white-space: pre-wrap; font-size: 0.8rem; margin-top: 0.5rem; }
+        .screenshot-link { color: #007bff; text-decoration: none; font-size: 0.8rem; }
+        
+        .meta-info { margin-bottom: 2rem; font-size: 0.9rem; color: #495057; }
+        .meta-info strong { color: #212529; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Rapport d'Exécution des Tests Automatisés</h1>
+        <div>{{ summary.project_name }} - {{ summary.timestamp }}</div>
+    </header>
+
+    <div class="container">
+        <div class="meta-info">
+            <p><strong>URL cible :</strong> <a href="{{ summary.url_cible }}">{{ summary.url_cible }}</a></p>
+            <p><strong>Durée totale :</strong> {{ summary.duration_seconds }} s</p>
+        </div>
+
+        <div class="summary-box">
+            <div class="summary-item">
+                <div class="summary-label">Total</div>
+                <div class="summary-value">{{ summary.total_tests }}</div>
+            </div>
+            <div class="summary-item" style="color: var(--success-color);">
+                <div class="summary-label">Passés</div>
+                <div class="summary-value">{{ summary.passed }}</div>
+            </div>
+            <div class="summary-item" style="color: var(--failure-color);">
+                <div class="summary-label">Échoués</div>
+                <div class="summary-value">{{ summary.failed }}</div>
+            </div>
+            <div class="summary-item" style="color: #f0ad4e;">
+                <div class="summary-label">Erreurs</div>
+                <div class="summary-value">{{ summary.errors }}</div>
+            </div>
+        </div>
+
+        <h2>Détails par Fonctionnalité</h2>
+        {% for feature in features %}
+        <div class="feature-card">
+            <div class="feature-header">
+                <h3>[{{ feature.id }}] {{ feature.title }}</h3>
+                <span class="feature-status {% if feature.status == 'PASS' %}status-pass{% else %}status-fail{% endif %}">
+                    {{ feature.status }}
+                </span>
+            </div>
+            <div style="padding: 1rem 1.5rem; border-bottom: 1px solid #eee;">
+                <p style="margin: 0; font-size: 0.9rem; color: #444;">{{ feature.description }}</p>
+            </div>
+            <table class="test-table">
+                <thead>
+                    <tr>
+                        <th width="15%">ID Test</th>
+                        <th>Titre du Cas de Test</th>
+                        <th width="10%">Statut</th>
+                        <th width="10%">Durée</th>
+                        <th width="10%">Preuve</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for test in feature.tests %}
+                    <tr>
+                        <td>{{ test.id }}</td>
+                        <td>
+                            {{ test.name }}
+                            {% if test.message_erreur %}
+                            <div class="error-message">{{ test.message_erreur }}</div>
+                            {% endif %}
+                        </td>
+                        <td style="color: {% if test.statut == 'PASS' %}var(--success-color){% else %}var(--failure-color){% endif %}; font-weight: bold;">
+                            {{ test.statut }}
+                        </td>
+                        <td>{{ test.durée_secondes }} s</td>
+                        <td>
+                            {% if test.screenshot_path %}
+                            <a href="{{ test.screenshot_path }}" class="screenshot-link" target="_blank">Screenshot 📸</a>
+                            {% else %}
+                            -
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% endfor %}
+
+        <div style="text-align: center; margin-top: 3rem;">
+            <button onclick="exportJSON()" style="padding: 0.6rem 1.2rem; cursor: pointer; border-radius: 4px; border: 1px solid #ccc;">Exporter en JSON</button>
+        </div>
+    </div>
+
+    <script>
+        function exportJSON() {
+            // Placeholder: In a real app, we'd trigger a download of the report.json
+            alert("Export JSON déclenché. Le fichier report.json est disponible dans le dossier des rapports.");
+        }
+    </script>
+</body>
+</html>
