@@ -1,81 +1,54 @@
 {
   "summary": {
     "project_name": "Demo Web Shop \u2013 Module Electronics",
-    "url_cible": "https://demowebshop.tricentis.com/electronics",
-    "total_tests": 25,
+    "url_cible": "https://www.google.com",
+    "total_tests": 2,
     "passed": 0,
     "failed": 0,
-    "errors": 25,
-    "duration_seconds": 3.08,
-    "timestamp": "2026-04-01 14:14:31"
+    "errors": 2,
+    "duration_seconds": 2.74,
+    "timestamp": "2026-04-02 11:51:17"
   },
   "features_with_results": [
     {
       "id": "F-001",
       "title": "Affichage des produits Electronics",
-      "description": "",
+      "description": "L'utilisateur peut visualiser la liste des produits \u00e9lectroniques disponibles.",
       "status": "FAIL",
-      "tests": [
-        {
-          "id": "F-001",
-          "name": "tests.test_F-001_generated_test_case",
-          "statut": "ERROR",
-          "dur\u00e9e_secondes": 0.0,
-          "message_erreur": "tests\\test_F-001_generated_test_case.py:2: in <module>\n    from pages.electronics_page import ElectronicsPage\npages\\electronics_page.py:3: in <module>\n    class ElectronicsPage(BasePage):\npages\\electronics_page.py:4: in ElectronicsPage\n    def __init__(self, driver: WebDriver):\n                               ^^^^^^^^^\nE   NameError: name 'WebDriver' is not defined",
-          "screenshot_path": "../screenshots/F-001_failure.png"
-        }
-      ]
+      "tests": []
     },
     {
       "id": "F-002",
       "title": "Navigation vers d\u00e9tail produit",
-      "description": "",
+      "description": "L'utilisateur peut consulter les d\u00e9tails d\u2019un produit.",
       "status": "FAIL",
       "tests": []
     },
     {
       "id": "F-003",
       "title": "Ajout au panier",
-      "description": "",
+      "description": "L'utilisateur peut ajouter un produit \u00e9lectronique au panier.",
       "status": "FAIL",
-      "tests": [
-        {
-          "id": "F-003",
-          "name": "tests.test_F-003_generated_test_case",
-          "statut": "ERROR",
-          "dur\u00e9e_secondes": 0.0,
-          "message_erreur": "C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\_pytest\\python.py:507: in importtestmodule\n    mod = import_path(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\_pytest\\pathlib.py:587: in import_path\n    importlib.import_module(module_name)\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\importlib\\__init__.py:90: in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n<frozen importlib._bootstrap>:1387: in _gcd_import\n    ???\n<frozen importlib._bootstrap>:1360: in _find_and_load\n    ???\n<frozen importlib._bootstrap>:1331: in _find_and_load_unlocked\n    ???\n<frozen importlib._bootstrap>:935: in _load_unlocked\n    ???\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\_pytest\\assertion\\rewrite.py:188: in exec_module\n    source_stat, co = _rewrite_test(fn, self.config)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\_pytest\\assertion\\rewrite.py:357: in _rewrite_test\n    tree = ast.parse(source, filename=strfn)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\ast.py:52: in parse\n    return compile(source, filename, mode, flags,\nE     File \"C:\\Users\\Lenovo\\Desktop\\modif autotest\\AUTOTEST\\autotest_spec\\output\\generated_tests\\tests\\test_F-003_generated_test_case.py\", line 24\nE       if not all(assertion:\nE                           ^\nE   SyntaxError: invalid syntax",
-          "screenshot_path": "../screenshots/F-003_failure.png"
-        }
-      ]
+      "tests": []
     },
     {
       "id": "F-004",
       "title": "Filtrage / Tri des produits",
-      "description": "",
+      "description": "L'utilisateur peut trier les produits.",
       "status": "FAIL",
       "tests": []
     },
     {
       "id": "F-005",
       "title": "Pagination",
-      "description": "",
+      "description": "L'utilisateur peut naviguer entre les pages produits.",
       "status": "FAIL",
-      "tests": [
-        {
-          "id": "F-005",
-          "name": "tests.test_F-005_generated_test_case",
-          "statut": "ERROR",
-          "dur\u00e9e_secondes": 0.0,
-          "message_erreur": "tests\\test_F-005_generated_test_case.py:2: in <module>\n    from pages.pagination_page import PaginationPage\npages\\pagination_page.py:3: in <module>\n    class PaginationPage(BasePage):\npages\\pagination_page.py:4: in PaginationPage\n    def __init__(self, driver: WebDriver):\n                               ^^^^^^^^^\nE   NameError: name 'WebDriver' is not defined",
-          "screenshot_path": "../screenshots/F-005_failure.png"
-        }
-      ]
+      "tests": []
     },
     {
       "id": "F-006",
       "title": "Recherche produit (globale li\u00e9e)",
-      "description": "",
+      "description": "L'utilisateur peut rechercher un produit \u00e9lectronique.",
       "status": "FAIL",
       "tests": []
     }

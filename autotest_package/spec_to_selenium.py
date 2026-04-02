@@ -72,6 +72,10 @@ class SeleniumGenerator:
             if code_match:
                 code = code_match.group(1)
             
+            # Ensure required imports are present
+            if 'from selenium.webdriver.remote.webdriver import WebDriver' not in code:
+                code = 'from selenium.webdriver.remote.webdriver import WebDriver\n' + code
+            
             test_file_path = os.path.join(tests_dir, f"test_{test_id}_{case.get('titre', 'unnamed').lower().replace(' ', '_')}.py")
             with open(test_file_path, 'w', encoding='utf-8') as f:
                 f.write(code.strip())
@@ -114,6 +118,11 @@ class SeleniumGenerator:
             files = re.findall(r'([a-zA-Z0-9_]+\.py)\s*```(?:python)?\s*\n(.*?)\n\s*```', response, re.DOTALL)
 
         for filename, content in files:
+            # Ensure required imports are present
+            if 'from selenium.webdriver.remote.webdriver import WebDriver' not in content:
+                # Add it at the top
+                content = 'from selenium.webdriver.remote.webdriver import WebDriver\n' + content
+                
             with open(os.path.join(pages_dir, filename), 'w', encoding='utf-8') as f:
                 f.write(content.strip())
             logger.info(f"Page file created: {filename}")

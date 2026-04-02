@@ -1,48 +1,62 @@
-import pytest
-from pages.electronics_page import ElectronicsPage
+from selenium.webdriver.remote.webdriver import WebDriver
+from pages.home_page import HomePage
 from pages.product_detail_page import ProductDetailPage
-from selenium.webdriver.common.by import By
+import pytest
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
 import time
 
 @pytest.mark.usefixtures("driver")
 class TestNavigationVersDetailProduit:
-    def test_navigation_vers_detail_produit(self, driver):
-        # Étape 1 : Se rendre sur la page d'accueil du site web
-        electronics_page = ElectronicsPage(driver)
-        electronics_page.navigate_to_electronics_page()
+    def __init__(self, driver: WebDriver):
+        self.driver = driver
+        self.home_page = HomePage(driver)
+        self.product_detail_page = ProductDetailPage(driver)
 
-        # Étape 2 : Cliquer sur un produit disponible
-        produit = "iPhone 14"
-        electronics_page.click_on_product(produit)
+    def test_navigation_vers_detail_produit(self, driver: WebDriver):
+        # Étape 1 : Se rendre sur la page d'accueil du site web.
+        self.home_page.navigate_to("https://www.google.com")
+        self.home_page.search_for_product("iPhone 14")
 
-        # Étape 3 : Vérifier que la page produit est affichée avec les détails suivants : description, prix, bouton 'Add to cart'
-        product_detail_page = ProductDetailPage(driver)
-        description = "Téléphone portable Apple"
-        prix = "999,99 €"
+        # Étape 2 : Cliquer sur un produit disponible.
+        self.home_page.click_on_product()
 
-        # Vérification de la présence des éléments
-        assert WebDriverWait(driver, 10).until(
-            EC.presence_of_element_located((By.CSS_SELECTOR, "#product_description"))
+        # Étape 3 : Vérifier que la page produit est affichée avec les détails suivants : description, prix, bouton 'Add to cart'.
+        assert self.product_detail_page.is_description_visible()
+        assert self.product_detail_page.get_price() == "999,99 €"
+        assert self.product_detail_page.is_add_to_cart_button_visible()
+
+        # Vérification de la présence des éléments sur la page produit
+        assert WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((By.CSS_SELECTOR, "#description"))
         )
-        assert WebDriverWait(driver, 10).until(
-            EC.presence_of_element_located((By.CSS_SELECTOR, "#product_price"))
+        assert WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((By.CSS_SELECTOR, "#price"))
         )
-        assert WebDriverWait(driver, 10).until(
+        assert WebDriverWait(self.driver, 10).until(
             EC.presence_of_element_located((By.CSS_SELECTOR, "button[type='submit']"))
         )
-
-        # Vérification des valeurs
-        assert product_detail_page.get_product_description() == description
-        assert product_detail_page.get_product_price() == prix
 
         # Capture d'un screenshot en cas d'échec
         try:
             assert True
         except AssertionError:
-            driver.save_screenshot("CT-001_failure.png")
+            self.driver.save_screenshot("CT-001_failure.png")
             raise
 
-        # Vérification finale
-        assert product_detail_page.is_product_detail_page_displayed()
+    def test_navigation_vers_detail_produit_echec(self, driver: WebDriver):
+        # Étape 1 : Se rendre sur la page d'accueil du site web.
+        self.home_page.navigate_to("https://www.google.com")
+        self.home_page.search_for_product("Produit inconnu")
+
+        # Étape 2 : Cliquer sur un produit disponible.
+        self.home_page.click_on_product()
+
+        # Étape 3 : Vérifier que la page produit n'est pas affichée.
+        try:
+            assert not self.product_detail_page.is_description_visible()
+            assert not self.product_detail_page.is_add_to_cart_button_visible()
+        except AssertionError:
+            self.driver.save_screenshot("CT-001_failure.png")
+            raise

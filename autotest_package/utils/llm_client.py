@@ -20,23 +20,23 @@ logger = setup_logger("LLMClient")
 class LLMClient:
     """Abstraction for interacting with Anthropic or OpenAI."""
 
-    def __init__(self, config_path: str):
+    def __init__(self, config_path: str, provider_override: str = None, api_key_override: str = None):
         """Initializes the LLM based on config."""
         with open(config_path, 'r', encoding='utf-8') as f:
             config = yaml.safe_load(f)
         
         self.llm_config = config.get('llm', {})
-        self.provider = self.llm_config.get('provider', 'anthropic')
+        self.provider = provider_override or os.getenv("LLM_PROVIDER_OVERRIDE") or self.llm_config.get('provider', 'anthropic')
         self.model = self.llm_config.get('model', 'claude-3-5-sonnet-20241022')
         self.temperature = self.llm_config.get('temperature', 0.2)
         self.max_tokens = self.llm_config.get('max_tokens', 4096)
 
-        import os
-        api_key = os.getenv("GOOGLE_API_KEY") if self.provider == "google" else \
+        api_key = api_key_override or (
+                  os.getenv("GOOGLE_API_KEY") if self.provider == "google" else \
                   os.getenv("MISTRAL_API_KEY") if self.provider == "mistral" else \
                   os.getenv("GROQ_API_KEY") if self.provider == "groq" else \
                   os.getenv("OPENAI_API_KEY") if self.provider == "openai" else \
-                  os.getenv("ANTHROPIC_API_KEY") if self.provider == "anthropic" else None
+                  os.getenv("ANTHROPIC_API_KEY") if self.provider == "anthropic" else None)
 
         if self.provider == "anthropic":
             self.llm = ChatAnthropic(

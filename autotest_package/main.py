@@ -27,6 +27,8 @@ def main():
     parser.add_argument("--loglevel", default="INFO", choices=["DEBUG", "INFO", "WARNING"], help="DEBUG | INFO | WARNING (défaut: INFO)")
     parser.add_argument("--keep-tests", action="store_true", help="Conserver les scripts générés après exécution")
     parser.add_argument("--dry-run", action="store_true", help="Générer les scripts sans les exécuter")
+    parser.add_argument("--api-key", help="API Key pour le fournisseur LLM (Groq, OpenAI, etc.)")
+    parser.add_argument("--provider", help="Outre-passer le fournisseur LLM du config.yaml (ex: groq, openai, ollama)")
     
     args = parser.parse_args()
 
@@ -35,6 +37,36 @@ def main():
     logger.info("Démarrage d'AUTOTEST Spec-Driven Pipeline")
 
     config_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "config.yaml")
+    
+    # Load config to check provider
+    with open(config_path, 'r', encoding='utf-8') as f:
+        config = yaml.safe_load(f)
+    
+    provider = args.provider or config.get('llm', {}).get('provider', 'ollama')
+    
+    # Check if API key is needed and provided
+    api_key_needed = provider in ["groq", "openai", "anthropic", "google", "mistral"]
+    if api_key_needed:
+        env_var_name = f"{provider.upper()}_API_KEY"
+        api_key = args.api_key or os.getenv(env_var_name)
+        
+        if not api_key:
+            print(f"\n--- CONFIGURATION MULTI-UTILISATEUR ---")
+            print(f"Le fournisseur LLM est configuré sur: {provider}")
+            api_key = input(f"Veuillez entrer votre clé API {provider.upper()} : ").strip()
+            if not api_key:
+                print("Erreur: Une clé API est requise pour continuer.")
+                sys.exit(1)
+        
+        # Inject into environment so LLMClient can find it
+        os.environ[env_var_name] = api_key
+        logger.info(f"Clé API {provider.upper()} configurée pour cette session.")
+
+    # Update config object provider if overridden by CLI
+    if args.provider:
+        config['llm']['provider'] = args.provider
+        os.environ["LLM_PROVIDER_OVERRIDE"] = args.provider
+        logger.info(f"Fournisseur LLM forcé sur: {args.provider}")
     
     try:
         # Create output directories

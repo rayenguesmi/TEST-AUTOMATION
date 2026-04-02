@@ -1,210 +1,45 @@
-<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="25" failures="0" skipped="0" tests="25" time="0.677" timestamp="2026-04-01T14:14:30.747449+01:00" hostname="DESKTOP-E5NKSEU"><testcase classname="" name="tests.test_CT-001_affichage_des_produits_electronics_-_flux_nominal" time="0.000"><error message="collection failure">tests\test_CT-001_affichage_des_produits_electronics_-_flux_nominal.py:3: in &lt;module&gt;
-    from pages.electronics_page import ElectronicsPage
-pages\electronics_page.py:3: in &lt;module&gt;
-    class ElectronicsPage(BasePage):
-pages\electronics_page.py:4: in ElectronicsPage
-    def __init__(self, driver: WebDriver):
-                               ^^^^^^^^^
-E   NameError: name 'WebDriver' is not defined</error></testcase><testcase classname="" name="tests.test_CT-001_ajout_au_panier_-_cas_positif" time="0.000"><error message="collection failure">tests\test_CT-001_ajout_au_panier_-_cas_positif.py:2: in &lt;module&gt;
-    from pages.electronics_page import ElectronicsPage
-pages\electronics_page.py:3: in &lt;module&gt;
-    class ElectronicsPage(BasePage):
-pages\electronics_page.py:4: in ElectronicsPage
-    def __init__(self, driver: WebDriver):
-                               ^^^^^^^^^
-E   NameError: name 'WebDriver' is not defined</error></testcase><testcase classname="" name="tests.test_CT-001_generated_test_case" time="0.000"><error message="collection failure">tests\test_CT-001_generated_test_case.py:7: in &lt;module&gt;
-    from pages.electronics_page import ElectronicsPage
-pages\electronics_page.py:3: in &lt;module&gt;
-    class ElectronicsPage(BasePage):
-pages\electronics_page.py:4: in ElectronicsPage
-    def __init__(self, driver: WebDriver):
-                               ^^^^^^^^^
-E   NameError: name 'WebDriver' is not defined</error></testcase><testcase classname="" name="tests.test_CT-001_navigation_entre_les_pages_produits" time="0.000"><error message="collection failure">tests\test_CT-001_navigation_entre_les_pages_produits.py:3: in &lt;module&gt;
-    from pages.electronics_page import ElectronicsPage
-pages\electronics_page.py:3: in &lt;module&gt;
-    class ElectronicsPage(BasePage):
-pages\electronics_page.py:4: in ElectronicsPage
-    def __init__(self, driver: WebDriver):
-                               ^^^^^^^^^
-E   NameError: name 'WebDriver' is not defined</error></testcase><testcase classname="" name="tests.test_CT-001_navigation_vers_détail_produit_-_flux_nominal" time="0.000"><error message="collection failure">tests\test_CT-001_navigation_vers_détail_produit_-_flux_nominal.py:2: in &lt;module&gt;
-    from pages.electronics_page import ElectronicsPage
-pages\electronics_page.py:3: in &lt;module&gt;
-    class ElectronicsPage(BasePage):
-pages\electronics_page.py:4: in ElectronicsPage
-    def __init__(self, driver: WebDriver):
-                               ^^^^^^^^^
-E   NameError: name 'WebDriver' is not defined</error></testcase><testcase classname="" name="tests.test_CT-001_recherche_produit_existant" time="0.000"><error message="collection failure">tests\test_CT-001_recherche_produit_existant.py:2: in &lt;module&gt;
-    from pages.electronics_page import ElectronicsPage
-pages\electronics_page.py:3: in &lt;module&gt;
-    class ElectronicsPage(BasePage):
-pages\electronics_page.py:4: in ElectronicsPage
-    def __init__(self, driver: WebDriver):
-                               ^^^^^^^^^
-E   NameError: name 'WebDriver' is not defined</error></testcase><testcase classname="" name="tests.test_CT-002_affichage_des_produits_electronics_-_url_incorrecte" time="0.000"><error message="collection failure">tests\test_CT-002_affichage_des_produits_electronics_-_url_incorrecte.py:4: in &lt;module&gt;
-    from pages.electronics_page import ElectronicsPage
-pages\electronics_page.py:3: in &lt;module&gt;
-    class ElectronicsPage(BasePage):
-pages\electronics_page.py:4: in ElectronicsPage
-    def __init__(self, driver: WebDriver):
-                               ^^^^^^^^^
-E   NameError: name 'WebDriver' is not defined</error></testcase><testcase classname="" name="tests.test_CT-002_affichage_des_produits_electronics_-_url_invalide" time="0.000"><error message="collection failure">ImportError while importing test module 'C:\Users\Lenovo\Desktop\modif autotest\AUTOTEST\autotest_spec\output\generated_tests\tests\test_CT-002_affichage_des_produits_electronics_-_url_invalide.py'.
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="2" failures="0" skipped="0" tests="2" time="0.664" timestamp="2026-04-02T11:51:16.918391+01:00" hostname="DESKTOP-E5NKSEU"><testcase classname="" name="tests.test_CT-002_affichage_des_produits_electronics_-_url_invalide" time="0.000"><error message="collection failure">ImportError while importing test module 'C:\Users\Lenovo\Desktop\modif autotest\AUTOTEST\autotest_spec\output\generated_tests\tests\test_CT-002_affichage_des_produits_electronics_-_url_invalide.py'.
 Hint: make sure your test modules/packages have valid Python names.
 Traceback:
-C:\Users\Lenovo\AppData\Local\Programs\Python\Python312\Lib\site-packages\_pytest\python.py:507: in importtestmodule
+C:\Users\Lenovo\AppData\Roaming\Python\Python314\site-packages\_pytest\python.py:507: in importtestmodule
     mod = import_path(
-C:\Users\Lenovo\AppData\Local\Programs\Python\Python312\Lib\site-packages\_pytest\pathlib.py:587: in import_path
+C:\Users\Lenovo\AppData\Roaming\Python\Python314\site-packages\_pytest\pathlib.py:587: in import_path
     importlib.import_module(module_name)
-C:\Users\Lenovo\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py:90: in import_module
+C:\Python314\Lib\importlib\__init__.py:88: in import_module
     return _bootstrap._gcd_import(name[level:], package, level)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+&lt;frozen importlib._bootstrap&gt;:1398: in _gcd_import
     ???
-&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+&lt;frozen importlib._bootstrap&gt;:1371: in _find_and_load
     ???
-&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+&lt;frozen importlib._bootstrap&gt;:1342: in _find_and_load_unlocked
     ???
-&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+&lt;frozen importlib._bootstrap&gt;:938: in _load_unlocked
     ???
-C:\Users\Lenovo\AppData\Local\Programs\Python\Python312\Lib\site-packages\_pytest\assertion\rewrite.py:197: in exec_module
+C:\Users\Lenovo\AppData\Roaming\Python\Python314\site-packages\_pytest\assertion\rewrite.py:197: in exec_module
     exec(co, module.__dict__)
 tests\test_CT-002_affichage_des_produits_electronics_-_url_invalide.py:3: in &lt;module&gt;
     from selenium.webdriver import WebDriver
-E   ImportError: cannot import name 'WebDriver' from 'selenium.webdriver' (C:\Users\Lenovo\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\__init__.py). Did you mean: 'webdriver'?</error></testcase><testcase classname="" name="tests.test_CT-002_generated_test_case" time="0.000"><error message="collection failure">tests\test_CT-002_generated_test_case.py:7: in &lt;module&gt;
-    from pages.electronics_page import ElectronicsPage
-pages\electronics_page.py:3: in &lt;module&gt;
-    class ElectronicsPage(BasePage):
-pages\electronics_page.py:4: in ElectronicsPage
-    def __init__(self, driver: WebDriver):
-                               ^^^^^^^^^
-E   NameError: name 'WebDriver' is not defined</error></testcase><testcase classname="" name="tests.test_CT-002_navigation_vers_détail_produit_-_produit_indisponible" time="0.000"><error message="collection failure">tests\test_CT-002_navigation_vers_détail_produit_-_produit_indisponible.py:2: in &lt;module&gt;
-    from pages.electronics_page import ElectronicsPage
-pages\electronics_page.py:3: in &lt;module&gt;
-    class ElectronicsPage(BasePage):
-pages\electronics_page.py:4: in ElectronicsPage
-    def __init__(self, driver: WebDriver):
-                               ^^^^^^^^^
-E   NameError: name 'WebDriver' is not defined</error></testcase><testcase classname="" name="tests.test_CT-002_recherche_produit_inexistant" time="0.000"><error message="collection failure">tests\test_CT-002_recherche_produit_inexistant.py:6: in &lt;module&gt;
-    from pages.electronics_page import ElectronicsPage
-pages\electronics_page.py:3: in &lt;module&gt;
-    class ElectronicsPage(BasePage):
-pages\electronics_page.py:4: in ElectronicsPage
-    def __init__(self, driver: WebDriver):
-                               ^^^^^^^^^
-E   NameError: name 'WebDriver' is not defined</error></testcase><testcase classname="" name="tests.test_CT-003_affichage_des_produits_electronics_-_problème_de_connexion" time="0.000"><error message="collection failure">tests\test_CT-003_affichage_des_produits_electronics_-_problème_de_connexion.py:6: in &lt;module&gt;
-    from pages.electronics_page import ElectronicsPage
-pages\electronics_page.py:3: in &lt;module&gt;
-    class ElectronicsPage(BasePage):
-pages\electronics_page.py:4: in ElectronicsPage
-    def __init__(self, driver: WebDriver):
-                               ^^^^^^^^^
-E   NameError: name 'WebDriver' is not defined</error></testcase><testcase classname="" name="tests.test_CT-003_generated_test_case" time="0.000"><error message="collection failure">tests\test_CT-003_generated_test_case.py:2: in &lt;module&gt;
-    from pages.electronics_page import ElectronicsPage
-pages\electronics_page.py:3: in &lt;module&gt;
-    class ElectronicsPage(BasePage):
-pages\electronics_page.py:4: in ElectronicsPage
-    def __init__(self, driver: WebDriver):
-                               ^^^^^^^^^
-E   NameError: name 'WebDriver' is not defined</error></testcase><testcase classname="" name="tests.test_CT-003_navigation_vers_détail_produit_-_permissions" time="0.000"><error message="collection failure">tests\test_CT-003_navigation_vers_détail_produit_-_permissions.py:2: in &lt;module&gt;
-    from pages.electronics_page import ElectronicsPage
-pages\electronics_page.py:3: in &lt;module&gt;
-    class ElectronicsPage(BasePage):
-pages\electronics_page.py:4: in ElectronicsPage
-    def __init__(self, driver: WebDriver):
-                               ^^^^^^^^^
-E   NameError: name 'WebDriver' is not defined</error></testcase><testcase classname="" name="tests.test_CT-003_recherche_avec_caractères_spéciaux" time="0.000"><error message="collection failure">tests\test_CT-003_recherche_avec_caractères_spéciaux.py:2: in &lt;module&gt;
-    from pages.electronics_page import ElectronicsPage
-pages\electronics_page.py:3: in &lt;module&gt;
-    class ElectronicsPage(BasePage):
-pages\electronics_page.py:4: in ElectronicsPage
-    def __init__(self, driver: WebDriver):
-                               ^^^^^^^^^
-E   NameError: name 'WebDriver' is not defined</error></testcase><testcase classname="" name="tests.test_CT-004_generated_test_case" time="0.000"><error message="collection failure">tests\test_CT-004_generated_test_case.py:2: in &lt;module&gt;
-    from pages.electronics_page import ElectronicsPage
-pages\electronics_page.py:3: in &lt;module&gt;
-    class ElectronicsPage(BasePage):
-pages\electronics_page.py:4: in ElectronicsPage
-    def __init__(self, driver: WebDriver):
-                               ^^^^^^^^^
-E   NameError: name 'WebDriver' is not defined</error></testcase><testcase classname="" name="tests.test_CT-004_navigation_vers_détail_produit_-_edge_case" time="0.000"><error message="collection failure">tests\test_CT-004_navigation_vers_détail_produit_-_edge_case.py:2: in &lt;module&gt;
-    from pages.electronics_page import ElectronicsPage
-pages\electronics_page.py:3: in &lt;module&gt;
-    class ElectronicsPage(BasePage):
-pages\electronics_page.py:4: in ElectronicsPage
-    def __init__(self, driver: WebDriver):
-                               ^^^^^^^^^
-E   NameError: name 'WebDriver' is not defined</error></testcase><testcase classname="" name="tests.test_CT-004_navigation_à_la_première_page" time="0.000"><error message="collection failure">tests\test_CT-004_navigation_à_la_première_page.py:3: in &lt;module&gt;
-    from pages.electronics_page import ElectronicsPage
-pages\electronics_page.py:3: in &lt;module&gt;
-    class ElectronicsPage(BasePage):
-pages\electronics_page.py:4: in ElectronicsPage
-    def __init__(self, driver: WebDriver):
-                               ^^^^^^^^^
-E   NameError: name 'WebDriver' is not defined</error></testcase><testcase classname="" name="tests.test_CT-004_recherche_avec_espace" time="0.000"><error message="collection failure">tests\test_CT-004_recherche_avec_espace.py:2: in &lt;module&gt;
-    from pages.electronics_page import ElectronicsPage
-pages\electronics_page.py:3: in &lt;module&gt;
-    class ElectronicsPage(BasePage):
-pages\electronics_page.py:4: in ElectronicsPage
-    def __init__(self, driver: WebDriver):
-                               ^^^^^^^^^
-E   NameError: name 'WebDriver' is not defined</error></testcase><testcase classname="" name="tests.test_CT001_navigation" time="0.000"><error message="collection failure">tests\test_CT001_navigation.py:2: in &lt;module&gt;
-    from pages.electronics_page import ElectronicsPage
-pages\electronics_page.py:3: in &lt;module&gt;
-    class ElectronicsPage(BasePage):
-pages\electronics_page.py:4: in ElectronicsPage
-    def __init__(self, driver: WebDriver):
-                               ^^^^^^^^^
-E   NameError: name 'WebDriver' is not defined</error></testcase><testcase classname="" name="tests.test_F-001_generated_test_case" time="0.000"><error message="collection failure">tests\test_F-001_generated_test_case.py:2: in &lt;module&gt;
-    from pages.electronics_page import ElectronicsPage
-pages\electronics_page.py:3: in &lt;module&gt;
-    class ElectronicsPage(BasePage):
-pages\electronics_page.py:4: in ElectronicsPage
-    def __init__(self, driver: WebDriver):
-                               ^^^^^^^^^
-E   NameError: name 'WebDriver' is not defined</error></testcase><testcase classname="" name="tests.test_F-003_generated_test_case" time="0.000"><error message="collection failure">C:\Users\Lenovo\AppData\Local\Programs\Python\Python312\Lib\site-packages\_pytest\python.py:507: in importtestmodule
+E   ImportError: cannot import name 'WebDriver' from 'selenium.webdriver' (C:\Users\Lenovo\AppData\Roaming\Python\Python314\site-packages\selenium\webdriver\__init__.py). Did you mean: 'webdriver'?</error></testcase><testcase classname="" name="tests.test_TC-006_generated_test_case" time="0.000"><error message="collection failure">ImportError while importing test module 'C:\Users\Lenovo\Desktop\modif autotest\AUTOTEST\autotest_spec\output\generated_tests\tests\test_TC-006_generated_test_case.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+C:\Users\Lenovo\AppData\Roaming\Python\Python314\site-packages\_pytest\python.py:507: in importtestmodule
     mod = import_path(
-C:\Users\Lenovo\AppData\Local\Programs\Python\Python312\Lib\site-packages\_pytest\pathlib.py:587: in import_path
+C:\Users\Lenovo\AppData\Roaming\Python\Python314\site-packages\_pytest\pathlib.py:587: in import_path
     importlib.import_module(module_name)
-C:\Users\Lenovo\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py:90: in import_module
+C:\Python314\Lib\importlib\__init__.py:88: in import_module
     return _bootstrap._gcd_import(name[level:], package, level)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+&lt;frozen importlib._bootstrap&gt;:1398: in _gcd_import
     ???
-&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+&lt;frozen importlib._bootstrap&gt;:1371: in _find_and_load
     ???
-&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+&lt;frozen importlib._bootstrap&gt;:1342: in _find_and_load_unlocked
     ???
-&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+&lt;frozen importlib._bootstrap&gt;:938: in _load_unlocked
     ???
-C:\Users\Lenovo\AppData\Local\Programs\Python\Python312\Lib\site-packages\_pytest\assertion\rewrite.py:188: in exec_module
-    source_stat, co = _rewrite_test(fn, self.config)
-                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-C:\Users\Lenovo\AppData\Local\Programs\Python\Python312\Lib\site-packages\_pytest\assertion\rewrite.py:357: in _rewrite_test
-    tree = ast.parse(source, filename=strfn)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-C:\Users\Lenovo\AppData\Local\Programs\Python\Python312\Lib\ast.py:52: in parse
-    return compile(source, filename, mode, flags,
-E     File "C:\Users\Lenovo\Desktop\modif autotest\AUTOTEST\autotest_spec\output\generated_tests\tests\test_F-003_generated_test_case.py", line 24
-E       if not all(assertion:
-E                           ^
-E   SyntaxError: invalid syntax</error></testcase><testcase classname="" name="tests.test_F-005_generated_test_case" time="0.000"><error message="collection failure">tests\test_F-005_generated_test_case.py:2: in &lt;module&gt;
-    from pages.pagination_page import PaginationPage
-pages\pagination_page.py:3: in &lt;module&gt;
-    class PaginationPage(BasePage):
-pages\pagination_page.py:4: in PaginationPage
-    def __init__(self, driver: WebDriver):
-                               ^^^^^^^^^
-E   NameError: name 'WebDriver' is not defined</error></testcase><testcase classname="" name="tests.test_TC-004_generated_test_case" time="0.000"><error message="collection failure">tests\test_TC-004_generated_test_case.py:2: in &lt;module&gt;
-    from pages.tri_page import TriPage
-pages\tri_page.py:3: in &lt;module&gt;
-    class TriPage(BasePage):
-pages\tri_page.py:4: in TriPage
-    def __init__(self, driver: WebDriver):
-                               ^^^^^^^^^
-E   NameError: name 'WebDriver' is not defined</error></testcase><testcase classname="" name="tests.test_TC-006_generated_test_case" time="0.000"><error message="collection failure">tests\test_TC-006_generated_test_case.py:2: in &lt;module&gt;
-    from pages.electronics_page import ElectronicsPage
-pages\electronics_page.py:3: in &lt;module&gt;
-    class ElectronicsPage(BasePage):
-pages\electronics_page.py:4: in ElectronicsPage
-    def __init__(self, driver: WebDriver):
-                               ^^^^^^^^^
-E   NameError: name 'WebDriver' is not defined</error></testcase></testsuite></testsuites>
+C:\Users\Lenovo\AppData\Roaming\Python\Python314\site-packages\_pytest\assertion\rewrite.py:197: in exec_module
+    exec(co, module.__dict__)
+tests\test_TC-006_generated_test_case.py:1: in &lt;module&gt;
+    from pages.search_page import SearchPage
+E   ModuleNotFoundError: No module named 'pages.search_page'</error></testcase></testsuite></testsuites>

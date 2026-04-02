@@ -1,16 +1,20 @@
-from base_page import BasePage
+from selenium.webdriver.remote.webdriver import WebDriver
+from selenium.webdriver.common.by import By
 
-class ProductPage(BasePage):
+class ProductPage:
     def __init__(self, driver: WebDriver):
-        super().__init__(driver)
+        self.driver = driver
 
-    def navigate_to_product(self, product_url):
-        self.navigate_to(product_url)
+    def get_product_details(self):
+        product_name = self.driver.find_element(By.CSS_SELECTOR, ".product-name").text
+        product_description = self.driver.find_element(By.CSS_SELECTOR, ".product-description").text
+        product_price = self.driver.find_element(By.CSS_SELECTOR, ".product-price").text
+        return {
+            "name": product_name,
+            "description": product_description,
+            "price": product_price
+        }
 
-    def assert_product_detail_visible(self):
-        product_detail = self.wait_for_element_visible("//div[@class='product-detail']")
-        return product_detail.is_displayed()
-
-    def click_on_add_to_cart(self):
-        add_to_cart_locator = "//button[@data-test='add-to-cart']"
-        self.click_on(add_to_cart_locator)
+    def add_to_cart(self):
+        add_to_cart_button = self.driver.find_element(By.CSS_SELECTOR, ".add-to-cart")
+        add_to_cart_button.click()

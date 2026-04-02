@@ -1,6 +1,5 @@
 import pytest
 from pages.electronics_page import ElectronicsPage
-from pages.product_detail_page import ProductDetailPage
 from selenium.webdriver.remote.webdriver import WebDriver
 
 @pytest.fixture
@@ -8,33 +7,33 @@ def driver():
     return WebDriver()
 
 class TestElectronicsPage:
-    @pytest.mark.parametrize("test_id, test_name", [
-        ("F-001_1", "Flux positif: Affichage des produits Electronics"),
-        ("F-001_2", "Flux négatif: Charger la page avec mauvaise URL")
-    ])
-    def test_electronics_page(self, driver, test_id, test_name):
-        if test_name == "Flux positif: Affichage des produits Electronics":
-            # Navigate to the electronics page
-            electronics_page = ElectronicsPage(driver)
-            electronics_page.navigate_to("https://demowebshop.tricentis.com/electronics")
+    def test_electronics_page(self, driver):
+        # Step 1: Navigate to the electronics page
+        electronics_page = ElectronicsPage(driver)
+        electronics_page.navigate_to("https://demowebshop.tricentis.com/electronics")
 
-            # Assert the product list is visible
-            assert electronics_page.is_element_visible("//div[@class='product-list']")
+        # Step 2: Assert that the page displays a list of products
+        assert electronics_page.is_product_list_displayed()
 
-            # Click on a product
-            product_detail_page = ProductDetailPage(driver)
-            product_detail_page.click_on("//a[@href='#'][contains(text(), 'Product 1')]")
+        # Step 3: Click on a product
+        product = electronics_page.get_first_product()
+        product.click()
 
-        elif test_name == "Flux négatif: Charger la page avec mauvaise URL":
-            # Navigate to the invalid URL
-            driver.get("https://example.com/invalid-url")
+    def test_invalid_url(self, driver):
+        # Step 1: Navigate to an invalid URL
+        driver.get("https://example.com/invalid-url")
 
-            # Assert an error message is displayed
-            assert electronics_page.is_element_visible("//div[@class='error-message']")
+        # Step 2: Assert that an error or redirection occurs
+        assert "Erreur 404" in driver.title or "Redirection" in driver.current_url
 
-        else:
-            raise ValueError(f"Unknown test name: {test_name}")
-
-        # Capture a screenshot in case of failure
-        if not driver.current_url.startswith("https://demowebshop.tricentis.com/"):
-            driver.save_screenshot(f"{test_id}_failure.png")
+@pytest.mark.parametrize("test_id", ["F-001"])
+def test_electronics_page_failure(test_id):
+    try:
+        pytest.main([f"-k={test_id}"])
+    except Exception as e:
+        import os
+        from selenium.common.exceptions import WebDriverException
+        if isinstance(e, WebDriverException):
+            driver = WebDriver()
+            page = ElectronicsPage(driver)
+            page.get_screenshot(f"{test_id}_failure.png")

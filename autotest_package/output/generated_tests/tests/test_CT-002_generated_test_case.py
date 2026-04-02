@@ -1,36 +1,40 @@
-import pytest
+# tests/test_ct_002.py
 from selenium.webdriver.remote.webdriver import WebDriver
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.by import By
+from pages.home_page import HomePage
 from pages.login_page import LoginPage
-from pages.electronics_page import ElectronicsPage
+from pages.pagination_page import PaginationPage
 from pages.error_page import ErrorPage
-from pages.product_page import ProductPage
+import pytest
 import time
 
-@pytest.mark.usefixtures("driver")
-class TestCT002:
-    def test_ct002(self, driver: WebDriver):
-        # Étape 1 : Se connecter au site web avec l'email 'user@example.com' et le mot de passe 'password123'
-        login_page = LoginPage(driver)
-        login_page.go_to()
-        login_page.email_input.send_keys("user@example.com")
-        login_page.password_input.send_keys("password123")
-        login_page.login_button.click()
+@pytest.fixture
+def driver():
+    # Cette fixture est fournie, elle retourne une instance de WebDriver
+    pass
 
-        # Étape 2 : Cliquer sur le produit 'Produit 2' indisponible
-        electronics_page = ElectronicsPage(driver)
-        electronics_page.go_to()
-        electronics_page.product_2_link.click()
+def test_ct_002(driver: WebDriver):
+    # Étape 1 : Se connecter
+    login_page = LoginPage(driver)
+    login_page.se_connecter("user@example.com", "password123")
 
-        # Étape 3 : Vérifier que la page produit n'est pas affichée et qu'un message d'erreur est affiché
-        error_page = ErrorPage(driver)
-        try:
-            WebDriverWait(driver, 10).until(
-                EC.presence_of_element_located((By.CSS_SELECTOR, error_page.error_message_css))
-            )
-            assert error_page.error_message.text != ""
-        except AssertionError:
-            driver.save_screenshot(f"CT-002_failure.png")
-            pytest.fail("La page produit est affichée ou le message d'erreur n'est pas affiché")
+    # Étape 2 : Se rendre sur la page des produits
+    home_page = HomePage(driver)
+    home_page.se_rendre_sur_la_page_des_produits()
+
+    # Étape 3 : Entrer un numéro de page supérieur au nombre de pages existantes
+    pagination_page = PaginationPage(driver)
+    pagination_page.entrer_numero_de_page(100)
+
+    # Étape 4 : Cliquer sur le bouton 'Go'
+    pagination_page.cliquer_sur_bouton_go()
+
+    # Étape 5 : Vérifier que le message d'erreur est affiché
+    error_page = ErrorPage(driver)
+    assert error_page.message_d_erreur_est_affiche()
+
+    # Capture d'un screenshot en cas d'échec
+    try:
+        assert error_page.message_d_erreur_est_affiche()
+    except AssertionError:
+        driver.save_screenshot("CT-002_failure.png")
+        raise

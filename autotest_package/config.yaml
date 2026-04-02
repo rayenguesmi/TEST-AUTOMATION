@@ -1,7 +1,6 @@
 llm:
-  provider: "ollama"
-  model: "llama3:latest"
-  base_url: "http://localhost:11434"
+  provider: "groq"
+  model: "llama-3.3-70b-versatile"
   temperature: 0.2
   max_tokens: 8192
 

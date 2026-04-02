@@ -1,17 +1,19 @@
 from selenium.webdriver.remote.webdriver import WebDriver
-from .base_page import BasePage
+from selenium.webdriver.common.by import By
 
-class ElectronicsPage(BasePage):
+class ElectronicsPage:
     def __init__(self, driver: WebDriver):
-        super().__init__(driver)
+        self.driver = driver
+        self.url = "https://example.com/electronics"
 
-    def navigate_to_electronics(self):
-        self.navigate_to("https://example.com/electronics")
+    def get_product_list(self):
+        self.driver.get(self.url)
+        product_list = self.driver.find_elements(By.CSS_SELECTOR, ".product-list > li")
+        return product_list
 
-    def assert_product_list_visible(self):
-        product_list = self.wait_for_element_visible("//div[@class='product-list']")
-        return product_list.is_displayed()
-
-    def click_on_product(self, product_name):
-        product_link_locator = f"//a[@href='#'][contains(text(), '{product_name}')]"
-        self.click_on(product_link_locator)
+    def select_product(self, product_name):
+        product_list = self.get_product_list()
+        for product in product_list:
+            if product.text == product_name:
+                product.click()
+                break

@@ -1,62 +1,32 @@
-import pytest
-from pages.electronics_page import ElectronicsPage
-from pages.product_page import ProductPage
+from pages.search_page import SearchPage
 from selenium.webdriver.remote.webdriver import WebDriver
 
-@pytest.fixture
-def driver():
-    return WebDriver()
+def test_search_existing_product(driver: WebDriver):
+    search_page = SearchPage(driver)
+    search_page.open()
+    
+    search_page.enter_search_term("phone")
+    search_page.submit_search()
+    
+    assert search_page.is_element_visible(".search-results"), "Search results are not visible"
+    assert search_page.get_elements_count(".product-item") > 0, "No products found"
 
-class TestElectronicsSearch:
-    @pytest.mark.parametrize("search_query", ["phone", "camera"])
-    def test_search_positive(self, driver):
-        electronics_page = ElectronicsPage(driver)
-        product_page = ProductPage(driver)
+def test_search_non_existing_product(driver: WebDriver):
+    search_page = SearchPage(driver)
+    search_page.open()
+    
+    search_page.enter_search_term("xyz123")
+    search_page.submit_search()
+    
+    assert search_page.is_element_visible(".search-results"), "Search results are not visible"
+    assert search_page.is_element_visible(".no-results-message"), "No results message is not visible"
 
-        # Step 1: Open URL
-        electronics_page.open_url("https://demowebshop.tricentis.com/electronics")
-
-        # Step 2: Input search query
-        electronics_page.search_input(search_query)
-
-        # Step 3: Submit search form
-        product_page.submit_search_form()
-
-        # Assert expected result
-        assert product_page.get_products_count() > 0, "No products found"
-
-    @pytest.mark.parametrize("search_query", ["inexistent_product"])
-    def test_search_negative(self, driver):
-        electronics_page = ElectronicsPage(driver)
-        error_page = ErrorPage(driver)
-
-        # Step 1: Open URL
-        electronics_page.open_url("https://demowebshop.tricentis.com/electronics")
-
-        # Step 2: Input search query
-        electronics_page.search_input(search_query)
-
-        # Step 3: Submit search form
-        error_page.submit_search_form()
-
-        # Assert expected result
-        assert error_page.get_error_message() == "Aucun résultat trouvé", "Error message not found"
-
-@pytest.mark.parametrize("search_query", ["phone", "camera"])
-def test_search_failure(driver):
-    electronics_page = ElectronicsPage(driver)
-    product_page = ProductPage(driver)
-
-    try:
-        # Step 1: Open URL
-        electronics_page.open_url("https://demowebshop.tricentis.com/electronics")
-
-        # Step 2: Input search query
-        electronics_page.search_input(search_query)
-
-        # Step 3: Submit search form
-        product_page.submit_search_form()
-
-    except Exception as e:
-        pytest.fail(f"Test failed: {e}")
-        driver.save_screenshot(f"{test_id}_failure.png")
+def test_search_empty_product(driver: WebDriver):
+    search_page = SearchPage(driver)
+    search_page.open()
+    
+    search_page.enter_search_term("")
+    search_page.submit_search()
+    
+    assert search_page.is_element_visible(".search-results"), "Search results are not visible"
+    assert search_page.is_element_visible(".no-results-message"), "No results message is not visible"
