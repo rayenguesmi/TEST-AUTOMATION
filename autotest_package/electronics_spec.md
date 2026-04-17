@@ -1,6 +1,6 @@
 📄 Projet : Demo Web Shop – Module Electronics
 
-URL : https://demowebshop.tricentis.com/electronics
+URL : https://demowebshop.tricentis.com/
 
 🛍️ Feature F-001 : Affichage des produits Electronics
 

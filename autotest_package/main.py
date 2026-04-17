@@ -5,6 +5,13 @@ import yaml
 import shutil
 from typing import List
 
+# ── Load .env automatically (GROQ_API_KEY, etc.) ─────────────────────────────
+try:
+    from dotenv import load_dotenv
+    load_dotenv(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".env"))
+except ImportError:
+    pass   # python-dotenv not installed – fall back to manual/cli key
+
 # Ensure relative imports work by adding script directory to path
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 

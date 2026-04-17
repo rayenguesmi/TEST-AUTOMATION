@@ -43,23 +43,23 @@
 <body>
     <header>
         <h1>Rapport d'Exécution des Tests Automatisés</h1>
-        <div>Demo Web Shop – Module Electronics - 2026-04-02 11:51:17</div>
+        <div>Demo Web Shop – Module Electronics - 2026-04-17 11:05:13</div>
     </header>
 
     <div class="container">
         <div class="meta-info">
-            <p><strong>URL cible :</strong> <a href="https://www.google.com">https://www.google.com</a></p>
-            <p><strong>Durée totale :</strong> 2.74 s</p>
+            <p><strong>URL cible :</strong> <a href="https://demowebshop.tricentis.com/">https://demowebshop.tricentis.com/</a></p>
+            <p><strong>Durée totale :</strong> 93.23 s</p>
         </div>
 
         <div class="summary-box">
             <div class="summary-item">
                 <div class="summary-label">Total</div>
-                <div class="summary-value">2</div>
+                <div class="summary-value">13</div>
             </div>
             <div class="summary-item" style="color: var(--success-color);">
                 <div class="summary-label">Passés</div>
-                <div class="summary-value">0</div>
+                <div class="summary-value">13</div>
             </div>
             <div class="summary-item" style="color: var(--failure-color);">
                 <div class="summary-label">Échoués</div>
@@ -67,7 +67,7 @@
             </div>
             <div class="summary-item" style="color: #f0ad4e;">
                 <div class="summary-label">Erreurs</div>
-                <div class="summary-value">2</div>
+                <div class="summary-value">0</div>
             </div>
         </div>
 
@@ -76,8 +76,8 @@
         <div class="feature-card">
             <div class="feature-header">
                 <h3>[F-001] Affichage des produits Electronics</h3>
-                <span class="feature-status status-fail">
-                    FAIL
+                <span class="feature-status status-pass">
+                    PASS
                 </span>
             </div>
             <div style="padding: 1rem 1.5rem; border-bottom: 1px solid #eee;">
@@ -95,6 +95,57 @@
                 </thead>
                 <tbody>
                     
+                    <tr>
+                        <td>electronics</td>
+                        <td>
+                            test_electronics_page_loads
+                            
+                        </td>
+                        <td style="color: var(--success-color); font-weight: bold;">
+                            PASS
+                        </td>
+                        <td>10.253 s</td>
+                        <td>
+                            
+                            -
+                            
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>subcategory</td>
+                        <td>
+                            test_subcategory_links_are_clickable
+                            
+                        </td>
+                        <td style="color: var(--success-color); font-weight: bold;">
+                            PASS
+                        </td>
+                        <td>6.166 s</td>
+                        <td>
+                            
+                            -
+                            
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>cell</td>
+                        <td>
+                            test_cell_phones_products_listed
+                            
+                        </td>
+                        <td style="color: var(--success-color); font-weight: bold;">
+                            PASS
+                        </td>
+                        <td>6.723 s</td>
+                        <td>
+                            
+                            -
+                            
+                        </td>
+                    </tr>
+                    
                 </tbody>
             </table>
         </div>
@@ -102,8 +153,8 @@
         <div class="feature-card">
             <div class="feature-header">
                 <h3>[F-002] Navigation vers détail produit</h3>
-                <span class="feature-status status-fail">
-                    FAIL
+                <span class="feature-status status-pass">
+                    PASS
                 </span>
             </div>
             <div style="padding: 1rem 1.5rem; border-bottom: 1px solid #eee;">
@@ -121,6 +172,40 @@
                 </thead>
                 <tbody>
                     
+                    <tr>
+                        <td>click</td>
+                        <td>
+                            test_click_product_shows_detail
+                            
+                        </td>
+                        <td style="color: var(--success-color); font-weight: bold;">
+                            PASS
+                        </td>
+                        <td>6.566 s</td>
+                        <td>
+                            
+                            -
+                            
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>product</td>
+                        <td>
+                            test_product_detail_has_add_to_cart
+                            
+                        </td>
+                        <td style="color: var(--success-color); font-weight: bold;">
+                            PASS
+                        </td>
+                        <td>6.313 s</td>
+                        <td>
+                            
+                            -
+                            
+                        </td>
+                    </tr>
+                    
                 </tbody>
             </table>
         </div>
@@ -128,8 +213,8 @@
         <div class="feature-card">
             <div class="feature-header">
                 <h3>[F-003] Ajout au panier</h3>
-                <span class="feature-status status-fail">
-                    FAIL
+                <span class="feature-status status-pass">
+                    PASS
                 </span>
             </div>
             <div style="padding: 1rem 1.5rem; border-bottom: 1px solid #eee;">
@@ -147,6 +232,40 @@
                 </thead>
                 <tbody>
                     
+                    <tr>
+                        <td>add</td>
+                        <td>
+                            test_add_product_to_cart
+                            
+                        </td>
+                        <td style="color: var(--success-color); font-weight: bold;">
+                            PASS
+                        </td>
+                        <td>7.277 s</td>
+                        <td>
+                            
+                            -
+                            
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>cart</td>
+                        <td>
+                            test_cart_link_visible_after_add
+                            
+                        </td>
+                        <td style="color: var(--success-color); font-weight: bold;">
+                            PASS
+                        </td>
+                        <td>6.893 s</td>
+                        <td>
+                            
+                            -
+                            
+                        </td>
+                    </tr>
+                    
                 </tbody>
             </table>
         </div>
@@ -154,8 +273,8 @@
         <div class="feature-card">
             <div class="feature-header">
                 <h3>[F-004] Filtrage / Tri des produits</h3>
-                <span class="feature-status status-fail">
-                    FAIL
+                <span class="feature-status status-pass">
+                    PASS
                 </span>
             </div>
             <div style="padding: 1rem 1.5rem; border-bottom: 1px solid #eee;">
@@ -172,6 +291,40 @@
                     </tr>
                 </thead>
                 <tbody>
+                    
+                    <tr>
+                        <td>sort</td>
+                        <td>
+                            test_sort_by_price_ascending
+                            
+                        </td>
+                        <td style="color: var(--success-color); font-weight: bold;">
+                            PASS
+                        </td>
+                        <td>6.408 s</td>
+                        <td>
+                            
+                            -
+                            
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>sort</td>
+                        <td>
+                            test_sort_by_name
+                            
+                        </td>
+                        <td style="color: var(--success-color); font-weight: bold;">
+                            PASS
+                        </td>
+                        <td>7.297 s</td>
+                        <td>
+                            
+                            -
+                            
+                        </td>
+                    </tr>
                     
                 </tbody>
             </table>
@@ -206,8 +359,8 @@
         <div class="feature-card">
             <div class="feature-header">
                 <h3>[F-006] Recherche produit (globale liée)</h3>
-                <span class="feature-status status-fail">
-                    FAIL
+                <span class="feature-status status-pass">
+                    PASS
                 </span>
             </div>
             <div style="padding: 1rem 1.5rem; border-bottom: 1px solid #eee;">
@@ -224,6 +377,40 @@
                     </tr>
                 </thead>
                 <tbody>
+                    
+                    <tr>
+                        <td>search</td>
+                        <td>
+                            test_search_existing_product
+                            
+                        </td>
+                        <td style="color: var(--success-color); font-weight: bold;">
+                            PASS
+                        </td>
+                        <td>7.606 s</td>
+                        <td>
+                            
+                            -
+                            
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>search</td>
+                        <td>
+                            test_search_nonexistent_product
+                            
+                        </td>
+                        <td style="color: var(--success-color); font-weight: bold;">
+                            PASS
+                        </td>
+                        <td>7.198 s</td>
+                        <td>
+                            
+                            -
+                            
+                        </td>
+                    </tr>
                     
                 </tbody>
             </table>

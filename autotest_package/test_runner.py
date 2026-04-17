@@ -98,9 +98,12 @@ class TestRunner:
             # Simple heuristic for screenshot path (assuming same name as conftest.py logic)
             screenshot_path = f"../screenshots/{test_id}_failure.png" if status in ["FAIL", "ERROR"] else None
             
+            classname = testcase.get('classname', '')
+
             tests_list.append({
                 "id": test_id,
                 "name": name,
+                "classname": classname,
                 "statut": status,
                 "durée_secondes": dur,
                 "message_erreur": msg,

@@ -65,15 +65,38 @@ class ReportGenerator:
             "timestamp": time.strftime("%Y-%m-%d %H:%M:%S")
         }
         
+        # Build a lookup: test classname -> test result
+        all_tests = results.get('tests', [])
+
         features_list = []
-        for feature in spec.get('features', []):
-            fid = feature.get('id')
-            feature_tests = [t for t in results.get('tests', []) if fid in t['id']]
-            
-            # Feature status calculation
+        features = spec.get('features', [])
+        # Distribute tests across features by template key (F001->F-001, etc.)
+        # Template keys: F001, F002, F003, F004, F005, F006
+        feature_key_map = {
+            f"F-{str(i+1).zfill(3)}": f"F{str(i+1).zfill(3)}"
+            for i in range(len(features))
+        }
+
+        for feature in features:
+            fid = feature.get('id')           # e.g. 'F-001'
+            tkey = feature_key_map.get(fid)   # e.g. 'F001'
+
+            # Match tests by classname which contains template key (e.g. 'test_F001_...')
+            feature_tests = [
+                t for t in all_tests
+                if tkey and tkey.lower() in t.get('classname', '').lower()
+            ]
+
+            # Fallback: match by test name containing template key
+            if not feature_tests:
+                feature_tests = [
+                    t for t in all_tests
+                    if tkey and tkey.lower() in t.get('name', '').lower()
+                ]
+
             all_passed = all(t['statut'] == "PASS" for t in feature_tests) if feature_tests else False
             status = "PASS" if all_passed else "FAIL"
-            
+
             features_list.append({
                 "id": fid,
                 "title": feature.get('titre'),

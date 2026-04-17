@@ -6,54 +6,67 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 
-# Add the pages directory to sys.path to resolve imports
-sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)), "pages"))
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "pages"))
+
+
+def pytest_addoption(parser):
+    parser.addoption("--browser",  action="store", default="chrome")
+    parser.addoption("--headless", action="store", default="true")
+
 
 @pytest.fixture(scope="session")
 def browser_name(request):
     return request.config.getoption("--browser")
 
+
 @pytest.fixture(scope="session")
 def headless(request):
     return request.config.getoption("--headless")
 
-def pytest_addoption(parser):
-    parser.addoption("--browser", action="store", default="chrome")
-    parser.addoption("--headless", action="store", default="true")
 
 @pytest.fixture
 def driver(browser_name, headless):
-    if browser_name == "chrome":
-        options = Options()
-        if headless == "true":
-            options.add_argument("--headless")
-        options.add_argument("--window-size=1920,1080")
-        options.add_argument("--no-sandbox")
-        options.add_argument("--disable-dev-shm-usage")
-        driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
-    else:
-        raise ValueError(f"Browser {browser_name} not supported yet.")
-    
-    yield driver
-    
-    driver.quit()
+    """Chrome - 1920x1080 - explicit waits only."""
+    options = Options()
+    options.add_argument("--window-size=1920,1080")
+    options.add_argument("--no-sandbox")
+    options.add_argument("--disable-dev-shm-usage")
+    options.add_argument("--disable-gpu")
+    options.add_argument("--disable-extensions")
+    options.add_argument("--disable-infobars")
+    options.add_argument("--start-maximized")
+    options.add_experimental_option("excludeSwitches", ["enable-automation"])
+    options.add_experimental_option("useAutomationExtension", False)
+    if headless == "true":
+        options.add_argument("--headless=new")
+
+    drv = webdriver.Chrome(
+        service=Service(ChromeDriverManager().install()),
+        options=options,
+    )
+    drv.set_page_load_timeout(30)
+    drv.implicitly_wait(0)
+    yield drv
+    drv.quit()
+
 
 @pytest.hookimpl(tryfirst=True, hookwrapper=True)
 def pytest_runtest_makereport(item, call):
-    # execute all other hooks to obtain the report object
     outcome = yield
     rep = outcome.get_result()
-    
-    # set a report attribute for each phase of a test, which can be "setup", "call", "teardown"
-    setattr(item, "rep_" + rep.when, rep)
+    setattr(item, f"rep_{rep.when}", rep)
+
 
 @pytest.fixture(autouse=True)
 def screenshot_on_failure(request, driver):
     yield
-    # Check if test failed
     if hasattr(request.node, "rep_call") and request.node.rep_call.failed:
-        test_id = request.node.name.split('_')[1] # Assumes test_TCXXX_...
-        screenshot_name = f"{test_id}_failure.png"
-        screenshots_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "screenshots")
-        os.makedirs(screenshots_dir, exist_ok=True)
-        driver.save_screenshot(os.path.join(screenshots_dir, screenshot_name))
+        parts   = request.node.name.split("_")
+        test_id = parts[1] if len(parts) > 1 else "unknown"
+        ss_dir  = os.path.join(
+            os.path.dirname(os.path.abspath(__file__)), "..", "screenshots"
+        )
+        os.makedirs(ss_dir, exist_ok=True)
+        path = os.path.join(ss_dir, f"{test_id}_failure.png")
+        driver.save_screenshot(path)
+        print(f"\nScreenshot: {path}")
