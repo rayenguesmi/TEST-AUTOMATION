@@ -69,7 +69,7 @@ class TestCasNégatifAccèsÀUnePageInexist:
     """Cas négatif - Accès à une page inexistante"""
 
     def test_cas_négatif___accès_à_une_page_inexistan(self, driver: WebDriver):
-        """Vérifier que l'accès à une page inexistante renvoie une erreur ou une page d'erreur."""
+        """Vérifier que l'accès à une page inexistante renvoie une erreur ou une page d'erreur"""
         wait = WebDriverWait(driver, 20)
         _go_to_electronics(driver)
 

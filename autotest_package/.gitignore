@@ -1,0 +1,21 @@
+# --- Clés API et secrets ---
+.env
+*.env
+*.key
+
+# --- Sorties générées ---
+output/
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# --- Drivers & logs ---
+*.log
+chromedriver*
+geckodriver*
+
+# --- IDE ---
+.vscode/
+.idea/
+*.swp

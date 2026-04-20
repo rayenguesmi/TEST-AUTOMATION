@@ -43,31 +43,31 @@
 <body>
     <header>
         <h1>Rapport d'Exécution des Tests Automatisés</h1>
-        <div>Demo Web Shop – Module Electronics - 2026-04-17 11:05:13</div>
+        <div>Demo Web Shop – Module Electronics - 2026-04-20 10:24:18</div>
     </header>
 
     <div class="container">
         <div class="meta-info">
             <p><strong>URL cible :</strong> <a href="https://demowebshop.tricentis.com/">https://demowebshop.tricentis.com/</a></p>
-            <p><strong>Durée totale :</strong> 93.23 s</p>
+            <p><strong>Durée totale :</strong> 376.95 s</p>
         </div>
 
         <div class="summary-box">
             <div class="summary-item">
                 <div class="summary-label">Total</div>
-                <div class="summary-value">13</div>
+                <div class="summary-value">12</div>
             </div>
             <div class="summary-item" style="color: var(--success-color);">
                 <div class="summary-label">Passés</div>
-                <div class="summary-value">13</div>
+                <div class="summary-value">9</div>
             </div>
             <div class="summary-item" style="color: var(--failure-color);">
                 <div class="summary-label">Échoués</div>
-                <div class="summary-value">0</div>
+                <div class="summary-value">2</div>
             </div>
             <div class="summary-item" style="color: #f0ad4e;">
                 <div class="summary-label">Erreurs</div>
-                <div class="summary-value">0</div>
+                <div class="summary-value">1</div>
             </div>
         </div>
 
@@ -76,8 +76,8 @@
         <div class="feature-card">
             <div class="feature-header">
                 <h3>[F-001] Affichage des produits Electronics</h3>
-                <span class="feature-status status-pass">
-                    PASS
+                <span class="feature-status status-fail">
+                    FAIL
                 </span>
             </div>
             <div style="padding: 1rem 1.5rem; border-bottom: 1px solid #eee;">
@@ -100,14 +100,55 @@
                         <td>
                             test_electronics_page_loads
                             
+                            <div class="error-message">tests\test_F001_affichage_des_produits_electronics___flu.py:74: in test_electronics_page_loads
+    _go_to_electronics(driver)
+tests\test_F001_affichage_des_produits_electronics___flu.py:55: in _go_to_electronics
+    driver.get(BASE_URL + "electronics")
+C:\Users\Lenovo\AppData\Roaming\Python\Python314\site-packages\selenium\webdriver\remote\webdriver.py:466: in get
+    self.execute(Command.GET, {"url": url})
+C:\Users\Lenovo\AppData\Roaming\Python\Python314\site-packages\selenium\webdriver\remote\webdriver.py:446: in execute
+    self.error_handler.check_response(response)
+C:\Users\Lenovo\AppData\Roaming\Python\Python314\site-packages\selenium\webdriver\remote\errorhandler.py:232: in check_response
+    raise exception_class(message, screen, stacktrace)
+E   selenium.common.exceptions.TimeoutException: Message: timeout: Timed out receiving message from renderer: 27.516
+E     (Session info: chrome=147.0.7727.56)
+E   Stacktrace:
+E   	chromedriver!GetHandleVerifier [0x88c733+10b73]
+E   	chromedriver!GetHandleVerifier [0x88c864+10ca4]
+E   	chromedriver!(No symbol) [0x662100]
+E   	chromedriver!(No symbol) [0x6524c3]
+E   	chromedriver!(No symbol) [0x6521f5]
+E   	chromedriver!(No symbol) [0x650308]
+E   	chromedriver!(No symbol) [0x650b56]
+E   	chromedriver!(No symbol) [0x65d9ab]
+E   	chromedriver!(No symbol) [0x66f75e]
+E   	chromedriver!(No symbol) [0x6751d6]
+E   	chromedriver!(No symbol) [0x6511dc]
+E   	chromedriver!(No symbol) [0x66f4cc]
+E   	chromedriver!(No symbol) [0x6eb514]
+E   	chromedriver!(No symbol) [0x6cd9b6]
+E   	chromedriver!(No symbol) [0x6a0339]
+E   	chromedriver!(No symbol) [0x6a10f4]
+E   	chromedriver!GetHandleVerifier [0xaefe04+274244]
+E   	chromedriver!GetHandleVerifier [0xaeb459+26f899]
+E   	chromedriver!GetHandleVerifier [0xb09bd5+28e015]
+E   	chromedriver!GetHandleVerifier [0x8a7188+2b5c8]
+E   	chromedriver!GetHandleVerifier [0x8af23d+3367d]
+E   	chromedriver!GetHandleVerifier [0x895138+19578]
+E   	chromedriver!GetHandleVerifier [0x895302+19742]
+E   	chromedriver!GetHandleVerifier [0x87e48f+28cf]
+E   	KERNEL32!BaseThreadInitThunk [0x759a5d49+19]
+E   	ntdll!RtlInitializeExceptionChain [0x774bd81b+6b]
+E   	ntdll!RtlGetAppContainerNamedObjectPath [0x774bd7a1+231]</div>
+                            
                         </td>
-                        <td style="color: var(--success-color); font-weight: bold;">
-                            PASS
+                        <td style="color: var(--failure-color); font-weight: bold;">
+                            FAIL
                         </td>
-                        <td>10.253 s</td>
+                        <td>51.156 s</td>
                         <td>
                             
-                            -
+                            <a href="../screenshots/electronics_failure.png" class="screenshot-link" target="_blank">Screenshot 📸</a>
                             
                         </td>
                     </tr>
@@ -121,7 +162,7 @@
                         <td style="color: var(--success-color); font-weight: bold;">
                             PASS
                         </td>
-                        <td>6.166 s</td>
+                        <td>55.561 s</td>
                         <td>
                             
                             -
@@ -134,14 +175,85 @@
                         <td>
                             test_cell_phones_products_listed
                             
+                            <div class="error-message">tests\test_F001_affichage_des_produits_electronics___flu.py:101: in test_cell_phones_products_listed
+    _go_to_cell_phones(driver)
+tests\test_F001_affichage_des_produits_electronics___flu.py:64: in _go_to_cell_phones
+    driver.get(BASE_URL + "cell-phones")
+C:\Users\Lenovo\AppData\Roaming\Python\Python314\site-packages\selenium\webdriver\remote\webdriver.py:466: in get
+    self.execute(Command.GET, {"url": url})
+C:\Users\Lenovo\AppData\Roaming\Python\Python314\site-packages\selenium\webdriver\remote\webdriver.py:446: in execute
+    self.error_handler.check_response(response)
+C:\Users\Lenovo\AppData\Roaming\Python\Python314\site-packages\selenium\webdriver\remote\errorhandler.py:232: in check_response
+    raise exception_class(message, screen, stacktrace)
+E   selenium.common.exceptions.TimeoutException: Message: timeout: Timed out receiving message from renderer: 26.887
+E     (Session info: chrome=147.0.7727.56)
+E   Stacktrace:
+E   	chromedriver!GetHandleVerifier [0x88c733+10b73]
+E   	chromedriver!GetHandleVerifier [0x88c864+10ca4]
+E   	chromedriver!(No symbol) [0x662100]
+E   	chromedriver!(No symbol) [0x6524c3]
+E   	chromedriver!(No symbol) [0x6521f5]
+E   	chromedriver!(No symbol) [0x650308]
+E   	chromedriver!(No symbol) [0x650b56]
+E   	chromedriver!(No symbol) [0x65d9ab]
+E   	chromedriver!(No symbol) [0x66f75e]
+E   	chromedriver!(No symbol) [0x6751d6]
+E   	chromedriver!(No symbol) [0x6511dc]
+E   	chromedriver!(No symbol) [0x66f4cc]
+E   	chromedriver!(No symbol) [0x6eb514]
+E   	chromedriver!(No symbol) [0x6cd9b6]
+E   	chromedriver!(No symbol) [0x6a0339]
+E   	chromedriver!(No symbol) [0x6a10f4]
+E   	chromedriver!GetHandleVerifier [0xaefe04+274244]
+E   	chromedriver!GetHandleVerifier [0xaeb459+26f899]
+E   	chromedriver!GetHandleVerifier [0xb09bd5+28e015]
+E   	chromedriver!GetHandleVerifier [0x8a7188+2b5c8]
+E   	chromedriver!GetHandleVerifier [0x8af23d+3367d]
+E   	chromedriver!GetHandleVerifier [0x895138+19578]
+E   	chromedriver!GetHandleVerifier [0x895302+19742]
+E   	chromedriver!GetHandleVerifier [0x87e48f+28cf]
+E   	KERNEL32!BaseThreadInitThunk [0x759a5d49+19]
+E   	ntdll!RtlInitializeExceptionChain [0x774bd81b+6b]
+E   	ntdll!RtlGetAppContainerNamedObjectPath [0x774bd7a1+231]</div>
+                            
                         </td>
-                        <td style="color: var(--success-color); font-weight: bold;">
-                            PASS
+                        <td style="color: var(--failure-color); font-weight: bold;">
+                            FAIL
                         </td>
-                        <td>6.723 s</td>
+                        <td>34.137 s</td>
                         <td>
                             
-                            -
+                            <a href="../screenshots/cell_failure.png" class="screenshot-link" target="_blank">Screenshot 📸</a>
+                            
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>cell</td>
+                        <td>
+                            test_cell_phones_products_listed
+                            
+                            <div class="error-message">conftest.py:71: in screenshot_on_failure
+    driver.save_screenshot(path)
+C:\Users\Lenovo\AppData\Roaming\Python\Python314\site-packages\selenium\webdriver\remote\webdriver.py:896: in save_screenshot
+    return self.get_screenshot_as_file(filename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Lenovo\AppData\Roaming\Python\Python314\site-packages\selenium\webdriver\remote\webdriver.py:873: in get_screenshot_as_file
+    png = self.get_screenshot_as_png()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Lenovo\AppData\Roaming\Python\Python314\site-packages\selenium\webdriver\remote\webdriver.py:904: in get_screenshot_as_png
+    return b64decode(self.get_screenshot_as_base64().encode("ascii"))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AttributeError: 'NoneType' object has no attribute 'encode'</div>
+                            
+                        </td>
+                        <td style="color: var(--failure-color); font-weight: bold;">
+                            ERROR
+                        </td>
+                        <td>28.987 s</td>
+                        <td>
+                            
+                            <a href="../screenshots/cell_failure.png" class="screenshot-link" target="_blank">Screenshot 📸</a>
                             
                         </td>
                     </tr>
@@ -181,7 +293,7 @@
                         <td style="color: var(--success-color); font-weight: bold;">
                             PASS
                         </td>
-                        <td>6.566 s</td>
+                        <td>36.984 s</td>
                         <td>
                             
                             -
@@ -198,7 +310,7 @@
                         <td style="color: var(--success-color); font-weight: bold;">
                             PASS
                         </td>
-                        <td>6.313 s</td>
+                        <td>17.09 s</td>
                         <td>
                             
                             -
@@ -241,7 +353,7 @@
                         <td style="color: var(--success-color); font-weight: bold;">
                             PASS
                         </td>
-                        <td>7.277 s</td>
+                        <td>29.088 s</td>
                         <td>
                             
                             -
@@ -258,7 +370,7 @@
                         <td style="color: var(--success-color); font-weight: bold;">
                             PASS
                         </td>
-                        <td>6.893 s</td>
+                        <td>16.791 s</td>
                         <td>
                             
                             -
@@ -301,7 +413,7 @@
                         <td style="color: var(--success-color); font-weight: bold;">
                             PASS
                         </td>
-                        <td>6.408 s</td>
+                        <td>14.263 s</td>
                         <td>
                             
                             -
@@ -318,7 +430,7 @@
                         <td style="color: var(--success-color); font-weight: bold;">
                             PASS
                         </td>
-                        <td>7.297 s</td>
+                        <td>19.167 s</td>
                         <td>
                             
                             -
@@ -387,7 +499,7 @@
                         <td style="color: var(--success-color); font-weight: bold;">
                             PASS
                         </td>
-                        <td>7.606 s</td>
+                        <td>23.969 s</td>
                         <td>
                             
                             -
@@ -404,7 +516,7 @@
                         <td style="color: var(--success-color); font-weight: bold;">
                             PASS
                         </td>
-                        <td>7.198 s</td>
+                        <td>21.513 s</td>
                         <td>
                             
                             -

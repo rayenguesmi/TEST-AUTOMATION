@@ -5,12 +5,17 @@ import yaml
 import shutil
 from typing import List
 
-# ── Load .env automatically (GROQ_API_KEY, etc.) ─────────────────────────────
+# ── .env : charge uniquement si les valeurs sont non vides ──────────────────
 try:
-    from dotenv import load_dotenv
-    load_dotenv(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".env"))
+    from dotenv import dotenv_values
+    _env_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".env")
+    _env_vals = dotenv_values(_env_path)
+    for _k, _v in _env_vals.items():
+        # Only inject keys that are actually filled in (.env acts as template)
+        if _v and _v.strip() and _k not in os.environ:
+            os.environ[_k] = _v
 except ImportError:
-    pass   # python-dotenv not installed – fall back to manual/cli key
+    pass   # python-dotenv not installed – use CLI --api-key or env var
 
 # Ensure relative imports work by adding script directory to path
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
@@ -50,30 +55,47 @@ def main():
         config = yaml.safe_load(f)
     
     provider = args.provider or config.get('llm', {}).get('provider', 'ollama')
-    
-    # Check if API key is needed and provided
+
+    # ── Multi-user API key injection ──────────────────────────────────────────
+    # Priority: --api-key CLI > PROVIDER_API_KEY env var > interactive prompt
     api_key_needed = provider in ["groq", "openai", "anthropic", "google", "mistral"]
     if api_key_needed:
         env_var_name = f"{provider.upper()}_API_KEY"
-        api_key = args.api_key or os.getenv(env_var_name)
-        
-        if not api_key:
-            print(f"\n--- CONFIGURATION MULTI-UTILISATEUR ---")
-            print(f"Le fournisseur LLM est configuré sur: {provider}")
-            api_key = input(f"Veuillez entrer votre clé API {provider.upper()} : ").strip()
-            if not api_key:
-                print("Erreur: Une clé API est requise pour continuer.")
-                sys.exit(1)
-        
-        # Inject into environment so LLMClient can find it
-        os.environ[env_var_name] = api_key
-        logger.info(f"Clé API {provider.upper()} configurée pour cette session.")
 
-    # Update config object provider if overridden by CLI
+        # 1. CLI flag
+        api_key = args.api_key
+
+        # 2. Environment variable (set by user's shell or .env non-vide)
+        if not api_key:
+            api_key = os.environ.get(env_var_name, "").strip() or None
+
+        # 3. Interactive prompt (multi-user: chaque utilisateur saisit la sienne)
+        if not api_key:
+            print()
+            print("=" * 60)
+            print("  AUTOTEST – Configuration de la session")
+            print("=" * 60)
+            print(f"  Fournisseur LLM : {provider.upper()}")
+            print()
+            print(f"  Vous pouvez aussi passer la clé via :")
+            print(f"    --api-key gsk_...")
+            print(f"    ou variable d'environnement {env_var_name}")
+            print("=" * 60)
+            api_key = input(f"  Entrez votre clé API {provider.upper()} : ").strip()
+            if not api_key:
+                print("\nErreur : clé API requise pour continuer.")
+                sys.exit(1)
+
+        # Injecter dans l'environnement (session uniquement, jamais sauvegardé)
+        os.environ[env_var_name] = api_key
+        masked = api_key[:8] + "..." + api_key[-4:] if len(api_key) > 12 else "****"
+        logger.info(f"Cle API {provider.upper()} configuree : {masked}")
+
+    # Override config provider if --provider given on CLI
     if args.provider:
         config['llm']['provider'] = args.provider
         os.environ["LLM_PROVIDER_OVERRIDE"] = args.provider
-        logger.info(f"Fournisseur LLM forcé sur: {args.provider}")
+        logger.info(f"Fournisseur LLM force sur: {args.provider}")
     
     try:
         # Create output directories
