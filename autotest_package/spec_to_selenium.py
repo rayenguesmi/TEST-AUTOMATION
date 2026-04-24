@@ -26,335 +26,6 @@ from utils.logger import setup_logger
 
 logger = setup_logger("SeleniumGenerator")
 
-DEFAULT_URL = "https://demowebshop.tricentis.com/"
-
-# ─── Shared header ────────────────────────────────────────────────────────────
-_TEST_HEADER = '''\
-import pytest
-from selenium.webdriver.remote.webdriver import WebDriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import (
-    ElementClickInterceptedException,
-    StaleElementReferenceException,
-    TimeoutException,
-)
-
-BASE_URL = "https://demowebshop.tricentis.com/"
-
-# ── Selectors ─────────────────────────────────────────────────────────────────
-ELECTRONICS_LINK   = (By.CSS_SELECTOR, "div.header-menu > ul.top-menu > li > a[href=\'/electronics\']")
-SUBCATEGORY_ITEMS  = (By.CSS_SELECTOR, ".category-grid .item-box, .sub-category-grid .item-box")
-SUBCATEGORY_LINK   = (By.CSS_SELECTOR, ".category-grid .item-box a, .sub-category-grid .item-box a")
-PRODUCT_LIST       = (By.CSS_SELECTOR, ".product-item")
-PRODUCT_TITLE_A    = (By.CSS_SELECTOR, ".product-item .product-title a")
-PRODUCT_PRICE      = (By.CSS_SELECTOR, ".product-item .price.actual-price")
-PRODUCT_H1         = (By.CSS_SELECTOR, "div.product-name h1")
-ADD_CART_BTN       = (By.CSS_SELECTOR, "input[value=\'Add to cart\']")
-NOTIFICATION_OK    = (By.CSS_SELECTOR, ".bar-notification.success")
-SEARCH_INPUT       = (By.ID, "small-searchterms")
-SEARCH_BTN         = (By.CSS_SELECTOR, "input[value=\'Search\']")
-SORT_SELECT        = (By.ID, "products-orderby")
-NEXT_PAGE_BTN      = (By.CSS_SELECTOR, ".pager li.next-page a")
-SEARCH_RESULTS     = (By.CSS_SELECTOR, ".search-results .product-item, .product-item")
-CART_LINK          = (By.CSS_SELECTOR, "#topcartlink a")
-
-
-def _wait_page_ready(driver):
-    WebDriverWait(driver, 20).until(
-        lambda d: d.execute_script("return document.readyState") == "complete"
-    )
-
-
-def _safe_click(driver, locator):
-    """Wait -> scroll -> clickable -> click (JS fallback)."""
-    wait = WebDriverWait(driver, 20)
-    el = wait.until(EC.presence_of_element_located(locator))
-    driver.execute_script("arguments[0].scrollIntoView({block: \'center\'});", el)
-    el = wait.until(EC.element_to_be_clickable(locator))
-    try:
-        el.click()
-    except (ElementClickInterceptedException, StaleElementReferenceException):
-        driver.execute_script("arguments[0].click();", el)
-
-
-def _go_to_electronics(driver):
-    """
-    Navigate to the Electronics category landing page (shows subcategories).
-    Does NOT wait for .product-item because the landing page has subcategories only.
-    """
-    driver.get(BASE_URL + "electronics")
-    _wait_page_ready(driver)
-
-
-def _go_to_cell_phones(driver):
-    """
-    Navigate to Cell phones subcategory which always has real product items.
-    Use this for tests that need to interact with actual products.
-    """
-    driver.get(BASE_URL + "cell-phones")
-    _wait_page_ready(driver)
-    WebDriverWait(driver, 20).until(EC.presence_of_element_located(PRODUCT_LIST))
-
-'''
-
-# ─── TEMPLATE F-001 : Affichage produits ──────────────────────────────────────
-_TEMPLATE_F001 = _TEST_HEADER + '''\
-class TestAffichageProduits:
-    """F-001: La page Electronics affiche des sous-categories et des produits."""
-
-    def test_electronics_page_loads(self, driver: WebDriver):
-        """La page Electronics se charge et affiche des elements navigables."""
-        wait = WebDriverWait(driver, 20)
-        _go_to_electronics(driver)
-
-        # La page doit afficher soit des sous-categories soit des produits
-        try:
-            items = wait.until(EC.presence_of_element_located(SUBCATEGORY_ITEMS))
-            assert items.is_displayed(), "Les sous-categories ne sont pas visibles"
-        except TimeoutException:
-            items = wait.until(EC.presence_of_element_located(PRODUCT_LIST))
-            assert items.is_displayed(), "Aucun produit Electronics trouve"
-
-    def test_subcategory_links_are_clickable(self, driver: WebDriver):
-        """Les liens de sous-categories sont cliquables."""
-        wait = WebDriverWait(driver, 20)
-        _go_to_electronics(driver)
-
-        try:
-            link = wait.until(EC.element_to_be_clickable(SUBCATEGORY_LINK))
-            driver.execute_script("arguments[0].scrollIntoView({block: \'center\'});", link)
-            link.click()
-            _wait_page_ready(driver)
-            assert "demowebshop.tricentis.com" in driver.current_url
-        except TimeoutException:
-            pytest.skip("Pas de sous-categories, tentative sur produits directs")
-
-    def test_cell_phones_products_listed(self, driver: WebDriver):
-        """La sous-categorie Cell phones affiche des produits avec titre et prix."""
-        wait = WebDriverWait(driver, 20)
-        _go_to_cell_phones(driver)
-
-        products = driver.find_elements(*PRODUCT_LIST)
-        assert len(products) > 0, "Aucun produit Cell phones affiche"
-
-        titles = driver.find_elements(*PRODUCT_TITLE_A)
-        assert len(titles) > 0, "Aucun titre produit trouve"
-        for t in titles:
-            assert t.text.strip() != "", "Un titre produit est vide"
-'''
-
-# ─── TEMPLATE F-002 : Navigation detail produit ───────────────────────────────
-_TEMPLATE_F002 = _TEST_HEADER + '''\
-class TestNavigationDetailProduit:
-    """F-002: Cliquer sur un produit redirige vers sa page detail."""
-
-    def test_click_product_shows_detail(self, driver: WebDriver):
-        """La page detail affiche le nom du produit et le bouton Add to cart."""
-        wait = WebDriverWait(driver, 20)
-        _go_to_cell_phones(driver)
-
-        first_link = wait.until(EC.element_to_be_clickable(PRODUCT_TITLE_A))
-        driver.execute_script("arguments[0].scrollIntoView({block: \'center\'});", first_link)
-        first_link.click()
-
-        h1 = wait.until(EC.presence_of_element_located(PRODUCT_H1))
-        assert h1.text.strip() != "", "Le nom du produit est vide"
-        assert "demowebshop.tricentis.com" in driver.current_url
-
-    def test_product_detail_has_add_to_cart(self, driver: WebDriver):
-        """La page detail contient le bouton Add to cart."""
-        wait = WebDriverWait(driver, 20)
-        _go_to_cell_phones(driver)
-
-        first_link = wait.until(EC.element_to_be_clickable(PRODUCT_TITLE_A))
-        driver.execute_script("arguments[0].scrollIntoView({block: \'center\'});", first_link)
-        first_link.click()
-
-        add_btn = wait.until(EC.presence_of_element_located(ADD_CART_BTN))
-        driver.execute_script("arguments[0].scrollIntoView({block: \'center\'});", add_btn)
-        assert add_btn.is_displayed(), "Bouton Add to cart introuvable"
-'''
-
-# ─── TEMPLATE F-003 : Ajout au panier ────────────────────────────────────────
-_TEMPLATE_F003 = _TEST_HEADER + '''\
-class TestAjoutAuPanier:
-    """F-003: L\'utilisateur peut ajouter un produit Electronics au panier."""
-
-    def test_add_product_to_cart(self, driver: WebDriver):
-        """Cliquer sur Add to cart affiche une notification de succes."""
-        wait = WebDriverWait(driver, 20)
-        _go_to_cell_phones(driver)
-
-        first_link = wait.until(EC.element_to_be_clickable(PRODUCT_TITLE_A))
-        driver.execute_script("arguments[0].scrollIntoView({block: \'center\'});", first_link)
-        first_link.click()
-        wait.until(EC.presence_of_element_located(PRODUCT_H1))
-
-        _safe_click(driver, ADD_CART_BTN)
-
-        try:
-            notification = wait.until(EC.visibility_of_element_located(NOTIFICATION_OK))
-            assert notification.is_displayed(), "Notification de succes non affichee"
-        except TimeoutException:
-            assert "cart" in driver.current_url or "demowebshop.tricentis.com" in driver.current_url
-
-    def test_cart_link_visible_after_add(self, driver: WebDriver):
-        """Le lien du panier est visible apres ajout."""
-        wait = WebDriverWait(driver, 20)
-        _go_to_cell_phones(driver)
-
-        first_link = wait.until(EC.element_to_be_clickable(PRODUCT_TITLE_A))
-        driver.execute_script("arguments[0].scrollIntoView({block: \'center\'});", first_link)
-        first_link.click()
-        wait.until(EC.presence_of_element_located(PRODUCT_H1))
-
-        _safe_click(driver, ADD_CART_BTN)
-
-        cart_link = wait.until(EC.presence_of_element_located(CART_LINK))
-        assert cart_link.is_displayed()
-'''
-
-# ─── TEMPLATE F-004 : Filtrage/Tri ───────────────────────────────────────────
-_TEMPLATE_F004 = _TEST_HEADER + '''\
-from selenium.webdriver.support.ui import Select
-
-class TestFiltrageTriProduits:
-    """F-004: L\'utilisateur peut trier les produits Electronics."""
-
-    def test_sort_by_price_ascending(self, driver: WebDriver):
-        """Trier par prix croissant reorganise la liste."""
-        wait = WebDriverWait(driver, 20)
-        _go_to_cell_phones(driver)
-
-        sort_el = wait.until(EC.presence_of_element_located(SORT_SELECT))
-        driver.execute_script("arguments[0].scrollIntoView({block: \'center\'});", sort_el)
-        select = Select(sort_el)
-        select.select_by_visible_text("Price: Low to High")
-
-        wait.until(EC.presence_of_element_located(PRODUCT_LIST))
-        products = driver.find_elements(*PRODUCT_LIST)
-        assert len(products) > 0, "Aucun produit apres tri par prix"
-
-    def test_sort_by_name(self, driver: WebDriver):
-        """Trier par nom reorganise la liste alphabetiquement."""
-        wait = WebDriverWait(driver, 20)
-        _go_to_cell_phones(driver)
-
-        sort_el = wait.until(EC.presence_of_element_located(SORT_SELECT))
-        driver.execute_script("arguments[0].scrollIntoView({block: \'center\'});", sort_el)
-        select = Select(sort_el)
-        select.select_by_visible_text("Name: A to Z")
-
-        wait.until(EC.presence_of_element_located(PRODUCT_LIST))
-        titles = driver.find_elements(*PRODUCT_TITLE_A)
-        assert len(titles) > 0, "Aucun produit apres tri par nom"
-        names = [t.text.strip() for t in titles if t.text.strip()]
-        assert names == sorted(names, key=str.casefold), \
-            f"Produits non tries alphabetiquement: {names}"
-'''
-
-# ─── TEMPLATE F-005 : Pagination ─────────────────────────────────────────────
-_TEMPLATE_F005 = _TEST_HEADER + '''\
-class TestPagination:
-    """F-005: L\'utilisateur peut naviguer entre les pages de produits."""
-
-    def test_next_button_navigates(self, driver: WebDriver):
-        """Le bouton Next charge la page suivante de produits."""
-        wait = WebDriverWait(driver, 20)
-        _go_to_cell_phones(driver)
-
-        try:
-            next_btn = wait.until(EC.element_to_be_clickable(NEXT_PAGE_BTN))
-        except TimeoutException:
-            pytest.skip("Pas de pagination (moins d\'une page de produits)")
-
-        titles_p1 = [el.text for el in driver.find_elements(*PRODUCT_TITLE_A)]
-        driver.execute_script("arguments[0].scrollIntoView({block: \'center\'});", next_btn)
-        next_btn.click()
-
-        wait.until(EC.presence_of_element_located(PRODUCT_LIST))
-        titles_p2 = [el.text for el in driver.find_elements(*PRODUCT_TITLE_A)]
-        assert titles_p1 != titles_p2, "Les produits de la page 2 sont identiques a la page 1"
-
-    def test_invalid_page_url(self, driver: WebDriver):
-        """Acceder a une page inexistante ne plante pas l\'application."""
-        driver.get(BASE_URL + "cell-phones?page=9999")
-        _wait_page_ready(driver)
-        assert "demowebshop.tricentis.com" in driver.current_url
-'''
-
-# ─── TEMPLATE F-006 : Recherche ───────────────────────────────────────────────
-_TEMPLATE_F006 = _TEST_HEADER + '''\
-class TestRechercheProduit:
-    """F-006: L\'utilisateur peut rechercher un produit Electronics."""
-
-    def test_search_existing_product(self, driver: WebDriver):
-        """Rechercher 'laptop' retourne des resultats pertinents."""
-        wait = WebDriverWait(driver, 20)
-        driver.get(BASE_URL)
-
-        search_input = wait.until(EC.presence_of_element_located(SEARCH_INPUT))
-        driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", search_input)
-        search_input.clear()
-        search_input.send_keys("laptop")
-
-        _safe_click(driver, SEARCH_BTN)
-        _wait_page_ready(driver)
-
-        # La page de resultats doit contenir au moins 1 produit
-        try:
-            wait.until(EC.presence_of_element_located(SEARCH_RESULTS))
-            results = driver.find_elements(*SEARCH_RESULTS)
-            assert len(results) > 0, "Aucun resultat pour 'laptop'"
-        except TimeoutException:
-            # Fallback : verifier que la page de recherche a charge
-            assert "search" in driver.current_url.lower() or "demowebshop" in driver.current_url
-
-    def test_search_nonexistent_product(self, driver: WebDriver):
-        """Rechercher un produit inexistant affiche un message d\'absence."""
-        wait = WebDriverWait(driver, 20)
-        driver.get(BASE_URL)
-
-        search_input = wait.until(EC.presence_of_element_located(SEARCH_INPUT))
-        driver.execute_script("arguments[0].scrollIntoView({block: \'center\'});", search_input)
-        search_input.clear()
-        search_input.send_keys("xyzproductinexistant99999")
-
-        _safe_click(driver, SEARCH_BTN)
-        _wait_page_ready(driver)
-
-        page_source = driver.page_source.lower()
-        assert (
-            "no products" in page_source
-            or "aucun" in page_source
-            or "not found" in page_source
-            or len(driver.find_elements(*SEARCH_RESULTS)) == 0
-        ), "Un message d\'absence de resultats devrait etre affiche"
-'''
-
-# ─── Keyword -> (template_key, template_code) ─────────────────────────────────
-_KEYWORD_MAP = [
-    (["affichage", "display", "liste produit", "visualis"],  "F001", _TEMPLATE_F001),
-    (["navigation", "detail", "produit detail"],             "F002", _TEMPLATE_F002),
-    (["panier", "cart", "ajout"],                            "F003", _TEMPLATE_F003),
-    (["tri", "filtr", "sort", "trier"],                      "F004", _TEMPLATE_F004),
-    (["pagination", "page suivante", "next", "previous"],    "F005", _TEMPLATE_F005),
-    (["recherche", "search", "rechercher"],                  "F006", _TEMPLATE_F006),
-]
-
-# Feature ID prefixes for direct matching
-_FEATURE_ID_MAP = {
-    "F-001": ("F001", _TEMPLATE_F001),
-    "F-002": ("F002", _TEMPLATE_F002),
-    "F-003": ("F003", _TEMPLATE_F003),
-    "F-004": ("F004", _TEMPLATE_F004),
-    "F-005": ("F005", _TEMPLATE_F005),
-    "F-006": ("F006", _TEMPLATE_F006),
-}
-
-
 def _pick_template(case: Dict[str, Any]):
     """
     Returns (template_key: str, template_code: str).
@@ -384,8 +55,8 @@ def _pick_template(case: Dict[str, Any]):
         f"    def test_{method_name}(self, driver: WebDriver):\n"
         f'        """{description}"""\n'
         f"        wait = WebDriverWait(driver, 20)\n"
-        f"        _go_to_electronics(driver)\n\n"
-        f"        assert \"demowebshop.tricentis.com\" in driver.current_url\n"
+        f"        driver.get(BASE_URL)\n\n"
+        f"        assert \"{{url_placeholder}}\" in driver.current_url\n"
     )
     generic_key = f"GENERIC_{class_name}"
     return generic_key, _TEST_HEADER + generic_body
@@ -393,7 +64,11 @@ def _pick_template(case: Dict[str, Any]):
 
 # ═════════════════════════════════════════════════════════════════════════════
 class SeleniumGenerator:
-    """Template-based Selenium test generator. LLM NOT used for Python code."""
+    """
+    Hybrid Selenium test generator.
+    - Uses deterministic templates for known sites (Demo Shop).
+    - Uses LLM for general cases and new sites.
+    """
 
     def __init__(self, config_path: str):
         with open(config_path, 'r', encoding='utf-8') as f:
@@ -414,9 +89,10 @@ class SeleniumGenerator:
         pages_dir  = os.path.join(generated_tests_dir, "pages")
         tests_dir  = os.path.join(generated_tests_dir, "tests")
 
-        for d in [tests_dir, pages_dir]:
-            if os.path.exists(d):
-                shutil.rmtree(d)
+        # Total cleanup of generated tests root to avoid leftovers
+        if os.path.exists(generated_tests_dir):
+            shutil.rmtree(generated_tests_dir)
+            
         for d in [generated_tests_dir, pages_dir, tests_dir]:
             os.makedirs(d, exist_ok=True)
             open(os.path.join(d, "__init__.py"), 'a').close()
@@ -433,7 +109,25 @@ class SeleniumGenerator:
             feat_id = case.get("id", "UNKNOWN")
             titre   = case.get("titre", "unnamed")
 
+            # Determine if we should use Template or LLM
+            is_demo_shop = DEMO_SHOP_DOMAIN in self.url_cible
             template_key, template_code = _pick_template(case)
+            
+            # If it's a generic template and not demo shop, or if we want full generality:
+            if not is_demo_shop or template_key.startswith("GENERIC"):
+                logger.info(f"  [LLM] Generating generic script for: {feat_id}")
+                system_prompt = self.config['prompts']['selenium_generation'].replace('{url_cible}', self.url_cible)
+                user_prompt = f"Génère le script pour ce cas de test :\n{json.dumps(case, indent=2)}"
+                
+                try:
+                    generated_code = self.llm_client.call(system_prompt, user_prompt)
+                    # Extract code block if present
+                    if "```" in generated_code:
+                        generated_code = re.search(r"```(?:python)?\n(.*?)\n```", generated_code, re.DOTALL).group(1)
+                    template_code = generated_code
+                    template_key = f"LLM_{template_key}"
+                except Exception as e:
+                    logger.warning(f"  [Error] LLM generation failed for {feat_id}, falling back to template: {e}")
 
             if template_key in written_keys:
                 logger.info(f"  Skip (doublon) : {feat_id} -> {template_key}")
@@ -441,16 +135,26 @@ class SeleniumGenerator:
             written_keys.add(template_key)
 
             try:
+                # Basic validation
                 ast.parse(template_code)
             except SyntaxError as e:
-                logger.error(f"  Template invalide pour {feat_id}: {e}")
+                logger.error(f"  Code invalide généré pour {feat_id}: {e}")
                 continue
 
             safe_titre = re.sub(r'[^\w]', '_', titre.lower())[:40]
-            filename   = f"test_{template_key}_{safe_titre}.py"
+            # Prefix filename with feat_id for reporting
+            filename   = f"test_{feat_id.replace('-', '_')}_{template_key}_{safe_titre}.py"
             filepath   = os.path.join(tests_dir, filename)
+            
+            # Also inject the ID into the test function name for LLM generated code
+            if not is_demo_shop or template_key.startswith("GENERIC"):
+                template_code = template_code.replace("def test_", f"def test_{feat_id.replace('-', '_')}_")
+
             with open(filepath, 'w', encoding='utf-8') as f:
-                f.write(template_code)
+                # Ensure the template code uses the correct URL
+                final_code = template_code.replace("https://demowebshop.tricentis.com/", self.url_cible)
+                final_code = final_code.replace("{url_placeholder}", self.url_cible)
+                f.write(final_code)
             logger.info(f"  [OK] Script : {filename}")
             saved += 1
 
@@ -562,15 +266,18 @@ def headless(request):
 def driver(browser_name, headless):
     """Chrome - 1920x1080 - explicit waits only."""
     options = Options()
+    options.page_load_strategy = 'eager'
     options.add_argument("--window-size=1920,1080")
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
     options.add_argument("--disable-gpu")
-    options.add_argument("--disable-extensions")
-    options.add_argument("--disable-infobars")
     options.add_argument("--start-maximized")
-    options.add_experimental_option("excludeSwitches", ["enable-automation"])
-    options.add_experimental_option("useAutomationExtension", False)
+    
+    # Block ads and images for speed on slow sites
+    prefs = {"profile.managed_default_content_settings.images": 2}
+    options.add_experimental_option("prefs", prefs)
+    options.add_argument("--disable-notifications")
+    
     if headless == "true":
         options.add_argument("--headless=new")
 

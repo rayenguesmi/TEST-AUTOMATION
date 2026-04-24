@@ -48,7 +48,9 @@ class TestCaseGenerator:
             logger.debug(f"Generating cases for {feature_id}")
             
             feature_json = json.dumps(feature, indent=2)
-            cases = self.llm_client.call_json(self.system_prompt, feature_json)
+            url_cible = parsed_spec.get('url_cible', 'URL non spécifiée')
+            system_prompt = self.system_prompt.replace('{url_cible}', url_cible)
+            cases = self.llm_client.call_json(system_prompt, feature_json)
             
             # Anti-rate limit
             import time

@@ -10,7 +10,7 @@ prompts:
     Extrait toutes les fonctionnalités testables du document fourni.
     IMPORTANT : Tu DOIS utiliser exactement ces clés JSON (en anglais) dans ta réponse :
     - "project_name": le nom du projet
-    - "url_cible": l'URL cible du site web (TOUJOURS https://demowebshop.tricentis.com/)
+    - "url_cible": Target website URL (extract from spec or use the provided parameter)
     - "features": une liste d'objets, chaque objet ayant :
         - "id": identifiant unique (ex: F-001)
         - "titre": le titre de la fonctionnalité
@@ -27,7 +27,7 @@ prompts:
     - 2 à 3 cas négatifs (données invalides, permissions, limites)
     - 1 cas edge case si pertinent
     Chaque cas doit être précis, autonome et exécutable par Selenium.
-    L'URL cible est TOUJOURS : https://demowebshop.tricentis.com/
+    Target URL: {url_cible}
     Inclus des données de test concrètes (emails, mots de passe, valeurs...).
     Réponds UNIQUEMENT en JSON valide.
 
@@ -36,36 +36,31 @@ prompts:
     Génère un script pytest complet et robuste pour le cas de test fourni.
 
     ════ RÈGLES OBLIGATOIRES ════
-    1. URL CIBLE : https://demowebshop.tricentis.com/ — NE JAMAIS utiliser nopcommerce ou toute autre URL.
+    1. TARGET URL: {url_cible} — Use this URL for all navigation.
     2. INTERDICTION ABSOLUE d'utiliser driver.find_element() directement.
     3. Utilise WebDriverWait(driver, 20) avec EC.element_to_be_clickable AVANT tout clic.
     4. Protocole d'interaction OBLIGATOIRE pour chaque élément :
-       a. element = WebDriverWait(driver, 20).until(EC.presence_of_element_located(locator))
+       a. element = WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.CSS_SELECTOR, "your-selector")))
        b. driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", element)
-       c. element = WebDriverWait(driver, 20).until(EC.element_to_be_clickable(locator))
+       c. element = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "your-selector")))
        d. try: element.click()
           except (ElementClickInterceptedException, StaleElementReferenceException):
               driver.execute_script("arguments[0].click();", element)
     5. OU utilise directement safe_click(locator) / safe_send_keys(locator, text) de la Page Object.
     6. Imports obligatoires au début du fichier :
+       from selenium.webdriver.common.by import By
        from selenium.webdriver.remote.webdriver import WebDriver
        from selenium.webdriver.support.ui import WebDriverWait
        from selenium.webdriver.support import expected_conditions as EC
        from selenium.common.exceptions import ElementClickInterceptedException, StaleElementReferenceException
     7. NE PAS importer 'from selenium.webdriver import WebDriver'.
     8. NE PAS créer d'instance WebDriver — utilise la fixture 'driver' de conftest.py.
-    9. Sélecteurs CSS robustes pour demowebshop.tricentis.com :
-       - Menu Electronics : div.header-menu > ul.top-menu > li > a[href='/electronics']
-       - Titre catégorie  : .category-page h1, h1.page-title
-       - Produits         : .product-item, .product-title a
-       - Bouton panier    : input[value='Add to cart'], .add-to-cart-button
-       - Notification     : .bar-notification.success
-       - Recherche        : #small-searchterms, input[value='Search']
-    10. Génère UNIQUEMENT du code Python valide entre ```, sans aucune explication.
+    9. LOCATORS: Use robust CSS Selectors or XPATH. Use the 'By' class (By.CSS_SELECTOR, By.ID, etc.).
+    10. GENERATE ONLY the code between ```python ... ```.
 
 selenium:
   browser: "chrome"
-  headless: true
+  headless: false
   window_size: "1920,1080"
   implicit_wait: 0            # Disabled – we use explicit WebDriverWait everywhere
   page_load_timeout: 30

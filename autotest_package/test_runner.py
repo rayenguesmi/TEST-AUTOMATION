@@ -1,4 +1,5 @@
 import os
+import re
 import subprocess
 import yaml
 import time
@@ -79,8 +80,19 @@ class TestRunner:
         
         tests_list = []
         for testcase in testsuite.findall('testcase'):
-            test_id = testcase.get('name', 'TC-Unknown').split('_')[1] if '_' in testcase.get('name', '') else testcase.get('name', 'TC-Unknown')
-            name = testcase.get('name')
+            full_name = testcase.get('name', '')
+            class_name = testcase.get('classname', '')
+            
+            # Extract Feature ID (e.g., F_001 -> F-001)
+            test_id = "TC-Unknown"
+            match = re.search(r'F_(\d+)', full_name + class_name)
+            if match:
+                test_id = f"F-{match.group(1)}"
+            else:
+                # Fallback to old logic if no F-number found
+                test_id = full_name.split('_')[1] if '_' in full_name else full_name
+            
+            name = full_name
             dur = float(testcase.get('time', 0))
             status = "PASS"
             msg = None

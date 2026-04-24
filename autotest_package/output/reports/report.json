@@ -2,55 +2,46 @@
   "summary": {
     "project_name": "Demo Web Shop \u2013 Module Electronics",
     "url_cible": "https://demowebshop.tricentis.com/",
-    "total_tests": 12,
-    "passed": 9,
+    "total_tests": 15,
+    "passed": 12,
     "failed": 2,
-    "errors": 1,
-    "duration_seconds": 376.95,
-    "timestamp": "2026-04-20 10:24:18"
+    "errors": 0,
+    "duration_seconds": 251.29,
+    "timestamp": "2026-04-24 11:05:07"
   },
   "features_with_results": [
     {
       "id": "F-001",
       "title": "Affichage des produits Electronics",
       "description": "L'utilisateur peut visualiser la liste des produits \u00e9lectroniques disponibles.",
-      "status": "FAIL",
+      "status": "PASS",
       "tests": [
         {
           "id": "electronics",
           "name": "test_electronics_page_loads",
-          "classname": "tests.test_F001_affichage_des_produits_electronics___flu.TestAffichageProduits",
-          "statut": "FAIL",
-          "dur\u00e9e_secondes": 51.156,
-          "message_erreur": "tests\\test_F001_affichage_des_produits_electronics___flu.py:74: in test_electronics_page_loads\n    _go_to_electronics(driver)\ntests\\test_F001_affichage_des_produits_electronics___flu.py:55: in _go_to_electronics\n    driver.get(BASE_URL + \"electronics\")\nC:\\Users\\Lenovo\\AppData\\Roaming\\Python\\Python314\\site-packages\\selenium\\webdriver\\remote\\webdriver.py:466: in get\n    self.execute(Command.GET, {\"url\": url})\nC:\\Users\\Lenovo\\AppData\\Roaming\\Python\\Python314\\site-packages\\selenium\\webdriver\\remote\\webdriver.py:446: in execute\n    self.error_handler.check_response(response)\nC:\\Users\\Lenovo\\AppData\\Roaming\\Python\\Python314\\site-packages\\selenium\\webdriver\\remote\\errorhandler.py:232: in check_response\n    raise exception_class(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: timeout: Timed out receiving message from renderer: 27.516\nE     (Session info: chrome=147.0.7727.56)\nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x88c733+10b73]\nE   \tchromedriver!GetHandleVerifier [0x88c864+10ca4]\nE   \tchromedriver!(No symbol) [0x662100]\nE   \tchromedriver!(No symbol) [0x6524c3]\nE   \tchromedriver!(No symbol) [0x6521f5]\nE   \tchromedriver!(No symbol) [0x650308]\nE   \tchromedriver!(No symbol) [0x650b56]\nE   \tchromedriver!(No symbol) [0x65d9ab]\nE   \tchromedriver!(No symbol) [0x66f75e]\nE   \tchromedriver!(No symbol) [0x6751d6]\nE   \tchromedriver!(No symbol) [0x6511dc]\nE   \tchromedriver!(No symbol) [0x66f4cc]\nE   \tchromedriver!(No symbol) [0x6eb514]\nE   \tchromedriver!(No symbol) [0x6cd9b6]\nE   \tchromedriver!(No symbol) [0x6a0339]\nE   \tchromedriver!(No symbol) [0x6a10f4]\nE   \tchromedriver!GetHandleVerifier [0xaefe04+274244]\nE   \tchromedriver!GetHandleVerifier [0xaeb459+26f899]\nE   \tchromedriver!GetHandleVerifier [0xb09bd5+28e015]\nE   \tchromedriver!GetHandleVerifier [0x8a7188+2b5c8]\nE   \tchromedriver!GetHandleVerifier [0x8af23d+3367d]\nE   \tchromedriver!GetHandleVerifier [0x895138+19578]\nE   \tchromedriver!GetHandleVerifier [0x895302+19742]\nE   \tchromedriver!GetHandleVerifier [0x87e48f+28cf]\nE   \tKERNEL32!BaseThreadInitThunk [0x759a5d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x774bd81b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x774bd7a1+231]",
-          "screenshot_path": "../screenshots/electronics_failure.png"
+          "classname": "tests.test_CT_001_F001_generated_test_case.TestAffichageProduits",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 78.644,
+          "message_erreur": null,
+          "screenshot_path": null
         },
         {
           "id": "subcategory",
           "name": "test_subcategory_links_are_clickable",
-          "classname": "tests.test_F001_affichage_des_produits_electronics___flu.TestAffichageProduits",
+          "classname": "tests.test_CT_001_F001_generated_test_case.TestAffichageProduits",
           "statut": "PASS",
-          "dur\u00e9e_secondes": 55.561,
+          "dur\u00e9e_secondes": 12.018,
           "message_erreur": null,
           "screenshot_path": null
         },
         {
           "id": "cell",
           "name": "test_cell_phones_products_listed",
-          "classname": "tests.test_F001_affichage_des_produits_electronics___flu.TestAffichageProduits",
-          "statut": "FAIL",
-          "dur\u00e9e_secondes": 34.137,
-          "message_erreur": "tests\\test_F001_affichage_des_produits_electronics___flu.py:101: in test_cell_phones_products_listed\n    _go_to_cell_phones(driver)\ntests\\test_F001_affichage_des_produits_electronics___flu.py:64: in _go_to_cell_phones\n    driver.get(BASE_URL + \"cell-phones\")\nC:\\Users\\Lenovo\\AppData\\Roaming\\Python\\Python314\\site-packages\\selenium\\webdriver\\remote\\webdriver.py:466: in get\n    self.execute(Command.GET, {\"url\": url})\nC:\\Users\\Lenovo\\AppData\\Roaming\\Python\\Python314\\site-packages\\selenium\\webdriver\\remote\\webdriver.py:446: in execute\n    self.error_handler.check_response(response)\nC:\\Users\\Lenovo\\AppData\\Roaming\\Python\\Python314\\site-packages\\selenium\\webdriver\\remote\\errorhandler.py:232: in check_response\n    raise exception_class(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: timeout: Timed out receiving message from renderer: 26.887\nE     (Session info: chrome=147.0.7727.56)\nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x88c733+10b73]\nE   \tchromedriver!GetHandleVerifier [0x88c864+10ca4]\nE   \tchromedriver!(No symbol) [0x662100]\nE   \tchromedriver!(No symbol) [0x6524c3]\nE   \tchromedriver!(No symbol) [0x6521f5]\nE   \tchromedriver!(No symbol) [0x650308]\nE   \tchromedriver!(No symbol) [0x650b56]\nE   \tchromedriver!(No symbol) [0x65d9ab]\nE   \tchromedriver!(No symbol) [0x66f75e]\nE   \tchromedriver!(No symbol) [0x6751d6]\nE   \tchromedriver!(No symbol) [0x6511dc]\nE   \tchromedriver!(No symbol) [0x66f4cc]\nE   \tchromedriver!(No symbol) [0x6eb514]\nE   \tchromedriver!(No symbol) [0x6cd9b6]\nE   \tchromedriver!(No symbol) [0x6a0339]\nE   \tchromedriver!(No symbol) [0x6a10f4]\nE   \tchromedriver!GetHandleVerifier [0xaefe04+274244]\nE   \tchromedriver!GetHandleVerifier [0xaeb459+26f899]\nE   \tchromedriver!GetHandleVerifier [0xb09bd5+28e015]\nE   \tchromedriver!GetHandleVerifier [0x8a7188+2b5c8]\nE   \tchromedriver!GetHandleVerifier [0x8af23d+3367d]\nE   \tchromedriver!GetHandleVerifier [0x895138+19578]\nE   \tchromedriver!GetHandleVerifier [0x895302+19742]\nE   \tchromedriver!GetHandleVerifier [0x87e48f+28cf]\nE   \tKERNEL32!BaseThreadInitThunk [0x759a5d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x774bd81b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x774bd7a1+231]",
-          "screenshot_path": "../screenshots/cell_failure.png"
-        },
-        {
-          "id": "cell",
-          "name": "test_cell_phones_products_listed",
-          "classname": "tests.test_F001_affichage_des_produits_electronics___flu.TestAffichageProduits",
-          "statut": "ERROR",
-          "dur\u00e9e_secondes": 28.987,
-          "message_erreur": "conftest.py:71: in screenshot_on_failure\n    driver.save_screenshot(path)\nC:\\Users\\Lenovo\\AppData\\Roaming\\Python\\Python314\\site-packages\\selenium\\webdriver\\remote\\webdriver.py:896: in save_screenshot\n    return self.get_screenshot_as_file(filename)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nC:\\Users\\Lenovo\\AppData\\Roaming\\Python\\Python314\\site-packages\\selenium\\webdriver\\remote\\webdriver.py:873: in get_screenshot_as_file\n    png = self.get_screenshot_as_png()\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nC:\\Users\\Lenovo\\AppData\\Roaming\\Python\\Python314\\site-packages\\selenium\\webdriver\\remote\\webdriver.py:904: in get_screenshot_as_png\n    return b64decode(self.get_screenshot_as_base64().encode(\"ascii\"))\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE   AttributeError: 'NoneType' object has no attribute 'encode'",
-          "screenshot_path": "../screenshots/cell_failure.png"
+          "classname": "tests.test_CT_001_F001_generated_test_case.TestAffichageProduits",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 8.734,
+          "message_erreur": null,
+          "screenshot_path": null
         }
       ]
     },
@@ -63,18 +54,18 @@
         {
           "id": "click",
           "name": "test_click_product_shows_detail",
-          "classname": "tests.test_F002_navigation_vers_d\u00e9tail_produit___flux_no.TestNavigationDetailProduit",
+          "classname": "tests.test_CT_001_F002_generated_test_case.TestNavigationDetailProduit",
           "statut": "PASS",
-          "dur\u00e9e_secondes": 36.984,
+          "dur\u00e9e_secondes": 10.943,
           "message_erreur": null,
           "screenshot_path": null
         },
         {
           "id": "product",
           "name": "test_product_detail_has_add_to_cart",
-          "classname": "tests.test_F002_navigation_vers_d\u00e9tail_produit___flux_no.TestNavigationDetailProduit",
+          "classname": "tests.test_CT_001_F002_generated_test_case.TestNavigationDetailProduit",
           "statut": "PASS",
-          "dur\u00e9e_secondes": 17.09,
+          "dur\u00e9e_secondes": 8.481,
           "message_erreur": null,
           "screenshot_path": null
         }
@@ -89,18 +80,18 @@
         {
           "id": "add",
           "name": "test_add_product_to_cart",
-          "classname": "tests.test_F003_ajout_au_panier___flux_nominal.TestAjoutAuPanier",
+          "classname": "tests.test_CT_001_F003_ajout_au_panier___flux_nominal.TestAjoutAuPanier",
           "statut": "PASS",
-          "dur\u00e9e_secondes": 29.088,
+          "dur\u00e9e_secondes": 9.067,
           "message_erreur": null,
           "screenshot_path": null
         },
         {
           "id": "cart",
           "name": "test_cart_link_visible_after_add",
-          "classname": "tests.test_F003_ajout_au_panier___flux_nominal.TestAjoutAuPanier",
+          "classname": "tests.test_CT_001_F003_ajout_au_panier___flux_nominal.TestAjoutAuPanier",
           "statut": "PASS",
-          "dur\u00e9e_secondes": 16.791,
+          "dur\u00e9e_secondes": 10.926,
           "message_erreur": null,
           "screenshot_path": null
         }
@@ -115,18 +106,18 @@
         {
           "id": "sort",
           "name": "test_sort_by_price_ascending",
-          "classname": "tests.test_F004_tri_par_prix_ascendant.TestFiltrageTriProduits",
+          "classname": "tests.test_CT_001_F004_tri_par_prix_ascendant.TestFiltrageTriProduits",
           "statut": "PASS",
-          "dur\u00e9e_secondes": 14.263,
+          "dur\u00e9e_secondes": 8.018,
           "message_erreur": null,
           "screenshot_path": null
         },
         {
           "id": "sort",
           "name": "test_sort_by_name",
-          "classname": "tests.test_F004_tri_par_prix_ascendant.TestFiltrageTriProduits",
+          "classname": "tests.test_CT_001_F004_tri_par_prix_ascendant.TestFiltrageTriProduits",
           "statut": "PASS",
-          "dur\u00e9e_secondes": 19.167,
+          "dur\u00e9e_secondes": 9.865,
           "message_erreur": null,
           "screenshot_path": null
         }
@@ -136,8 +127,27 @@
       "id": "F-005",
       "title": "Pagination",
       "description": "L'utilisateur peut naviguer entre les pages produits.",
-      "status": "FAIL",
-      "tests": []
+      "status": "PASS",
+      "tests": [
+        {
+          "id": "next",
+          "name": "test_next_button_navigates",
+          "classname": "tests.test_CT_001_F005_generated_test_case.TestPagination",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 27.983,
+          "message_erreur": null,
+          "screenshot_path": null
+        },
+        {
+          "id": "invalid",
+          "name": "test_invalid_page_url",
+          "classname": "tests.test_CT_001_F005_generated_test_case.TestPagination",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 7.486,
+          "message_erreur": null,
+          "screenshot_path": null
+        }
+      ]
     },
     {
       "id": "F-006",
@@ -148,18 +158,18 @@
         {
           "id": "search",
           "name": "test_search_existing_product",
-          "classname": "tests.test_F006_generated_test_case.TestRechercheProduit",
+          "classname": "tests.test_CT_001_F006_recherche_produit_existant.TestRechercheProduit",
           "statut": "PASS",
-          "dur\u00e9e_secondes": 23.969,
+          "dur\u00e9e_secondes": 8.21,
           "message_erreur": null,
           "screenshot_path": null
         },
         {
           "id": "search",
           "name": "test_search_nonexistent_product",
-          "classname": "tests.test_F006_generated_test_case.TestRechercheProduit",
+          "classname": "tests.test_CT_001_F006_recherche_produit_existant.TestRechercheProduit",
           "statut": "PASS",
-          "dur\u00e9e_secondes": 21.513,
+          "dur\u00e9e_secondes": 9.598,
           "message_erreur": null,
           "screenshot_path": null
         }

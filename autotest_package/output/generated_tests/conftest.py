@@ -28,15 +28,18 @@ def headless(request):
 def driver(browser_name, headless):
     """Chrome - 1920x1080 - explicit waits only."""
     options = Options()
+    options.page_load_strategy = 'eager'
     options.add_argument("--window-size=1920,1080")
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
     options.add_argument("--disable-gpu")
-    options.add_argument("--disable-extensions")
-    options.add_argument("--disable-infobars")
     options.add_argument("--start-maximized")
-    options.add_experimental_option("excludeSwitches", ["enable-automation"])
-    options.add_experimental_option("useAutomationExtension", False)
+    
+    # Block ads and images for speed on slow sites
+    prefs = {"profile.managed_default_content_settings.images": 2}
+    options.add_experimental_option("prefs", prefs)
+    options.add_argument("--disable-notifications")
+    
     if headless == "true":
         options.add_argument("--headless=new")
 
