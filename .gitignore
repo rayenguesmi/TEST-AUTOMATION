@@ -34,4 +34,4 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
- 
+ autotest_output/ 
