@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rapport de Test - Cloudflare – Plateforme Web & Services Cloud</title>
+    <style>
+        :root {
+            --primary-bg: #f8f9fa;
+            --header-bg: #343a40;
+            --success-color: #28a745;
+            --failure-color: #dc3545;
+            --card-bg: #fff;
+            --border-color: #dee2e6;
+        }
+
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--primary-bg); margin: 0; padding: 0; }
+        header { background: var(--header-bg); color: white; padding: 1.5rem 2rem; text-align: center; }
+        .container { max-width: 1200px; margin: 2rem auto; padding: 0 1.5rem; }
+        
+        .summary-box { display: flex; justify-content: space-between; background: var(--card-bg); padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 2rem; }
+        .summary-item { text-align: center; flex: 1; }
+        .summary-label { font-size: 0.9rem; color: #6c757d; margin-bottom: 0.5rem; }
+        .summary-value { font-size: 1.5rem; font-weight: bold; }
+        
+        .feature-card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 2rem; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+        .feature-header { display: flex; justify-content: space-between; align-items: center; padding: 1rem 1.5rem; border-bottom: 1px solid var(--border-color); }
+        .feature-status { padding: 0.2rem 0.8rem; border-radius: 20px; font-size: 0.85rem; font-weight: bold; }
+        .status-pass { background: #d4edda; color: var(--success-color); }
+        .status-fail { background: #f8d7da; color: var(--failure-color); }
+
+        .test-table { width: 100%; border-collapse: collapse; }
+        .test-table th { background: #f1f3f5; text-align: left; padding: 0.8rem 1.5rem; font-size: 0.9rem; border-bottom: 1px solid var(--border-color); }
+        .test-table td { padding: 0.8rem 1.5rem; font-size: 0.9rem; border-bottom: 1px solid var(--border-color); }
+        
+        .error-message { background: #fff5f5; color: #c92a2a; padding: 0.5rem; border-radius: 4px; font-family: monospace; white-space: pre-wrap; font-size: 0.8rem; margin-top: 0.5rem; }
+        .screenshot-link { color: #007bff; text-decoration: none; font-size: 0.8rem; }
+        
+        .meta-info { margin-bottom: 2rem; font-size: 0.9rem; color: #495057; }
+        .meta-info strong { color: #212529; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Rapport d'Exécution des Tests Automatisés</h1>
+        <div>Cloudflare – Plateforme Web & Services Cloud - 2026-05-03 15:00:15</div>
+    </header>
+
+    <div class="container">
+        <div class="meta-info">
+            <p><strong>URL cible :</strong> <a href="https://www.cloudflare.com">https://www.cloudflare.com</a></p>
+            <p><strong>Durée totale :</strong> 602.16 s</p>
+        </div>
+
+        <div class="summary-box">
+            <div class="summary-item">
+                <div class="summary-label">Total</div>
+                <div class="summary-value">24</div>
+            </div>
+            <div class="summary-item" style="color: var(--success-color);">
+                <div class="summary-label">Passés</div>
+                <div class="summary-value">7</div>
+            </div>
+            <div class="summary-item" style="color: var(--failure-color);">
+                <div class="summary-label">Échoués</div>
+                <div class="summary-value">17</div>
+            </div>
+            <div class="summary-item" style="color: #f0ad4e;">
+                <div class="summary-label">Erreurs</div>
+                <div class="summary-value">0</div>
+            </div>
+        </div>
+
+        <h2>Détails par Fonctionnalité</h2>
+        
+        <div class="feature-card">
+            <div class="feature-header">
+                <h3>[F-001] Affichage de la page d’accueil</h3>
+                <span class="feature-status status-fail">
+                    PARTIAL
+                </span>
+            </div>
+            <div style="padding: 1rem 1.5rem; border-bottom: 1px solid #eee;">
+                <p style="margin: 0; font-size: 0.9rem; color: #444;">L'utilisateur peut consulter la page d’accueil du site.</p>
+            </div>
+            <table class="test-table">
+                <thead>
+                    <tr>
+                        <th width="15%">ID Test</th>
+                        <th>Titre du Cas de Test</th>
+                        <th width="10%">Statut</th>
+                        <th width="10%">Durée</th>
+                        <th width="10%">Preuve</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td>products</td>
+                        <td>
+                            test_products_list_is_displayed
+                            
+                            <div class="error-message">tests\test_CT_001_consultation_des_produits_cloudflare___f.py:45: in test_products_list_is_displayed
+    _go_to_listing(driver, BASE_URL)
+tests\test_CT_001_consultation_des_produits_cloudflare___f.py:25: in _go_to_listing
+    sub = WebDriverWait(driver, 20).until(
+C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py:121: in until
+    raise TimeoutException(message, screen, stacktrace)
+E   selenium.common.exceptions.TimeoutException: Message: 
+E   Stacktrace:
+E   	chromedriver!GetHandleVerifier [0x46b373+10553]
+E   	chromedriver!GetHandleVerifier [0x46b4a4+10684]
+E   	chromedriver!(No symbol) [0x271e10]
+E   	chromedriver!(No symbol) [0x2ba9da]
+E   	chromedriver!(No symbol) [0x2bac7b]
+E   	chromedriver!(No symbol) [0x2fd162]
+E   	chromedriver!(No symbol) [0x2dd8b4]
+E   	chromedriver!(No symbol) [0x2faa36]
+E   	chromedriver!(No symbol) [0x2dd606]
+E   	chromedriver!(No symbol) [0x2b0039]
+E   	chromedriver!(No symbol) [0x2b0df4]
+E   	chromedriver!GetHandleVerifier [0x6eddb4+292f94]
+E   	chromedriver!GetHandleVerifier [0x6e937d+28e55d]
+E   	chromedriver!GetHandleVerifier [0x708215+2ad3f5]
+E   	chromedriver!GetHandleVerifier [0x484c18+29df8]
+E   	chromedriver!GetHandleVerifier [0x48c6fd+318dd]
+E   	chromedriver!GetHandleVerifier [0x473c78+18e58]
+E   	chromedriver!GetHandleVerifier [0x473e42+19022]
+E   	chromedriver!GetHandleVerifier [0x45d45f+263f]
+E   	KERNEL32!BaseThreadInitThunk [0x75e85d49+19]
+E   	ntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]
+E   	ntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]</div>
+                            
+                        </td>
+                        <td style="color: var(--failure-color); font-weight: bold;">
+                            FAIL
+                        </td>
+                        <td>29.868 s</td>
+                        <td>
+                            
+                            <a href="../screenshots/products_failure.png" class="screenshot-link" target="_blank">Screenshot 📸</a>
+                            
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>product</td>
+                        <td>
+                            test_product_image_present
+                            
+                            <div class="error-message">tests\test_CT_001_consultation_des_produits_cloudflare___f.py:60: in test_product_image_present
+    _go_to_listing(driver, BASE_URL)
+tests\test_CT_001_consultation_des_produits_cloudflare___f.py:25: in _go_to_listing
+    sub = WebDriverWait(driver, 20).until(
+C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py:121: in until
+    raise TimeoutException(message, screen, stacktrace)
+E   selenium.common.exceptions.TimeoutException: Message: 
+E   Stacktrace:
+E   	chromedriver!GetHandleVerifier [0x46b373+10553]
+E   	chromedriver!GetHandleVerifier [0x46b4a4+10684]
+E   	chromedriver!(No symbol) [0x271e10]
+E   	chromedriver!(No symbol) [0x2ba9da]
+E   	chromedriver!(No symbol) [0x2bac7b]
+E   	chromedriver!(No symbol) [0x2fd162]
+E   	chromedriver!(No symbol) [0x2dd8b4]
+E   	chromedriver!(No symbol) [0x2faa36]
+E   	chromedriver!(No symbol) [0x2dd606]
+E   	chromedriver!(No symbol) [0x2b0039]
+E   	chromedriver!(No symbol) [0x2b0df4]
+E   	chromedriver!GetHandleVerifier [0x6eddb4+292f94]
+E   	chromedriver!GetHandleVerifier [0x6e937d+28e55d]
+E   	chromedriver!GetHandleVerifier [0x708215+2ad3f5]
+E   	chromedriver!GetHandleVerifier [0x484c18+29df8]
+E   	chromedriver!GetHandleVerifier [0x48c6fd+318dd]
+E   	chromedriver!GetHandleVerifier [0x473c78+18e58]
+E   	chromedriver!GetHandleVerifier [0x473e42+19022]
+E   	chromedriver!GetHandleVerifier [0x45d45f+263f]
+E   	KERNEL32!BaseThreadInitThunk [0x75e85d49+19]
+E   	ntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]
+E   	ntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]</div>
+                            
+                        </td>
+                        <td style="color: var(--failure-color); font-weight: bold;">
+                            FAIL
+                        </td>
+                        <td>30.227 s</td>
+                        <td>
+                            
+                            <a href="../screenshots/product_failure.png" class="screenshot-link" target="_blank">Screenshot 📸</a>
+                            
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>invalid</td>
+                        <td>
+                            test_invalid_url_shows_no_products
+                            
+                        </td>
+                        <td style="color: var(--success-color); font-weight: bold;">
+                            PASS
+                        </td>
+                        <td>14.781 s</td>
+                        <td>
+                            
+                            -
+                            
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>products</td>
+                        <td>
+                            test_products_list_is_displayed
+                            
+                            <div class="error-message">tests\test_CT_001_generated_test_case.py:45: in test_products_list_is_displayed
+    _go_to_listing(driver, BASE_URL)
+tests\test_CT_001_generated_test_case.py:25: in _go_to_listing
+    sub = WebDriverWait(driver, 20).until(
+C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py:121: in until
+    raise TimeoutException(message, screen, stacktrace)
+E   selenium.common.exceptions.TimeoutException: Message: 
+E   Stacktrace:
+E   	chromedriver!GetHandleVerifier [0x46b373+10553]
+E   	chromedriver!GetHandleVerifier [0x46b4a4+10684]
+E   	chromedriver!(No symbol) [0x271e10]
+E   	chromedriver!(No symbol) [0x2ba9da]
+E   	chromedriver!(No symbol) [0x2bac7b]
+E   	chromedriver!(No symbol) [0x2fd162]
+E   	chromedriver!(No symbol) [0x2dd8b4]
+E   	chromedriver!(No symbol) [0x2faa36]
+E   	chromedriver!(No symbol) [0x2dd606]
+E   	chromedriver!(No symbol) [0x2b0039]
+E   	chromedriver!(No symbol) [0x2b0df4]
+E   	chromedriver!GetHandleVerifier [0x6eddb4+292f94]
+E   	chromedriver!GetHandleVerifier [0x6e937d+28e55d]
+E   	chromedriver!GetHandleVerifier [0x708215+2ad3f5]
+E   	chromedriver!GetHandleVerifier [0x484c18+29df8]
+E   	chromedriver!GetHandleVerifier [0x48c6fd+318dd]
+E   	chromedriver!GetHandleVerifier [0x473c78+18e58]
+E   	chromedriver!GetHandleVerifier [0x473e42+19022]
+E   	chromedriver!GetHandleVerifier [0x45d45f+263f]
+E   	KERNEL32!BaseThreadInitThunk [0x75e85d49+19]
+E   	ntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]
+E   	ntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]</div>
+                            
+                        </td>
+                        <td style="color: var(--failure-color); font-weight: bold;">
+                            FAIL
+                        </td>
+                        <td>30.571 s</td>
+                        <td>
+                            
+                            <a href="../screenshots/products_failure.png" class="screenshot-link" target="_blank">Screenshot 📸</a>
+                            
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>product</td>
+                        <td>
+                            test_product_image_present
+                            
+                            <div class="error-message">tests\test_CT_001_generated_test_case.py:60: in test_product_image_present
+    _go_to_listing(driver, BASE_URL)
+tests\test_CT_001_generated_test_case.py:25: in _go_to_listing
+    sub = WebDriverWait(driver, 20).until(
+C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py:121: in until
+    raise TimeoutException(message, screen, stacktrace)
+E   selenium.common.exceptions.TimeoutException: Message: 
+E   Stacktrace:
+E   	chromedriver!GetHandleVerifier [0x46b373+10553]
+E   	chromedriver!GetHandleVerifier [0x46b4a4+10684]
+E   	chromedriver!(No symbol) [0x271e10]
+E   	chromedriver!(No symbol) [0x2ba9da]
+E   	chromedriver!(No symbol) [0x2bac7b]
+E   	chromedriver!(No symbol) [0x2fd162]
+E   	chromedriver!(No symbol) [0x2dd8b4]
+E   	chromedriver!(No symbol) [0x2faa36]
+E   	chromedriver!(No symbol) [0x2dd606]
+E   	chromedriver!(No symbol) [0x2b0039]
+E   	chromedriver!(No symbol) [0x2b0df4]
+E   	chromedriver!GetHandleVerifier [0x6eddb4+292f94]
+E   	chromedriver!GetHandleVerifier [0x6e937d+28e55d]
+E   	chromedriver!GetHandleVerifier [0x708215+2ad3f5]
+E   	chromedriver!GetHandleVerifier [0x484c18+29df8]
+E   	chromedriver!GetHandleVerifier [0x48c6fd+318dd]
+E   	chromedriver!GetHandleVerifier [0x473c78+18e58]
+E   	chromedriver!GetHandleVerifier [0x473e42+19022]
+E   	chromedriver!GetHandleVerifier [0x45d45f+263f]
+E   	KERNEL32!BaseThreadInitThunk [0x75e85d49+19]
+E   	ntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]
+E   	ntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]</div>
+                            
+                        </td>
+                        <td style="color: var(--failure-color); font-weight: bold;">
+                            FAIL
+                        </td>
+                        <td>30.306 s</td>
+                        <td>
+                            
+                            <a href="../screenshots/product_failure.png" class="screenshot-link" target="_blank">Screenshot 📸</a>
+                            
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>invalid</td>
+                        <td>
+                            test_invalid_url_shows_no_products
+                            
+                        </td>
+                        <td style="color: var(--success-color); font-weight: bold;">
+                            PASS
+                        </td>
+                        <td>15.074 s</td>
+                        <td>
+                            
+                            -
+                            
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="feature-card">
+            <div class="feature-header">
+                <h3>[F-002] Navigation dans le menu principal</h3>
+                <span class="feature-status status-fail">
+                    PARTIAL
+                </span>
+            </div>
+            <div style="padding: 1rem 1.5rem; border-bottom: 1px solid #eee;">
+                <p style="margin: 0; font-size: 0.9rem; color: #444;">L'utilisateur peut naviguer entre les différentes sections du site.</p>
+            </div>
+            <table class="test-table">
+                <thead>
+                    <tr>
+                        <th width="15%">ID Test</th>
+                        <th>Titre du Cas de Test</th>
+                        <th width="10%">Statut</th>
+                        <th width="10%">Durée</th>
+                        <th width="10%">Preuve</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td>products</td>
+                        <td>
+                            test_products_list_is_displayed
+                            
+                            <div class="error-message">tests\test_CT_002_consultation_des_produits_cloudflare___s.py:45: in test_products_list_is_displayed
+    _go_to_listing(driver, BASE_URL)
+tests\test_CT_002_consultation_des_produits_cloudflare___s.py:25: in _go_to_listing
+    sub = WebDriverWait(driver, 20).until(
+C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py:121: in until
+    raise TimeoutException(message, screen, stacktrace)
+E   selenium.common.exceptions.TimeoutException: Message: 
+E   Stacktrace:
+E   	chromedriver!GetHandleVerifier [0x46b373+10553]
+E   	chromedriver!GetHandleVerifier [0x46b4a4+10684]
+E   	chromedriver!(No symbol) [0x271e10]
+E   	chromedriver!(No symbol) [0x2ba9da]
+E   	chromedriver!(No symbol) [0x2bac7b]
+E   	chromedriver!(No symbol) [0x2fd162]
+E   	chromedriver!(No symbol) [0x2dd8b4]
+E   	chromedriver!(No symbol) [0x2faa36]
+E   	chromedriver!(No symbol) [0x2dd606]
+E   	chromedriver!(No symbol) [0x2b0039]
+E   	chromedriver!(No symbol) [0x2b0df4]
+E   	chromedriver!GetHandleVerifier [0x6eddb4+292f94]
+E   	chromedriver!GetHandleVerifier [0x6e937d+28e55d]
+E   	chromedriver!GetHandleVerifier [0x708215+2ad3f5]
+E   	chromedriver!GetHandleVerifier [0x484c18+29df8]
+E   	chromedriver!GetHandleVerifier [0x48c6fd+318dd]
+E   	chromedriver!GetHandleVerifier [0x473c78+18e58]
+E   	chromedriver!GetHandleVerifier [0x473e42+19022]
+E   	chromedriver!GetHandleVerifier [0x45d45f+263f]
+E   	KERNEL32!BaseThreadInitThunk [0x75e85d49+19]
+E   	ntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]
+E   	ntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]</div>
+                            
+                        </td>
+                        <td style="color: var(--failure-color); font-weight: bold;">
+                            FAIL
+                        </td>
+                        <td>30.123 s</td>
+                        <td>
+                            
+                            <a href="../screenshots/products_failure.png" class="screenshot-link" target="_blank">Screenshot 📸</a>
+                            
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>product</td>
+                        <td>
+                            test_product_image_present
+                            
+                            <div class="error-message">tests\test_CT_002_consultation_des_produits_cloudflare___s.py:60: in test_product_image_present
+    _go_to_listing(driver, BASE_URL)
+tests\test_CT_002_consultation_des_produits_cloudflare___s.py:25: in _go_to_listing
+    sub = WebDriverWait(driver, 20).until(
+C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py:121: in until
+    raise TimeoutException(message, screen, stacktrace)
+E   selenium.common.exceptions.TimeoutException: Message: 
+E   Stacktrace:
+E   	chromedriver!GetHandleVerifier [0x46b373+10553]
+E   	chromedriver!GetHandleVerifier [0x46b4a4+10684]
+E   	chromedriver!(No symbol) [0x271e10]
+E   	chromedriver!(No symbol) [0x2ba9da]
+E   	chromedriver!(No symbol) [0x2bac7b]
+E   	chromedriver!(No symbol) [0x2fd162]
+E   	chromedriver!(No symbol) [0x2dd8b4]
+E   	chromedriver!(No symbol) [0x2faa36]
+E   	chromedriver!(No symbol) [0x2dd606]
+E   	chromedriver!(No symbol) [0x2b0039]
+E   	chromedriver!(No symbol) [0x2b0df4]
+E   	chromedriver!GetHandleVerifier [0x6eddb4+292f94]
+E   	chromedriver!GetHandleVerifier [0x6e937d+28e55d]
+E   	chromedriver!GetHandleVerifier [0x708215+2ad3f5]
+E   	chromedriver!GetHandleVerifier [0x484c18+29df8]
+E   	chromedriver!GetHandleVerifier [0x48c6fd+318dd]
+E   	chromedriver!GetHandleVerifier [0x473c78+18e58]
+E   	chromedriver!GetHandleVerifier [0x473e42+19022]
+E   	chromedriver!GetHandleVerifier [0x45d45f+263f]
+E   	KERNEL32!BaseThreadInitThunk [0x75e85d49+19]
+E   	ntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]
+E   	ntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]</div>
+                            
+                        </td>
+                        <td style="color: var(--failure-color); font-weight: bold;">
+                            FAIL
+                        </td>
+                        <td>30.446 s</td>
+                        <td>
+                            
+                            <a href="../screenshots/product_failure.png" class="screenshot-link" target="_blank">Screenshot 📸</a>
+                            
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>invalid</td>
+                        <td>
+                            test_invalid_url_shows_no_products
+                            
+                        </td>
+                        <td style="color: var(--success-color); font-weight: bold;">
+                            PASS
+                        </td>
+                        <td>14.262 s</td>
+                        <td>
+                            
+                            -
+                            
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>products</td>
+                        <td>
+                            test_products_list_is_displayed
+                            
+                            <div class="error-message">tests\test_CT_002_generated_test_case.py:45: in test_products_list_is_displayed
+    _go_to_listing(driver, BASE_URL)
+tests\test_CT_002_generated_test_case.py:25: in _go_to_listing
+    sub = WebDriverWait(driver, 20).until(
+C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py:121: in until
+    raise TimeoutException(message, screen, stacktrace)
+E   selenium.common.exceptions.TimeoutException: Message: 
+E   Stacktrace:
+E   	chromedriver!GetHandleVerifier [0x46b373+10553]
+E   	chromedriver!GetHandleVerifier [0x46b4a4+10684]
+E   	chromedriver!(No symbol) [0x271e10]
+E   	chromedriver!(No symbol) [0x2ba9da]
+E   	chromedriver!(No symbol) [0x2bac7b]
+E   	chromedriver!(No symbol) [0x2fd162]
+E   	chromedriver!(No symbol) [0x2dd8b4]
+E   	chromedriver!(No symbol) [0x2faa36]
+E   	chromedriver!(No symbol) [0x2dd606]
+E   	chromedriver!(No symbol) [0x2b0039]
+E   	chromedriver!(No symbol) [0x2b0df4]
+E   	chromedriver!GetHandleVerifier [0x6eddb4+292f94]
+E   	chromedriver!GetHandleVerifier [0x6e937d+28e55d]
+E   	chromedriver!GetHandleVerifier [0x708215+2ad3f5]
+E   	chromedriver!GetHandleVerifier [0x484c18+29df8]
+E   	chromedriver!GetHandleVerifier [0x48c6fd+318dd]
+E   	chromedriver!GetHandleVerifier [0x473c78+18e58]
+E   	chromedriver!GetHandleVerifier [0x473e42+19022]
+E   	chromedriver!GetHandleVerifier [0x45d45f+263f]
+E   	KERNEL32!BaseThreadInitThunk [0x75e85d49+19]
+E   	ntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]
+E   	ntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]</div>
+                            
+                        </td>
+                        <td style="color: var(--failure-color); font-weight: bold;">
+                            FAIL
+                        </td>
+                        <td>28.972 s</td>
+                        <td>
+                            
+                            <a href="../screenshots/products_failure.png" class="screenshot-link" target="_blank">Screenshot 📸</a>
+                            
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>product</td>
+                        <td>
+                            test_product_image_present
+                            
+                            <div class="error-message">tests\test_CT_002_generated_test_case.py:60: in test_product_image_present
+    _go_to_listing(driver, BASE_URL)
+tests\test_CT_002_generated_test_case.py:25: in _go_to_listing
+    sub = WebDriverWait(driver, 20).until(
+C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py:121: in until
+    raise TimeoutException(message, screen, stacktrace)
+E   selenium.common.exceptions.TimeoutException: Message: 
+E   Stacktrace:
+E   	chromedriver!GetHandleVerifier [0x46b373+10553]
+E   	chromedriver!GetHandleVerifier [0x46b4a4+10684]
+E   	chromedriver!(No symbol) [0x271e10]
+E   	chromedriver!(No symbol) [0x2ba9da]
+E   	chromedriver!(No symbol) [0x2bac7b]
+E   	chromedriver!(No symbol) [0x2fd162]
+E   	chromedriver!(No symbol) [0x2dd8b4]
+E   	chromedriver!(No symbol) [0x2faa36]
+E   	chromedriver!(No symbol) [0x2dd606]
+E   	chromedriver!(No symbol) [0x2b0039]
+E   	chromedriver!(No symbol) [0x2b0df4]
+E   	chromedriver!GetHandleVerifier [0x6eddb4+292f94]
+E   	chromedriver!GetHandleVerifier [0x6e937d+28e55d]
+E   	chromedriver!GetHandleVerifier [0x708215+2ad3f5]
+E   	chromedriver!GetHandleVerifier [0x484c18+29df8]
+E   	chromedriver!GetHandleVerifier [0x48c6fd+318dd]
+E   	chromedriver!GetHandleVerifier [0x473c78+18e58]
+E   	chromedriver!GetHandleVerifier [0x473e42+19022]
+E   	chromedriver!GetHandleVerifier [0x45d45f+263f]
+E   	KERNEL32!BaseThreadInitThunk [0x75e85d49+19]
+E   	ntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]
+E   	ntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]</div>
+                            
+                        </td>
+                        <td style="color: var(--failure-color); font-weight: bold;">
+                            FAIL
+                        </td>
+                        <td>28.897 s</td>
+                        <td>
+                            
+                            <a href="../screenshots/product_failure.png" class="screenshot-link" target="_blank">Screenshot 📸</a>
+                            
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>invalid</td>
+                        <td>
+                            test_invalid_url_shows_no_products
+                            
+                        </td>
+                        <td style="color: var(--success-color); font-weight: bold;">
+                            PASS
+                        </td>
+                        <td>13.556 s</td>
+                        <td>
+                            
+                            -
+                            
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="feature-card">
+            <div class="feature-header">
+                <h3>[F-003] Consultation des produits Cloudflare</h3>
+                <span class="feature-status status-fail">
+                    PARTIAL
+                </span>
+            </div>
+            <div style="padding: 1rem 1.5rem; border-bottom: 1px solid #eee;">
+                <p style="margin: 0; font-size: 0.9rem; color: #444;">L'utilisateur peut consulter les services proposés.</p>
+            </div>
+            <table class="test-table">
+                <thead>
+                    <tr>
+                        <th width="15%">ID Test</th>
+                        <th>Titre du Cas de Test</th>
+                        <th width="10%">Statut</th>
+                        <th width="10%">Durée</th>
+                        <th width="10%">Preuve</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td>navigate</td>
+                        <td>
+                            test_navigate_to_product_detail
+                            
+                            <div class="error-message">tests\test_CT_003_consultation_des_produits_cloudflare___m.py:45: in test_navigate_to_product_detail
+    _go_to_listing(driver, BASE_URL)
+tests\test_CT_003_consultation_des_produits_cloudflare___m.py:25: in _go_to_listing
+    sub = WebDriverWait(driver, 20).until(
+C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py:121: in until
+    raise TimeoutException(message, screen, stacktrace)
+E   selenium.common.exceptions.TimeoutException: Message: 
+E   Stacktrace:
+E   	chromedriver!GetHandleVerifier [0x46b373+10553]
+E   	chromedriver!GetHandleVerifier [0x46b4a4+10684]
+E   	chromedriver!(No symbol) [0x271e10]
+E   	chromedriver!(No symbol) [0x2ba9da]
+E   	chromedriver!(No symbol) [0x2bac7b]
+E   	chromedriver!(No symbol) [0x2fd162]
+E   	chromedriver!(No symbol) [0x2dd8b4]
+E   	chromedriver!(No symbol) [0x2faa36]
+E   	chromedriver!(No symbol) [0x2dd606]
+E   	chromedriver!(No symbol) [0x2b0039]
+E   	chromedriver!(No symbol) [0x2b0df4]
+E   	chromedriver!GetHandleVerifier [0x6eddb4+292f94]
+E   	chromedriver!GetHandleVerifier [0x6e937d+28e55d]
+E   	chromedriver!GetHandleVerifier [0x708215+2ad3f5]
+E   	chromedriver!GetHandleVerifier [0x484c18+29df8]
+E   	chromedriver!GetHandleVerifier [0x48c6fd+318dd]
+E   	chromedriver!GetHandleVerifier [0x473c78+18e58]
+E   	chromedriver!GetHandleVerifier [0x473e42+19022]
+E   	chromedriver!GetHandleVerifier [0x45d45f+263f]
+E   	KERNEL32!BaseThreadInitThunk [0x75e85d49+19]
+E   	ntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]
+E   	ntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]</div>
+                            
+                        </td>
+                        <td style="color: var(--failure-color); font-weight: bold;">
+                            FAIL
+                        </td>
+                        <td>28.772 s</td>
+                        <td>
+                            
+                            <a href="../screenshots/navigate_failure.png" class="screenshot-link" target="_blank">Screenshot 📸</a>
+                            
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>product</td>
+                        <td>
+                            test_product_detail_has_price
+                            
+                            <div class="error-message">tests\test_CT_003_consultation_des_produits_cloudflare___m.py:61: in test_product_detail_has_price
+    _go_to_listing(driver, BASE_URL)
+tests\test_CT_003_consultation_des_produits_cloudflare___m.py:25: in _go_to_listing
+    sub = WebDriverWait(driver, 20).until(
+C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py:121: in until
+    raise TimeoutException(message, screen, stacktrace)
+E   selenium.common.exceptions.TimeoutException: Message: 
+E   Stacktrace:
+E   	chromedriver!GetHandleVerifier [0x46b373+10553]
+E   	chromedriver!GetHandleVerifier [0x46b4a4+10684]
+E   	chromedriver!(No symbol) [0x271e10]
+E   	chromedriver!(No symbol) [0x2ba9da]
+E   	chromedriver!(No symbol) [0x2bac7b]
+E   	chromedriver!(No symbol) [0x2fd162]
+E   	chromedriver!(No symbol) [0x2dd8b4]
+E   	chromedriver!(No symbol) [0x2faa36]
+E   	chromedriver!(No symbol) [0x2dd606]
+E   	chromedriver!(No symbol) [0x2b0039]
+E   	chromedriver!(No symbol) [0x2b0df4]
+E   	chromedriver!GetHandleVerifier [0x6eddb4+292f94]
+E   	chromedriver!GetHandleVerifier [0x6e937d+28e55d]
+E   	chromedriver!GetHandleVerifier [0x708215+2ad3f5]
+E   	chromedriver!GetHandleVerifier [0x484c18+29df8]
+E   	chromedriver!GetHandleVerifier [0x48c6fd+318dd]
+E   	chromedriver!GetHandleVerifier [0x473c78+18e58]
+E   	chromedriver!GetHandleVerifier [0x473e42+19022]
+E   	chromedriver!GetHandleVerifier [0x45d45f+263f]
+E   	KERNEL32!BaseThreadInitThunk [0x75e85d49+19]
+E   	ntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]
+E   	ntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]</div>
+                            
+                        </td>
+                        <td style="color: var(--failure-color); font-weight: bold;">
+                            FAIL
+                        </td>
+                        <td>28.633 s</td>
+                        <td>
+                            
+                            <a href="../screenshots/product_failure.png" class="screenshot-link" target="_blank">Screenshot 📸</a>
+                            
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>detail</td>
+                        <td>
+                            test_detail_page_has_product_name
+                            
+                            <div class="error-message">tests\test_CT_003_consultation_des_produits_cloudflare___m.py:78: in test_detail_page_has_product_name
+    _go_to_listing(driver, BASE_URL)
+tests\test_CT_003_consultation_des_produits_cloudflare___m.py:25: in _go_to_listing
+    sub = WebDriverWait(driver, 20).until(
+C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py:121: in until
+    raise TimeoutException(message, screen, stacktrace)
+E   selenium.common.exceptions.TimeoutException: Message: 
+E   Stacktrace:
+E   	chromedriver!GetHandleVerifier [0x46b373+10553]
+E   	chromedriver!GetHandleVerifier [0x46b4a4+10684]
+E   	chromedriver!(No symbol) [0x271e10]
+E   	chromedriver!(No symbol) [0x2ba9da]
+E   	chromedriver!(No symbol) [0x2bac7b]
+E   	chromedriver!(No symbol) [0x2fd162]
+E   	chromedriver!(No symbol) [0x2dd8b4]
+E   	chromedriver!(No symbol) [0x2faa36]
+E   	chromedriver!(No symbol) [0x2dd606]
+E   	chromedriver!(No symbol) [0x2b0039]
+E   	chromedriver!(No symbol) [0x2b0df4]
+E   	chromedriver!GetHandleVerifier [0x6eddb4+292f94]
+E   	chromedriver!GetHandleVerifier [0x6e937d+28e55d]
+E   	chromedriver!GetHandleVerifier [0x708215+2ad3f5]
+E   	chromedriver!GetHandleVerifier [0x484c18+29df8]
+E   	chromedriver!GetHandleVerifier [0x48c6fd+318dd]
+E   	chromedriver!GetHandleVerifier [0x473c78+18e58]
+E   	chromedriver!GetHandleVerifier [0x473e42+19022]
+E   	chromedriver!GetHandleVerifier [0x45d45f+263f]
+E   	KERNEL32!BaseThreadInitThunk [0x75e85d49+19]
+E   	ntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]
+E   	ntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]</div>
+                            
+                        </td>
+                        <td style="color: var(--failure-color); font-weight: bold;">
+                            FAIL
+                        </td>
+                        <td>28.93 s</td>
+                        <td>
+                            
+                            <a href="../screenshots/detail_failure.png" class="screenshot-link" target="_blank">Screenshot 📸</a>
+                            
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>products</td>
+                        <td>
+                            test_products_list_is_displayed
+                            
+                            <div class="error-message">tests\test_CT_003_generated_test_case.py:45: in test_products_list_is_displayed
+    _go_to_listing(driver, BASE_URL)
+tests\test_CT_003_generated_test_case.py:25: in _go_to_listing
+    sub = WebDriverWait(driver, 20).until(
+C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py:121: in until
+    raise TimeoutException(message, screen, stacktrace)
+E   selenium.common.exceptions.TimeoutException: Message: 
+E   Stacktrace:
+E   	chromedriver!GetHandleVerifier [0x46b373+10553]
+E   	chromedriver!GetHandleVerifier [0x46b4a4+10684]
+E   	chromedriver!(No symbol) [0x271e10]
+E   	chromedriver!(No symbol) [0x2ba9da]
+E   	chromedriver!(No symbol) [0x2bac7b]
+E   	chromedriver!(No symbol) [0x2fd162]
+E   	chromedriver!(No symbol) [0x2dd8b4]
+E   	chromedriver!(No symbol) [0x2faa36]
+E   	chromedriver!(No symbol) [0x2dd606]
+E   	chromedriver!(No symbol) [0x2b0039]
+E   	chromedriver!(No symbol) [0x2b0df4]
+E   	chromedriver!GetHandleVerifier [0x6eddb4+292f94]
+E   	chromedriver!GetHandleVerifier [0x6e937d+28e55d]
+E   	chromedriver!GetHandleVerifier [0x708215+2ad3f5]
+E   	chromedriver!GetHandleVerifier [0x484c18+29df8]
+E   	chromedriver!GetHandleVerifier [0x48c6fd+318dd]
+E   	chromedriver!GetHandleVerifier [0x473c78+18e58]
+E   	chromedriver!GetHandleVerifier [0x473e42+19022]
+E   	chromedriver!GetHandleVerifier [0x45d45f+263f]
+E   	KERNEL32!BaseThreadInitThunk [0x75e85d49+19]
+E   	ntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]
+E   	ntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]</div>
+                            
+                        </td>
+                        <td style="color: var(--failure-color); font-weight: bold;">
+                            FAIL
+                        </td>
+                        <td>28.584 s</td>
+                        <td>
+                            
+                            <a href="../screenshots/products_failure.png" class="screenshot-link" target="_blank">Screenshot 📸</a>
+                            
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>product</td>
+                        <td>
+                            test_product_image_present
+                            
+                            <div class="error-message">tests\test_CT_003_generated_test_case.py:60: in test_product_image_present
+    _go_to_listing(driver, BASE_URL)
+tests\test_CT_003_generated_test_case.py:25: in _go_to_listing
+    sub = WebDriverWait(driver, 20).until(
+C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py:121: in until
+    raise TimeoutException(message, screen, stacktrace)
+E   selenium.common.exceptions.TimeoutException: Message: 
+E   Stacktrace:
+E   	chromedriver!GetHandleVerifier [0x46b373+10553]
+E   	chromedriver!GetHandleVerifier [0x46b4a4+10684]
+E   	chromedriver!(No symbol) [0x271e10]
+E   	chromedriver!(No symbol) [0x2ba9da]
+E   	chromedriver!(No symbol) [0x2bac7b]
+E   	chromedriver!(No symbol) [0x2fd162]
+E   	chromedriver!(No symbol) [0x2dd8b4]
+E   	chromedriver!(No symbol) [0x2faa36]
+E   	chromedriver!(No symbol) [0x2dd606]
+E   	chromedriver!(No symbol) [0x2b0039]
+E   	chromedriver!(No symbol) [0x2b0df4]
+E   	chromedriver!GetHandleVerifier [0x6eddb4+292f94]
+E   	chromedriver!GetHandleVerifier [0x6e937d+28e55d]
+E   	chromedriver!GetHandleVerifier [0x708215+2ad3f5]
+E   	chromedriver!GetHandleVerifier [0x484c18+29df8]
+E   	chromedriver!GetHandleVerifier [0x48c6fd+318dd]
+E   	chromedriver!GetHandleVerifier [0x473c78+18e58]
+E   	chromedriver!GetHandleVerifier [0x473e42+19022]
+E   	chromedriver!GetHandleVerifier [0x45d45f+263f]
+E   	KERNEL32!BaseThreadInitThunk [0x75e85d49+19]
+E   	ntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]
+E   	ntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]</div>
+                            
+                        </td>
+                        <td style="color: var(--failure-color); font-weight: bold;">
+                            FAIL
+                        </td>
+                        <td>28.982 s</td>
+                        <td>
+                            
+                            <a href="../screenshots/product_failure.png" class="screenshot-link" target="_blank">Screenshot 📸</a>
+                            
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>invalid</td>
+                        <td>
+                            test_invalid_url_shows_no_products
+                            
+                        </td>
+                        <td style="color: var(--success-color); font-weight: bold;">
+                            PASS
+                        </td>
+                        <td>13.822 s</td>
+                        <td>
+                            
+                            -
+                            
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+        
+
+        <div style="text-align: center; margin-top: 3rem;">
+            <button onclick="exportJSON()" style="padding: 0.6rem 1.2rem; cursor: pointer; border-radius: 4px; border: 1px solid #ccc;">Exporter en JSON</button>
+        </div>
+    </div>
+
+    <script>
+        function exportJSON() {
+            // Placeholder: In a real app, we'd trigger a download of the report.json
+            alert("Export JSON déclenché. Le fichier report.json est disponible dans le dossier des rapports.");
+        }
+    </script>
+</body>
+</html>

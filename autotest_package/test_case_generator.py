@@ -28,13 +28,13 @@ TEST_CASE_SCHEMA = {
 class TestCaseGenerator:
     """Generates detailed test cases for each feature in the spec."""
 
-    def __init__(self, config_path: str):
+    def __init__(self, config_path: str, provider: str = None, api_key: str = None):
         """Initializes generator with config and prompts."""
         with open(config_path, 'r', encoding='utf-8') as f:
             self.config = yaml.safe_load(f)
-        
+
         self.system_prompt = self.config['prompts']['test_generation']
-        self.llm_client = LLMClient(config_path)
+        self.llm_client = LLMClient(config_path, provider_override=provider, api_key_override=api_key)
 
     def generate(self, parsed_spec: Dict[str, Any]) -> List[Dict[str, Any]]:
         """Generates test cases for all features in the spec."""

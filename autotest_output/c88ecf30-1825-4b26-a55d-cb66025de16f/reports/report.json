@@ -1,0 +1,911 @@
+{
+  "summary": {
+    "project_name": "Demoblaze",
+    "url_cible": "https://www.demoblaze.com/",
+    "total_tests": 93,
+    "passed": 23,
+    "failed": 70,
+    "errors": 0,
+    "duration_seconds": 2589.7,
+    "timestamp": "2026-05-03 13:25:23"
+  },
+  "features_with_results": [
+    {
+      "id": "F-001",
+      "title": "Affichage des produits Electronics",
+      "description": "L'utilisateur peut visualiser la liste des produits \u00e9lectroniques disponibles.",
+      "status": "PARTIAL",
+      "tests": [
+        {
+          "id": "add",
+          "name": "test_add_to_cart_updates_counter",
+          "classname": "tests.test_CT_001_ajout_au_panier___flux_nominal",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 49.914,
+          "message_erreur": "tests\\test_CT_001_ajout_au_panier___flux_nominal.py:63: in test_add_to_cart_updates_counter\n    _go_to_cart_page(driver)\ntests\\test_CT_001_ajout_au_panier___flux_nominal.py:58: in _go_to_cart_page\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_001_ajout_au_panier___flux_nominal.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/add_failure.png"
+        },
+        {
+          "id": "add",
+          "name": "test_add_to_cart_button_visible",
+          "classname": "tests.test_CT_001_ajout_au_panier___flux_nominal",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 49.94,
+          "message_erreur": "tests\\test_CT_001_ajout_au_panier___flux_nominal.py:93: in test_add_to_cart_button_visible\n    _go_to_cart_page(driver)\ntests\\test_CT_001_ajout_au_panier___flux_nominal.py:58: in _go_to_cart_page\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_001_ajout_au_panier___flux_nominal.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/add_failure.png"
+        },
+        {
+          "id": "cart",
+          "name": "test_cart_counter_visible",
+          "classname": "tests.test_CT_001_ajout_au_panier___flux_nominal",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 50.043,
+          "message_erreur": "tests\\test_CT_001_ajout_au_panier___flux_nominal.py:102: in test_cart_counter_visible\n    _go_to_cart_page(driver)\ntests\\test_CT_001_ajout_au_panier___flux_nominal.py:58: in _go_to_cart_page\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_001_ajout_au_panier___flux_nominal.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/cart_failure.png"
+        },
+        {
+          "id": "products",
+          "name": "test_products_list_is_displayed",
+          "classname": "tests.test_CT_001_cas_positif___cr\u00e9ation_de_compte_et_conn",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 28.987,
+          "message_erreur": "tests\\test_CT_001_cas_positif___cr\u00e9ation_de_compte_et_conn.py:45: in test_products_list_is_displayed\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_001_cas_positif___cr\u00e9ation_de_compte_et_conn.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/products_failure.png"
+        },
+        {
+          "id": "product",
+          "name": "test_product_image_present",
+          "classname": "tests.test_CT_001_cas_positif___cr\u00e9ation_de_compte_et_conn",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 28.717,
+          "message_erreur": "tests\\test_CT_001_cas_positif___cr\u00e9ation_de_compte_et_conn.py:60: in test_product_image_present\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_001_cas_positif___cr\u00e9ation_de_compte_et_conn.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/product_failure.png"
+        },
+        {
+          "id": "invalid",
+          "name": "test_invalid_url_shows_no_products",
+          "classname": "tests.test_CT_001_cas_positif___cr\u00e9ation_de_compte_et_conn",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 13.47,
+          "message_erreur": null,
+          "screenshot_path": null
+        },
+        {
+          "id": "products",
+          "name": "test_products_list_is_displayed",
+          "classname": "tests.test_CT_001_envoi_de_message_valide",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 29.684,
+          "message_erreur": "tests\\test_CT_001_envoi_de_message_valide.py:45: in test_products_list_is_displayed\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_001_envoi_de_message_valide.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/products_failure.png"
+        },
+        {
+          "id": "product",
+          "name": "test_product_image_present",
+          "classname": "tests.test_CT_001_envoi_de_message_valide",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 28.559,
+          "message_erreur": "tests\\test_CT_001_envoi_de_message_valide.py:60: in test_product_image_present\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_001_envoi_de_message_valide.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/product_failure.png"
+        },
+        {
+          "id": "invalid",
+          "name": "test_invalid_url_shows_no_products",
+          "classname": "tests.test_CT_001_envoi_de_message_valide",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 13.383,
+          "message_erreur": null,
+          "screenshot_path": null
+        },
+        {
+          "id": "products",
+          "name": "test_products_list_is_displayed",
+          "classname": "tests.test_CT_001_generated_test_case",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 28.752,
+          "message_erreur": "tests\\test_CT_001_generated_test_case.py:45: in test_products_list_is_displayed\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_001_generated_test_case.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/products_failure.png"
+        },
+        {
+          "id": "product",
+          "name": "test_product_image_present",
+          "classname": "tests.test_CT_001_generated_test_case",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 28.581,
+          "message_erreur": "tests\\test_CT_001_generated_test_case.py:60: in test_product_image_present\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_001_generated_test_case.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/product_failure.png"
+        },
+        {
+          "id": "invalid",
+          "name": "test_invalid_url_shows_no_products",
+          "classname": "tests.test_CT_001_generated_test_case",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 13.425,
+          "message_erreur": null,
+          "screenshot_path": null
+        },
+        {
+          "id": "products",
+          "name": "test_products_list_is_displayed",
+          "classname": "tests.test_CT_001_navigation_entre_cat\u00e9gories",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 28.695,
+          "message_erreur": "tests\\test_CT_001_navigation_entre_cat\u00e9gories.py:45: in test_products_list_is_displayed\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_001_navigation_entre_cat\u00e9gories.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/products_failure.png"
+        },
+        {
+          "id": "product",
+          "name": "test_product_image_present",
+          "classname": "tests.test_CT_001_navigation_entre_cat\u00e9gories",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 28.752,
+          "message_erreur": "tests\\test_CT_001_navigation_entre_cat\u00e9gories.py:60: in test_product_image_present\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_001_navigation_entre_cat\u00e9gories.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/product_failure.png"
+        },
+        {
+          "id": "invalid",
+          "name": "test_invalid_url_shows_no_products",
+          "classname": "tests.test_CT_001_navigation_entre_cat\u00e9gories",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 13.325,
+          "message_erreur": null,
+          "screenshot_path": null
+        },
+        {
+          "id": "products",
+          "name": "test_products_list_is_displayed",
+          "classname": "tests.test_CT_001_navigation_entre_cat\u00e9gories___flux_nomin",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 28.857,
+          "message_erreur": "tests\\test_CT_001_navigation_entre_cat\u00e9gories___flux_nomin.py:45: in test_products_list_is_displayed\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_001_navigation_entre_cat\u00e9gories___flux_nomin.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/products_failure.png"
+        },
+        {
+          "id": "product",
+          "name": "test_product_image_present",
+          "classname": "tests.test_CT_001_navigation_entre_cat\u00e9gories___flux_nomin",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 29.035,
+          "message_erreur": "tests\\test_CT_001_navigation_entre_cat\u00e9gories___flux_nomin.py:60: in test_product_image_present\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_001_navigation_entre_cat\u00e9gories___flux_nomin.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/product_failure.png"
+        },
+        {
+          "id": "invalid",
+          "name": "test_invalid_url_shows_no_products",
+          "classname": "tests.test_CT_001_navigation_entre_cat\u00e9gories___flux_nomin",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 14.736,
+          "message_erreur": null,
+          "screenshot_path": null
+        },
+        {
+          "id": "navigate",
+          "name": "test_navigate_to_product_detail",
+          "classname": "tests.test_CT_001_navigation_vers_d\u00e9tail_produit___flux_no",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 28.389,
+          "message_erreur": "tests\\test_CT_001_navigation_vers_d\u00e9tail_produit___flux_no.py:45: in test_navigate_to_product_detail\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_001_navigation_vers_d\u00e9tail_produit___flux_no.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/navigate_failure.png"
+        },
+        {
+          "id": "product",
+          "name": "test_product_detail_has_price",
+          "classname": "tests.test_CT_001_navigation_vers_d\u00e9tail_produit___flux_no",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 29.218,
+          "message_erreur": "tests\\test_CT_001_navigation_vers_d\u00e9tail_produit___flux_no.py:61: in test_product_detail_has_price\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_001_navigation_vers_d\u00e9tail_produit___flux_no.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/product_failure.png"
+        },
+        {
+          "id": "detail",
+          "name": "test_detail_page_has_product_name",
+          "classname": "tests.test_CT_001_navigation_vers_d\u00e9tail_produit___flux_no",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 30.591,
+          "message_erreur": "tests\\test_CT_001_navigation_vers_d\u00e9tail_produit___flux_no.py:78: in test_detail_page_has_product_name\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_001_navigation_vers_d\u00e9tail_produit___flux_no.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/detail_failure.png"
+        },
+        {
+          "id": "products",
+          "name": "test_products_list_is_displayed",
+          "classname": "tests.test_CT_001_passage_de_commande_valide",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 30.138,
+          "message_erreur": "tests\\test_CT_001_passage_de_commande_valide.py:45: in test_products_list_is_displayed\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_001_passage_de_commande_valide.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/products_failure.png"
+        },
+        {
+          "id": "product",
+          "name": "test_product_image_present",
+          "classname": "tests.test_CT_001_passage_de_commande_valide",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 28.853,
+          "message_erreur": "tests\\test_CT_001_passage_de_commande_valide.py:60: in test_product_image_present\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_001_passage_de_commande_valide.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/product_failure.png"
+        },
+        {
+          "id": "invalid",
+          "name": "test_invalid_url_shows_no_products",
+          "classname": "tests.test_CT_001_passage_de_commande_valide",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 13.53,
+          "message_erreur": null,
+          "screenshot_path": null
+        }
+      ]
+    },
+    {
+      "id": "F-002",
+      "title": "Navigation vers d\u00e9tail produit",
+      "description": "L'utilisateur peut consulter les d\u00e9tails d\u2019un produit.",
+      "status": "PARTIAL",
+      "tests": [
+        {
+          "id": "add",
+          "name": "test_add_to_cart_updates_counter",
+          "classname": "tests.test_CT_002_ajout_au_panier___sans_connexion",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 50.009,
+          "message_erreur": "tests\\test_CT_002_ajout_au_panier___sans_connexion.py:63: in test_add_to_cart_updates_counter\n    _go_to_cart_page(driver)\ntests\\test_CT_002_ajout_au_panier___sans_connexion.py:58: in _go_to_cart_page\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_002_ajout_au_panier___sans_connexion.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/add_failure.png"
+        },
+        {
+          "id": "add",
+          "name": "test_add_to_cart_button_visible",
+          "classname": "tests.test_CT_002_ajout_au_panier___sans_connexion",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 49.929,
+          "message_erreur": "tests\\test_CT_002_ajout_au_panier___sans_connexion.py:93: in test_add_to_cart_button_visible\n    _go_to_cart_page(driver)\ntests\\test_CT_002_ajout_au_panier___sans_connexion.py:58: in _go_to_cart_page\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_002_ajout_au_panier___sans_connexion.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/add_failure.png"
+        },
+        {
+          "id": "cart",
+          "name": "test_cart_counter_visible",
+          "classname": "tests.test_CT_002_ajout_au_panier___sans_connexion",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 49.931,
+          "message_erreur": "tests\\test_CT_002_ajout_au_panier___sans_connexion.py:102: in test_cart_counter_visible\n    _go_to_cart_page(driver)\ntests\\test_CT_002_ajout_au_panier___sans_connexion.py:58: in _go_to_cart_page\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_002_ajout_au_panier___sans_connexion.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/cart_failure.png"
+        },
+        {
+          "id": "products",
+          "name": "test_products_list_is_displayed",
+          "classname": "tests.test_CT_002_cas_n\u00e9gatif___mauvais_identifiants",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 28.676,
+          "message_erreur": "tests\\test_CT_002_cas_n\u00e9gatif___mauvais_identifiants.py:45: in test_products_list_is_displayed\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_002_cas_n\u00e9gatif___mauvais_identifiants.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/products_failure.png"
+        },
+        {
+          "id": "product",
+          "name": "test_product_image_present",
+          "classname": "tests.test_CT_002_cas_n\u00e9gatif___mauvais_identifiants",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 32.888,
+          "message_erreur": "tests\\test_CT_002_cas_n\u00e9gatif___mauvais_identifiants.py:60: in test_product_image_present\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_002_cas_n\u00e9gatif___mauvais_identifiants.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/product_failure.png"
+        },
+        {
+          "id": "invalid",
+          "name": "test_invalid_url_shows_no_products",
+          "classname": "tests.test_CT_002_cas_n\u00e9gatif___mauvais_identifiants",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 13.655,
+          "message_erreur": null,
+          "screenshot_path": null
+        },
+        {
+          "id": "products",
+          "name": "test_products_list_is_displayed",
+          "classname": "tests.test_CT_002_champs_vides",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 29.044,
+          "message_erreur": "tests\\test_CT_002_champs_vides.py:45: in test_products_list_is_displayed\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_002_champs_vides.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/products_failure.png"
+        },
+        {
+          "id": "product",
+          "name": "test_product_image_present",
+          "classname": "tests.test_CT_002_champs_vides",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 29.25,
+          "message_erreur": "tests\\test_CT_002_champs_vides.py:60: in test_product_image_present\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_002_champs_vides.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/product_failure.png"
+        },
+        {
+          "id": "invalid",
+          "name": "test_invalid_url_shows_no_products",
+          "classname": "tests.test_CT_002_champs_vides",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 13.562,
+          "message_erreur": null,
+          "screenshot_path": null
+        },
+        {
+          "id": "products",
+          "name": "test_products_list_is_displayed",
+          "classname": "tests.test_CT_002_generated_test_case",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 29.055,
+          "message_erreur": "tests\\test_CT_002_generated_test_case.py:45: in test_products_list_is_displayed\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_002_generated_test_case.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/products_failure.png"
+        },
+        {
+          "id": "product",
+          "name": "test_product_image_present",
+          "classname": "tests.test_CT_002_generated_test_case",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 28.668,
+          "message_erreur": "tests\\test_CT_002_generated_test_case.py:60: in test_product_image_present\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_002_generated_test_case.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/product_failure.png"
+        },
+        {
+          "id": "invalid",
+          "name": "test_invalid_url_shows_no_products",
+          "classname": "tests.test_CT_002_generated_test_case",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 13.395,
+          "message_erreur": null,
+          "screenshot_path": null
+        },
+        {
+          "id": "products",
+          "name": "test_products_list_is_displayed",
+          "classname": "tests.test_CT_002_navigation_entre_cat\u00e9gories___cat\u00e9gorie_",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 28.608,
+          "message_erreur": "tests\\test_CT_002_navigation_entre_cat\u00e9gories___cat\u00e9gorie_.py:45: in test_products_list_is_displayed\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_002_navigation_entre_cat\u00e9gories___cat\u00e9gorie_.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/products_failure.png"
+        },
+        {
+          "id": "product",
+          "name": "test_product_image_present",
+          "classname": "tests.test_CT_002_navigation_entre_cat\u00e9gories___cat\u00e9gorie_",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 28.84,
+          "message_erreur": "tests\\test_CT_002_navigation_entre_cat\u00e9gories___cat\u00e9gorie_.py:60: in test_product_image_present\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_002_navigation_entre_cat\u00e9gories___cat\u00e9gorie_.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/product_failure.png"
+        },
+        {
+          "id": "invalid",
+          "name": "test_invalid_url_shows_no_products",
+          "classname": "tests.test_CT_002_navigation_entre_cat\u00e9gories___cat\u00e9gorie_",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 13.277,
+          "message_erreur": null,
+          "screenshot_path": null
+        },
+        {
+          "id": "navigate",
+          "name": "test_navigate_to_product_detail",
+          "classname": "tests.test_CT_002_navigation_vers_d\u00e9tail_produit___produit",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 28.717,
+          "message_erreur": "tests\\test_CT_002_navigation_vers_d\u00e9tail_produit___produit.py:45: in test_navigate_to_product_detail\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_002_navigation_vers_d\u00e9tail_produit___produit.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/navigate_failure.png"
+        },
+        {
+          "id": "product",
+          "name": "test_product_detail_has_price",
+          "classname": "tests.test_CT_002_navigation_vers_d\u00e9tail_produit___produit",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 28.622,
+          "message_erreur": "tests\\test_CT_002_navigation_vers_d\u00e9tail_produit___produit.py:61: in test_product_detail_has_price\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_002_navigation_vers_d\u00e9tail_produit___produit.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/product_failure.png"
+        },
+        {
+          "id": "detail",
+          "name": "test_detail_page_has_product_name",
+          "classname": "tests.test_CT_002_navigation_vers_d\u00e9tail_produit___produit",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 28.701,
+          "message_erreur": "tests\\test_CT_002_navigation_vers_d\u00e9tail_produit___produit.py:78: in test_detail_page_has_product_name\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_002_navigation_vers_d\u00e9tail_produit___produit.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/detail_failure.png"
+        },
+        {
+          "id": "products",
+          "name": "test_products_list_is_displayed",
+          "classname": "tests.test_CT_002_produits_non_mis_\u00e0_jour",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 28.635,
+          "message_erreur": "tests\\test_CT_002_produits_non_mis_\u00e0_jour.py:45: in test_products_list_is_displayed\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_002_produits_non_mis_\u00e0_jour.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/products_failure.png"
+        },
+        {
+          "id": "product",
+          "name": "test_product_image_present",
+          "classname": "tests.test_CT_002_produits_non_mis_\u00e0_jour",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 28.622,
+          "message_erreur": "tests\\test_CT_002_produits_non_mis_\u00e0_jour.py:60: in test_product_image_present\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_002_produits_non_mis_\u00e0_jour.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/product_failure.png"
+        },
+        {
+          "id": "invalid",
+          "name": "test_invalid_url_shows_no_products",
+          "classname": "tests.test_CT_002_produits_non_mis_\u00e0_jour",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 13.22,
+          "message_erreur": null,
+          "screenshot_path": null
+        }
+      ]
+    },
+    {
+      "id": "F-003",
+      "title": "Ajout au panier",
+      "description": "L'utilisateur peut ajouter un produit au panier.",
+      "status": "PARTIAL",
+      "tests": [
+        {
+          "id": "add",
+          "name": "test_add_to_cart_updates_counter",
+          "classname": "tests.test_CT_003_ajout_au_panier___produit_indisponible",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 49.649,
+          "message_erreur": "tests\\test_CT_003_ajout_au_panier___produit_indisponible.py:63: in test_add_to_cart_updates_counter\n    _go_to_cart_page(driver)\ntests\\test_CT_003_ajout_au_panier___produit_indisponible.py:58: in _go_to_cart_page\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_003_ajout_au_panier___produit_indisponible.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/add_failure.png"
+        },
+        {
+          "id": "add",
+          "name": "test_add_to_cart_button_visible",
+          "classname": "tests.test_CT_003_ajout_au_panier___produit_indisponible",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 50.23,
+          "message_erreur": "tests\\test_CT_003_ajout_au_panier___produit_indisponible.py:93: in test_add_to_cart_button_visible\n    _go_to_cart_page(driver)\ntests\\test_CT_003_ajout_au_panier___produit_indisponible.py:58: in _go_to_cart_page\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_003_ajout_au_panier___produit_indisponible.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/add_failure.png"
+        },
+        {
+          "id": "cart",
+          "name": "test_cart_counter_visible",
+          "classname": "tests.test_CT_003_ajout_au_panier___produit_indisponible",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 49.87,
+          "message_erreur": "tests\\test_CT_003_ajout_au_panier___produit_indisponible.py:102: in test_cart_counter_visible\n    _go_to_cart_page(driver)\ntests\\test_CT_003_ajout_au_panier___produit_indisponible.py:58: in _go_to_cart_page\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_003_ajout_au_panier___produit_indisponible.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/cart_failure.png"
+        },
+        {
+          "id": "products",
+          "name": "test_products_list_is_displayed",
+          "classname": "tests.test_CT_003_cas_n\u00e9gatif___utilisateur_d\u00e9j\u00e0_existant",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 29.102,
+          "message_erreur": "tests\\test_CT_003_cas_n\u00e9gatif___utilisateur_d\u00e9j\u00e0_existant.py:45: in test_products_list_is_displayed\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_003_cas_n\u00e9gatif___utilisateur_d\u00e9j\u00e0_existant.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/products_failure.png"
+        },
+        {
+          "id": "product",
+          "name": "test_product_image_present",
+          "classname": "tests.test_CT_003_cas_n\u00e9gatif___utilisateur_d\u00e9j\u00e0_existant",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 28.956,
+          "message_erreur": "tests\\test_CT_003_cas_n\u00e9gatif___utilisateur_d\u00e9j\u00e0_existant.py:60: in test_product_image_present\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_003_cas_n\u00e9gatif___utilisateur_d\u00e9j\u00e0_existant.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/product_failure.png"
+        },
+        {
+          "id": "invalid",
+          "name": "test_invalid_url_shows_no_products",
+          "classname": "tests.test_CT_003_cas_n\u00e9gatif___utilisateur_d\u00e9j\u00e0_existant",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 13.452,
+          "message_erreur": null,
+          "screenshot_path": null
+        },
+        {
+          "id": "products",
+          "name": "test_products_list_is_displayed",
+          "classname": "tests.test_CT_003_donn\u00e9es_invalides",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 29.996,
+          "message_erreur": "tests\\test_CT_003_donn\u00e9es_invalides.py:45: in test_products_list_is_displayed\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_003_donn\u00e9es_invalides.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/products_failure.png"
+        },
+        {
+          "id": "product",
+          "name": "test_product_image_present",
+          "classname": "tests.test_CT_003_donn\u00e9es_invalides",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 28.531,
+          "message_erreur": "tests\\test_CT_003_donn\u00e9es_invalides.py:60: in test_product_image_present\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_003_donn\u00e9es_invalides.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/product_failure.png"
+        },
+        {
+          "id": "invalid",
+          "name": "test_invalid_url_shows_no_products",
+          "classname": "tests.test_CT_003_donn\u00e9es_invalides",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 13.342,
+          "message_erreur": null,
+          "screenshot_path": null
+        },
+        {
+          "id": "products",
+          "name": "test_products_list_is_displayed",
+          "classname": "tests.test_CT_003_email_invalide",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 28.448,
+          "message_erreur": "tests\\test_CT_003_email_invalide.py:45: in test_products_list_is_displayed\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_003_email_invalide.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/products_failure.png"
+        },
+        {
+          "id": "product",
+          "name": "test_product_image_present",
+          "classname": "tests.test_CT_003_email_invalide",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 28.506,
+          "message_erreur": "tests\\test_CT_003_email_invalide.py:60: in test_product_image_present\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_003_email_invalide.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/product_failure.png"
+        },
+        {
+          "id": "invalid",
+          "name": "test_invalid_url_shows_no_products",
+          "classname": "tests.test_CT_003_email_invalide",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 12.64,
+          "message_erreur": null,
+          "screenshot_path": null
+        },
+        {
+          "id": "products",
+          "name": "test_products_list_is_displayed",
+          "classname": "tests.test_CT_003_generated_test_case",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 28.705,
+          "message_erreur": "tests\\test_CT_003_generated_test_case.py:45: in test_products_list_is_displayed\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_003_generated_test_case.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/products_failure.png"
+        },
+        {
+          "id": "product",
+          "name": "test_product_image_present",
+          "classname": "tests.test_CT_003_generated_test_case",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 28.428,
+          "message_erreur": "tests\\test_CT_003_generated_test_case.py:60: in test_product_image_present\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_003_generated_test_case.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/product_failure.png"
+        },
+        {
+          "id": "invalid",
+          "name": "test_invalid_url_shows_no_products",
+          "classname": "tests.test_CT_003_generated_test_case",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 13.146,
+          "message_erreur": null,
+          "screenshot_path": null
+        },
+        {
+          "id": "products",
+          "name": "test_products_list_is_displayed",
+          "classname": "tests.test_CT_003_navigation_entre_cat\u00e9gories___mauvais_ch",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 28.545,
+          "message_erreur": "tests\\test_CT_003_navigation_entre_cat\u00e9gories___mauvais_ch.py:45: in test_products_list_is_displayed\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_003_navigation_entre_cat\u00e9gories___mauvais_ch.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/products_failure.png"
+        },
+        {
+          "id": "product",
+          "name": "test_product_image_present",
+          "classname": "tests.test_CT_003_navigation_entre_cat\u00e9gories___mauvais_ch",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 28.702,
+          "message_erreur": "tests\\test_CT_003_navigation_entre_cat\u00e9gories___mauvais_ch.py:60: in test_product_image_present\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_003_navigation_entre_cat\u00e9gories___mauvais_ch.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/product_failure.png"
+        },
+        {
+          "id": "invalid",
+          "name": "test_invalid_url_shows_no_products",
+          "classname": "tests.test_CT_003_navigation_entre_cat\u00e9gories___mauvais_ch",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 13.529,
+          "message_erreur": null,
+          "screenshot_path": null
+        },
+        {
+          "id": "navigate",
+          "name": "test_navigate_to_product_detail",
+          "classname": "tests.test_CT_003_navigation_vers_d\u00e9tail_produit___produit",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 28.974,
+          "message_erreur": "tests\\test_CT_003_navigation_vers_d\u00e9tail_produit___produit.py:45: in test_navigate_to_product_detail\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_003_navigation_vers_d\u00e9tail_produit___produit.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/navigate_failure.png"
+        },
+        {
+          "id": "product",
+          "name": "test_product_detail_has_price",
+          "classname": "tests.test_CT_003_navigation_vers_d\u00e9tail_produit___produit",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 28.671,
+          "message_erreur": "tests\\test_CT_003_navigation_vers_d\u00e9tail_produit___produit.py:61: in test_product_detail_has_price\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_003_navigation_vers_d\u00e9tail_produit___produit.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/product_failure.png"
+        },
+        {
+          "id": "detail",
+          "name": "test_detail_page_has_product_name",
+          "classname": "tests.test_CT_003_navigation_vers_d\u00e9tail_produit___produit",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 28.819,
+          "message_erreur": "tests\\test_CT_003_navigation_vers_d\u00e9tail_produit___produit.py:78: in test_detail_page_has_product_name\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_003_navigation_vers_d\u00e9tail_produit___produit.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/detail_failure.png"
+        },
+        {
+          "id": "products",
+          "name": "test_products_list_is_displayed",
+          "classname": "tests.test_CT_003_probl\u00e8me_de_chargement_ajax",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 28.46,
+          "message_erreur": "tests\\test_CT_003_probl\u00e8me_de_chargement_ajax.py:45: in test_products_list_is_displayed\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_003_probl\u00e8me_de_chargement_ajax.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/products_failure.png"
+        },
+        {
+          "id": "product",
+          "name": "test_product_image_present",
+          "classname": "tests.test_CT_003_probl\u00e8me_de_chargement_ajax",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 28.769,
+          "message_erreur": "tests\\test_CT_003_probl\u00e8me_de_chargement_ajax.py:60: in test_product_image_present\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_003_probl\u00e8me_de_chargement_ajax.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/product_failure.png"
+        },
+        {
+          "id": "invalid",
+          "name": "test_invalid_url_shows_no_products",
+          "classname": "tests.test_CT_003_probl\u00e8me_de_chargement_ajax",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 13.09,
+          "message_erreur": null,
+          "screenshot_path": null
+        }
+      ]
+    },
+    {
+      "id": "F-004",
+      "title": "Navigation entre cat\u00e9gories",
+      "description": "L'utilisateur peut filtrer les produits par cat\u00e9gorie.",
+      "status": "PARTIAL",
+      "tests": [
+        {
+          "id": "add",
+          "name": "test_add_to_cart_updates_counter",
+          "classname": "tests.test_CT_004_ajout_au_panier___edge_case___plusieurs_",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 49.493,
+          "message_erreur": "tests\\test_CT_004_ajout_au_panier___edge_case___plusieurs_.py:63: in test_add_to_cart_updates_counter\n    _go_to_cart_page(driver)\ntests\\test_CT_004_ajout_au_panier___edge_case___plusieurs_.py:58: in _go_to_cart_page\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_004_ajout_au_panier___edge_case___plusieurs_.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/add_failure.png"
+        },
+        {
+          "id": "add",
+          "name": "test_add_to_cart_button_visible",
+          "classname": "tests.test_CT_004_ajout_au_panier___edge_case___plusieurs_",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 49.642,
+          "message_erreur": "tests\\test_CT_004_ajout_au_panier___edge_case___plusieurs_.py:93: in test_add_to_cart_button_visible\n    _go_to_cart_page(driver)\ntests\\test_CT_004_ajout_au_panier___edge_case___plusieurs_.py:58: in _go_to_cart_page\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_004_ajout_au_panier___edge_case___plusieurs_.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/add_failure.png"
+        },
+        {
+          "id": "cart",
+          "name": "test_cart_counter_visible",
+          "classname": "tests.test_CT_004_ajout_au_panier___edge_case___plusieurs_",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 50.099,
+          "message_erreur": "tests\\test_CT_004_ajout_au_panier___edge_case___plusieurs_.py:102: in test_cart_counter_visible\n    _go_to_cart_page(driver)\ntests\\test_CT_004_ajout_au_panier___edge_case___plusieurs_.py:58: in _go_to_cart_page\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_004_ajout_au_panier___edge_case___plusieurs_.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/cart_failure.png"
+        },
+        {
+          "id": "products",
+          "name": "test_products_list_is_displayed",
+          "classname": "tests.test_CT_004_cas_edge___ann\u00e9e_expir\u00e9e",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 28.438,
+          "message_erreur": "tests\\test_CT_004_cas_edge___ann\u00e9e_expir\u00e9e.py:45: in test_products_list_is_displayed\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_004_cas_edge___ann\u00e9e_expir\u00e9e.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/products_failure.png"
+        },
+        {
+          "id": "product",
+          "name": "test_product_image_present",
+          "classname": "tests.test_CT_004_cas_edge___ann\u00e9e_expir\u00e9e",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 28.56,
+          "message_erreur": "tests\\test_CT_004_cas_edge___ann\u00e9e_expir\u00e9e.py:60: in test_product_image_present\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_004_cas_edge___ann\u00e9e_expir\u00e9e.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/product_failure.png"
+        },
+        {
+          "id": "invalid",
+          "name": "test_invalid_url_shows_no_products",
+          "classname": "tests.test_CT_004_cas_edge___ann\u00e9e_expir\u00e9e",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 13.382,
+          "message_erreur": null,
+          "screenshot_path": null
+        },
+        {
+          "id": "products",
+          "name": "test_products_list_is_displayed",
+          "classname": "tests.test_CT_004_cas_edge_case___champs_vides",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 28.927,
+          "message_erreur": "tests\\test_CT_004_cas_edge_case___champs_vides.py:45: in test_products_list_is_displayed\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_004_cas_edge_case___champs_vides.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/products_failure.png"
+        },
+        {
+          "id": "product",
+          "name": "test_product_image_present",
+          "classname": "tests.test_CT_004_cas_edge_case___champs_vides",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 28.928,
+          "message_erreur": "tests\\test_CT_004_cas_edge_case___champs_vides.py:60: in test_product_image_present\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_004_cas_edge_case___champs_vides.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/product_failure.png"
+        },
+        {
+          "id": "invalid",
+          "name": "test_invalid_url_shows_no_products",
+          "classname": "tests.test_CT_004_cas_edge_case___champs_vides",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 15.029,
+          "message_erreur": null,
+          "screenshot_path": null
+        },
+        {
+          "id": "products",
+          "name": "test_products_list_is_displayed",
+          "classname": "tests.test_CT_004_cas_edge_case___message_tr\u00e8s_long",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 28.804,
+          "message_erreur": "tests\\test_CT_004_cas_edge_case___message_tr\u00e8s_long.py:45: in test_products_list_is_displayed\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_004_cas_edge_case___message_tr\u00e8s_long.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/products_failure.png"
+        },
+        {
+          "id": "product",
+          "name": "test_product_image_present",
+          "classname": "tests.test_CT_004_cas_edge_case___message_tr\u00e8s_long",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 28.533,
+          "message_erreur": "tests\\test_CT_004_cas_edge_case___message_tr\u00e8s_long.py:60: in test_product_image_present\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_004_cas_edge_case___message_tr\u00e8s_long.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/product_failure.png"
+        },
+        {
+          "id": "invalid",
+          "name": "test_invalid_url_shows_no_products",
+          "classname": "tests.test_CT_004_cas_edge_case___message_tr\u00e8s_long",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 13.159,
+          "message_erreur": null,
+          "screenshot_path": null
+        },
+        {
+          "id": "products",
+          "name": "test_products_list_is_displayed",
+          "classname": "tests.test_CT_004_generated_test_case",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 28.362,
+          "message_erreur": "tests\\test_CT_004_generated_test_case.py:45: in test_products_list_is_displayed\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_004_generated_test_case.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/products_failure.png"
+        },
+        {
+          "id": "product",
+          "name": "test_product_image_present",
+          "classname": "tests.test_CT_004_generated_test_case",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 28.503,
+          "message_erreur": "tests\\test_CT_004_generated_test_case.py:60: in test_product_image_present\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_004_generated_test_case.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/product_failure.png"
+        },
+        {
+          "id": "invalid",
+          "name": "test_invalid_url_shows_no_products",
+          "classname": "tests.test_CT_004_generated_test_case",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 13.097,
+          "message_erreur": null,
+          "screenshot_path": null
+        },
+        {
+          "id": "products",
+          "name": "test_products_list_is_displayed",
+          "classname": "tests.test_CT_004_navigation_avec_une_grande_quantit\u00e9_de_p",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 28.572,
+          "message_erreur": "tests\\test_CT_004_navigation_avec_une_grande_quantit\u00e9_de_p.py:45: in test_products_list_is_displayed\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_004_navigation_avec_une_grande_quantit\u00e9_de_p.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/products_failure.png"
+        },
+        {
+          "id": "product",
+          "name": "test_product_image_present",
+          "classname": "tests.test_CT_004_navigation_avec_une_grande_quantit\u00e9_de_p",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 28.725,
+          "message_erreur": "tests\\test_CT_004_navigation_avec_une_grande_quantit\u00e9_de_p.py:60: in test_product_image_present\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_004_navigation_avec_une_grande_quantit\u00e9_de_p.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/product_failure.png"
+        },
+        {
+          "id": "invalid",
+          "name": "test_invalid_url_shows_no_products",
+          "classname": "tests.test_CT_004_navigation_avec_une_grande_quantit\u00e9_de_p",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 14.093,
+          "message_erreur": null,
+          "screenshot_path": null
+        },
+        {
+          "id": "products",
+          "name": "test_products_list_is_displayed",
+          "classname": "tests.test_CT_004_navigation_entre_cat\u00e9gories___edge_case_",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 28.757,
+          "message_erreur": "tests\\test_CT_004_navigation_entre_cat\u00e9gories___edge_case_.py:45: in test_products_list_is_displayed\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_004_navigation_entre_cat\u00e9gories___edge_case_.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/products_failure.png"
+        },
+        {
+          "id": "product",
+          "name": "test_product_image_present",
+          "classname": "tests.test_CT_004_navigation_entre_cat\u00e9gories___edge_case_",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 28.614,
+          "message_erreur": "tests\\test_CT_004_navigation_entre_cat\u00e9gories___edge_case_.py:60: in test_product_image_present\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_004_navigation_entre_cat\u00e9gories___edge_case_.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/product_failure.png"
+        },
+        {
+          "id": "invalid",
+          "name": "test_invalid_url_shows_no_products",
+          "classname": "tests.test_CT_004_navigation_entre_cat\u00e9gories___edge_case_",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 13.237,
+          "message_erreur": null,
+          "screenshot_path": null
+        },
+        {
+          "id": "navigate",
+          "name": "test_navigate_to_product_detail",
+          "classname": "tests.test_CT_004_navigation_vers_d\u00e9tail_produit___edge_ca",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 28.693,
+          "message_erreur": "tests\\test_CT_004_navigation_vers_d\u00e9tail_produit___edge_ca.py:45: in test_navigate_to_product_detail\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_004_navigation_vers_d\u00e9tail_produit___edge_ca.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/navigate_failure.png"
+        },
+        {
+          "id": "product",
+          "name": "test_product_detail_has_price",
+          "classname": "tests.test_CT_004_navigation_vers_d\u00e9tail_produit___edge_ca",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 28.869,
+          "message_erreur": "tests\\test_CT_004_navigation_vers_d\u00e9tail_produit___edge_ca.py:61: in test_product_detail_has_price\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_004_navigation_vers_d\u00e9tail_produit___edge_ca.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/product_failure.png"
+        },
+        {
+          "id": "detail",
+          "name": "test_detail_page_has_product_name",
+          "classname": "tests.test_CT_004_navigation_vers_d\u00e9tail_produit___edge_ca",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 28.952,
+          "message_erreur": "tests\\test_CT_004_navigation_vers_d\u00e9tail_produit___edge_ca.py:78: in test_detail_page_has_product_name\n    _go_to_listing(driver, BASE_URL)\ntests\\test_CT_004_navigation_vers_d\u00e9tail_produit___edge_ca.py:25: in _go_to_listing\n    sub = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0x46b373+10553]\nE   \tchromedriver!GetHandleVerifier [0x46b4a4+10684]\nE   \tchromedriver!(No symbol) [0x271e10]\nE   \tchromedriver!(No symbol) [0x2ba9da]\nE   \tchromedriver!(No symbol) [0x2bac7b]\nE   \tchromedriver!(No symbol) [0x2fd162]\nE   \tchromedriver!(No symbol) [0x2dd8b4]\nE   \tchromedriver!(No symbol) [0x2faa36]\nE   \tchromedriver!(No symbol) [0x2dd606]\nE   \tchromedriver!(No symbol) [0x2b0039]\nE   \tchromedriver!(No symbol) [0x2b0df4]\nE   \tchromedriver!GetHandleVerifier [0x6eddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x6e937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x708215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0x484c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0x48c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0x473c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0x473e42+19022]\nE   \tchromedriver!GetHandleVerifier [0x45d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/detail_failure.png"
+        }
+      ]
+    },
+    {
+      "id": "F-005",
+      "title": "Navigation (Pagination implicite / chargement dynamique)",
+      "description": "L'utilisateur peut parcourir plusieurs produits.",
+      "status": "UNKNOWN",
+      "tests": []
+    },
+    {
+      "id": "F-006",
+      "title": "Contact utilisateur",
+      "description": "L'utilisateur peut envoyer un message via le formulaire contact.",
+      "status": "UNKNOWN",
+      "tests": []
+    },
+    {
+      "id": "F-007",
+      "title": "Authentification (Login / Sign Up)",
+      "description": "L'utilisateur peut cr\u00e9er un compte et se connecter.",
+      "status": "UNKNOWN",
+      "tests": []
+    },
+    {
+      "id": "F-008",
+      "title": "Passage de commande (Checkout)",
+      "description": "L'utilisateur peut finaliser un achat.",
+      "status": "UNKNOWN",
+      "tests": []
+    }
+  ]
+}

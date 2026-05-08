@@ -1,5 +1,6 @@
 import argparse
 import os
+import re
 import sys
 import yaml
 import shutil
@@ -26,6 +27,7 @@ from test_case_generator import TestCaseGenerator
 from spec_to_selenium import SeleniumGenerator
 from test_runner import TestRunner
 from report_generator import ReportGenerator
+from dom_scanner import DOMScanner
 
 def main():
     parser = argparse.ArgumentParser(description="AUTOTEST avec spec fonctionnelle")
@@ -120,28 +122,75 @@ def main():
         logger.info("Étape 2: Génération des scénarios de test avec le LLM")
         test_cases = case_gen.generate(parsed_spec)
 
-        # STEP 3: Génération des scripts Selenium
+        # STEP 3: Scan DOM réel pour extraire les vrais sélecteurs CSS
+        logger.info("Étape 3: Scan du DOM live pour extraire les sélecteurs réels")
+        dom_context = ""
+        try:
+            keywords = [parsed_spec.get("project_name", "")]
+            for feat in parsed_spec.get("features", []):
+                keywords.append(feat.get("titre", ""))
+                keywords.append(feat.get("description", ""))
+            keywords = [k for k in keywords if k]
+            scanner = DOMScanner(headless=True)
+            dom_context = scanner.scan_with_navigation(
+                parsed_spec.get("url_cible", args.url),
+                keywords=keywords,
+            )
+            logger.info(f"DOM context: {len(dom_context)} chars")
+        except Exception as scan_err:
+            logger.warning(f"DOM scan échoué (non-bloquant): {scan_err}")
+
+        # Extract the most specific sub-page URL found during DOM scan to use as url_cible.
+        # This overrides the root URL from the spec so the LLM navigates to the correct page.
+        effective_url = parsed_spec.get('url_cible', args.url)
+        if dom_context:
+            _non_product_paths = {
+                "cart", "checkout", "login", "register", "wishlist",
+                "compare", "contact", "account", "privacy", "search",
+                "blog", "news", "sitemap",
+            }
+            urls_in_ctx = re.findall(r'║  URL\s*:\s*(.+)', dom_context)
+            root_clean = args.url.rstrip('/')
+            for found_url in urls_in_ctx:
+                found_url = found_url.strip()
+                if found_url.rstrip('/') == root_clean:
+                    continue
+                # Skip non-product pages (cart, login, etc.)
+                from urllib.parse import urlparse as _urlparse
+                path_segs = _urlparse(found_url).path.strip('/').split('/')
+                if any(seg in _non_product_paths for seg in path_segs):
+                    continue
+                effective_url = found_url
+                logger.info(f"URL effective pour génération Selenium: {found_url}")
+                break
+
+        # STEP 4: Génération des scripts Selenium avec contexte DOM
         script_gen = SeleniumGenerator(config_path)
-        logger.info("Étape 3: Création des scripts Selenium Python (POM)")
-        script_gen.generate_scripts(test_cases, output_dir, url_cible=parsed_spec.get('url_cible'))
+        logger.info("Étape 4: Création des scripts Selenium Python avec sélecteurs réels")
+        script_gen.generate_scripts(
+            test_cases, output_dir,
+            url_cible=effective_url,
+            dom_context=dom_context,
+            original_url=args.url,
+        )
         
         if args.dry_run:
             logger.info("Mode --dry-run activé. Arrêt avant l'exécution.")
             sys.exit(0)
 
-        # STEP 4: Exécution des tests
+        # STEP 5: Exécution des tests
         runner = TestRunner(config_path)
-        logger.info("Étape 4: Exécution de pytest")
+        logger.info("Étape 5: Exécution de pytest")
         test_results = runner.run_tests(
-            generated_tests_dir, 
-            browser=args.browser, 
-            headless=args.headless, 
-            timeout_sec=args.timeout * len(test_cases)
+            generated_tests_dir,
+            browser=args.browser,
+            headless=args.headless,
+            timeout_sec=max(600, args.timeout * len(test_cases) * 3)
         )
 
-        # STEP 5: Génération du rapport
+        # STEP 6: Génération du rapport
         report_gen = ReportGenerator(config_path)
-        logger.info("Étape 5: Création du rapport final")
+        logger.info("Étape 6: Création du rapport final")
         report_gen.generate(test_results, parsed_spec, reports_dir)
 
         logger.info(f"Pipeline terminé avec succès. Rapport disponible dans {reports_dir}")

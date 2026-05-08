@@ -1,43 +1,58 @@
-<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="2" skipped="1" tests="15" time="248.569" timestamp="2026-04-24T11:00:58.980524+01:00" hostname="DESKTOP-E5NKSEU"><testcase classname="tests.test_CT_001_F001_generated_test_case.TestAffichageProduits" name="test_electronics_page_loads" time="78.644" /><testcase classname="tests.test_CT_001_F001_generated_test_case.TestAffichageProduits" name="test_subcategory_links_are_clickable" time="12.018" /><testcase classname="tests.test_CT_001_F001_generated_test_case.TestAffichageProduits" name="test_cell_phones_products_listed" time="8.734" /><testcase classname="tests.test_CT_001_F002_generated_test_case.TestNavigationDetailProduit" name="test_click_product_shows_detail" time="10.943" /><testcase classname="tests.test_CT_001_F002_generated_test_case.TestNavigationDetailProduit" name="test_product_detail_has_add_to_cart" time="8.481" /><testcase classname="tests.test_CT_001_F003_ajout_au_panier___flux_nominal.TestAjoutAuPanier" name="test_add_product_to_cart" time="9.067" /><testcase classname="tests.test_CT_001_F003_ajout_au_panier___flux_nominal.TestAjoutAuPanier" name="test_cart_link_visible_after_add" time="10.926" /><testcase classname="tests.test_CT_001_F004_tri_par_prix_ascendant.TestFiltrageTriProduits" name="test_sort_by_price_ascending" time="8.018" /><testcase classname="tests.test_CT_001_F004_tri_par_prix_ascendant.TestFiltrageTriProduits" name="test_sort_by_name" time="9.865" /><testcase classname="tests.test_CT_001_F005_generated_test_case.TestPagination" name="test_next_button_navigates" time="27.983"><skipped type="pytest.skip" message="Pas de pagination (moins d'une page de produits)">C:\Users\Lenovo\Desktop\PFE RAYEN\AUTOTEST\autotest_package\output\generated_tests\tests\test_CT_001_F005_generated_test_case.py:79: Pas de pagination (moins d'une page de produits)</skipped></testcase><testcase classname="tests.test_CT_001_F005_generated_test_case.TestPagination" name="test_invalid_page_url" time="7.486" /><testcase classname="tests.test_CT_001_F006_recherche_produit_existant.TestRechercheProduit" name="test_search_existing_product" time="8.210" /><testcase classname="tests.test_CT_001_F006_recherche_produit_existant.TestRechercheProduit" name="test_search_nonexistent_product" time="9.598" /><testcase classname="tests.test_CT_002_LLM_GENERIC_GeneratedTestCase_generated_test_case" name="test_CT_002" time="8.503"><failure message="AssertionError: La page a été chargée correctement, erreur : assert 'Page not found' == '404'&#10;    &#10;    - 404&#10;    + Page not found&#10;assert False">tests\test_CT_002_LLM_GENERIC_GeneratedTestCase_generated_test_case.py:25: in test_CT_002
-    assert error_element.text == "404"
-E   AssertionError: assert 'Page not found' == '404'
-E     
-E     - 404
-E     + Page not found
-
-During handling of the above exception, another exception occurred:
-tests\test_CT_002_LLM_GENERIC_GeneratedTestCase_generated_test_case.py:28: in test_CT_002
-    assert False, f"La page a été chargée correctement, erreur : {e}"
-E   AssertionError: La page a été chargée correctement, erreur : assert 'Page not found' == '404'
-E       
-E       - 404
-E       + Page not found
-E   assert False</failure></testcase><testcase classname="tests.test_CT_005_LLM_GENERIC_CasEdgeCaseListeVide_cas_edge_case___liste_vide" name="test_CT_005" time="29.649"><failure message="selenium.common.exceptions.TimeoutException: Message: &#10;Stacktrace:&#10;&#09;chromedriver!GetHandleVerifier [0x54b373+10553]&#10;&#09;chromedriver!GetHandleVerifier [0x54b4a4+10684]&#10;&#09;chromedriver!(No symbol) [0x351e10]&#10;&#09;chromedriver!(No symbol) [0x39a9da]&#10;&#09;chromedriver!(No symbol) [0x39ac7b]&#10;&#09;chromedriver!(No symbol) [0x3dd162]&#10;&#09;chromedriver!(No symbol) [0x3bd8b4]&#10;&#09;chromedriver!(No symbol) [0x3daa36]&#10;&#09;chromedriver!(No symbol) [0x3bd606]&#10;&#09;chromedriver!(No symbol) [0x390039]&#10;&#09;chromedriver!(No symbol) [0x390df4]&#10;&#09;chromedriver!GetHandleVerifier [0x7cddb4+292f94]&#10;&#09;chromedriver!GetHandleVerifier [0x7c937d+28e55d]&#10;&#09;chromedriver!GetHandleVerifier [0x7e8215+2ad3f5]&#10;&#09;chromedriver!GetHandleVerifier [0x564c18+29df8]&#10;&#09;chromedriver!GetHandleVerifier [0x56c6fd+318dd]&#10;&#09;chromedriver!GetHandleVerifier [0x553c78+18e58]&#10;&#09;chromedriver!GetHandleVerifier [0x553e42+19022]&#10;&#09;chromedriver!GetHandleVerifier [0x53d45f+263f]&#10;&#09;KERNEL32!BaseThreadInitThunk [0x759a5d49+19]&#10;&#09;ntdll!RtlInitializeExceptionChain [0x774bd81b+6b]&#10;&#09;ntdll!RtlGetAppContainerNamedObjectPath [0x774bd7a1+231]">tests\test_CT_005_LLM_GENERIC_CasEdgeCaseListeVide_cas_edge_case___liste_vide.py:12: in test_CT_005
-    option_tri = WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.CSS_SELECTOR, "#products-orderby")))
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="3" skipped="0" tests="9" time="193.612" timestamp="2026-04-28T20:58:05.408988+01:00" hostname="DESKTOP-E5NKSEU"><testcase classname="tests.test_F_001_affichage_des_produits_electronics" name="test_products_list_is_displayed" time="10.294"><failure message="AssertionError: Nom produit vide&#10;assert ''">tests\test_F_001_affichage_des_produits_electronics.py:54: in test_products_list_is_displayed
+    assert name_text, "Nom produit vide"
+E   AssertionError: Nom produit vide
+E   assert ''</failure></testcase><testcase classname="tests.test_F_001_affichage_des_produits_electronics" name="test_product_image_present" time="9.559" /><testcase classname="tests.test_F_001_affichage_des_produits_electronics" name="test_invalid_url_shows_no_products" time="14.531" /><testcase classname="tests.test_F_002_tri_des_produits_par_prix" name="test_sort_price_low_to_high" time="6.568" /><testcase classname="tests.test_F_002_tri_des_produits_par_prix" name="test_sort_price_high_to_low" time="6.712" /><testcase classname="tests.test_F_002_tri_des_produits_par_prix" name="test_sort_options_available" time="6.558" /><testcase classname="tests.test_F_003_ajout_au_panier" name="test_add_to_cart_updates_counter" time="51.688"><failure message="selenium.common.exceptions.TimeoutException: Message: &#10;Stacktrace:&#10;&#09;chromedriver!GetHandleVerifier [0xacb373+10553]&#10;&#09;chromedriver!GetHandleVerifier [0xacb4a4+10684]&#10;&#09;chromedriver!(No symbol) [0x8d1e10]&#10;&#09;chromedriver!(No symbol) [0x91a9da]&#10;&#09;chromedriver!(No symbol) [0x91ac7b]&#10;&#09;chromedriver!(No symbol) [0x95d162]&#10;&#09;chromedriver!(No symbol) [0x93d8b4]&#10;&#09;chromedriver!(No symbol) [0x95aa36]&#10;&#09;chromedriver!(No symbol) [0x93d606]&#10;&#09;chromedriver!(No symbol) [0x910039]&#10;&#09;chromedriver!(No symbol) [0x910df4]&#10;&#09;chromedriver!GetHandleVerifier [0xd4ddb4+292f94]&#10;&#09;chromedriver!GetHandleVerifier [0xd4937d+28e55d]&#10;&#09;chromedriver!GetHandleVerifier [0xd68215+2ad3f5]&#10;&#09;chromedriver!GetHandleVerifier [0xae4c18+29df8]&#10;&#09;chromedriver!GetHandleVerifier [0xaec6fd+318dd]&#10;&#09;chromedriver!GetHandleVerifier [0xad3c78+18e58]&#10;&#09;chromedriver!GetHandleVerifier [0xad3e42+19022]&#10;&#09;chromedriver!GetHandleVerifier [0xabd45f+263f]&#10;&#09;KERNEL32!BaseThreadInitThunk [0x75e85d49+19]&#10;&#09;ntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]&#10;&#09;ntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]">tests\test_F_003_ajout_au_panier.py:63: in test_add_to_cart_updates_counter
+    add_btn = WebDriverWait(driver, 20).until(
 C:\Users\Lenovo\AppData\Roaming\Python\Python314\site-packages\selenium\webdriver\support\wait.py:121: in until
     raise TimeoutException(message, screen, stacktrace)
 E   selenium.common.exceptions.TimeoutException: Message: 
 E   Stacktrace:
-E   	chromedriver!GetHandleVerifier [0x54b373+10553]
-E   	chromedriver!GetHandleVerifier [0x54b4a4+10684]
-E   	chromedriver!(No symbol) [0x351e10]
-E   	chromedriver!(No symbol) [0x39a9da]
-E   	chromedriver!(No symbol) [0x39ac7b]
-E   	chromedriver!(No symbol) [0x3dd162]
-E   	chromedriver!(No symbol) [0x3bd8b4]
-E   	chromedriver!(No symbol) [0x3daa36]
-E   	chromedriver!(No symbol) [0x3bd606]
-E   	chromedriver!(No symbol) [0x390039]
-E   	chromedriver!(No symbol) [0x390df4]
-E   	chromedriver!GetHandleVerifier [0x7cddb4+292f94]
-E   	chromedriver!GetHandleVerifier [0x7c937d+28e55d]
-E   	chromedriver!GetHandleVerifier [0x7e8215+2ad3f5]
-E   	chromedriver!GetHandleVerifier [0x564c18+29df8]
-E   	chromedriver!GetHandleVerifier [0x56c6fd+318dd]
-E   	chromedriver!GetHandleVerifier [0x553c78+18e58]
-E   	chromedriver!GetHandleVerifier [0x553e42+19022]
-E   	chromedriver!GetHandleVerifier [0x53d45f+263f]
-E   	KERNEL32!BaseThreadInitThunk [0x759a5d49+19]
-E   	ntdll!RtlInitializeExceptionChain [0x774bd81b+6b]
-E   	ntdll!RtlGetAppContainerNamedObjectPath [0x774bd7a1+231]</failure></testcase></testsuite></testsuites>
+E   	chromedriver!GetHandleVerifier [0xacb373+10553]
+E   	chromedriver!GetHandleVerifier [0xacb4a4+10684]
+E   	chromedriver!(No symbol) [0x8d1e10]
+E   	chromedriver!(No symbol) [0x91a9da]
+E   	chromedriver!(No symbol) [0x91ac7b]
+E   	chromedriver!(No symbol) [0x95d162]
+E   	chromedriver!(No symbol) [0x93d8b4]
+E   	chromedriver!(No symbol) [0x95aa36]
+E   	chromedriver!(No symbol) [0x93d606]
+E   	chromedriver!(No symbol) [0x910039]
+E   	chromedriver!(No symbol) [0x910df4]
+E   	chromedriver!GetHandleVerifier [0xd4ddb4+292f94]
+E   	chromedriver!GetHandleVerifier [0xd4937d+28e55d]
+E   	chromedriver!GetHandleVerifier [0xd68215+2ad3f5]
+E   	chromedriver!GetHandleVerifier [0xae4c18+29df8]
+E   	chromedriver!GetHandleVerifier [0xaec6fd+318dd]
+E   	chromedriver!GetHandleVerifier [0xad3c78+18e58]
+E   	chromedriver!GetHandleVerifier [0xad3e42+19022]
+E   	chromedriver!GetHandleVerifier [0xabd45f+263f]
+E   	KERNEL32!BaseThreadInitThunk [0x75e85d49+19]
+E   	ntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]
+E   	ntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]</failure></testcase><testcase classname="tests.test_F_003_ajout_au_panier" name="test_add_to_cart_button_visible" time="52.163"><failure message="selenium.common.exceptions.TimeoutException: Message: &#10;Stacktrace:&#10;&#09;chromedriver!GetHandleVerifier [0xacb373+10553]&#10;&#09;chromedriver!GetHandleVerifier [0xacb4a4+10684]&#10;&#09;chromedriver!(No symbol) [0x8d1e10]&#10;&#09;chromedriver!(No symbol) [0x91a9da]&#10;&#09;chromedriver!(No symbol) [0x91ac7b]&#10;&#09;chromedriver!(No symbol) [0x95d162]&#10;&#09;chromedriver!(No symbol) [0x93d8b4]&#10;&#09;chromedriver!(No symbol) [0x95aa36]&#10;&#09;chromedriver!(No symbol) [0x93d606]&#10;&#09;chromedriver!(No symbol) [0x910039]&#10;&#09;chromedriver!(No symbol) [0x910df4]&#10;&#09;chromedriver!GetHandleVerifier [0xd4ddb4+292f94]&#10;&#09;chromedriver!GetHandleVerifier [0xd4937d+28e55d]&#10;&#09;chromedriver!GetHandleVerifier [0xd68215+2ad3f5]&#10;&#09;chromedriver!GetHandleVerifier [0xae4c18+29df8]&#10;&#09;chromedriver!GetHandleVerifier [0xaec6fd+318dd]&#10;&#09;chromedriver!GetHandleVerifier [0xad3c78+18e58]&#10;&#09;chromedriver!GetHandleVerifier [0xad3e42+19022]&#10;&#09;chromedriver!GetHandleVerifier [0xabd45f+263f]&#10;&#09;KERNEL32!BaseThreadInitThunk [0x75e85d49+19]&#10;&#09;ntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]&#10;&#09;ntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]">tests\test_F_003_ajout_au_panier.py:93: in test_add_to_cart_button_visible
+    add_btn = WebDriverWait(driver, 20).until(
+C:\Users\Lenovo\AppData\Roaming\Python\Python314\site-packages\selenium\webdriver\support\wait.py:121: in until
+    raise TimeoutException(message, screen, stacktrace)
+E   selenium.common.exceptions.TimeoutException: Message: 
+E   Stacktrace:
+E   	chromedriver!GetHandleVerifier [0xacb373+10553]
+E   	chromedriver!GetHandleVerifier [0xacb4a4+10684]
+E   	chromedriver!(No symbol) [0x8d1e10]
+E   	chromedriver!(No symbol) [0x91a9da]
+E   	chromedriver!(No symbol) [0x91ac7b]
+E   	chromedriver!(No symbol) [0x95d162]
+E   	chromedriver!(No symbol) [0x93d8b4]
+E   	chromedriver!(No symbol) [0x95aa36]
+E   	chromedriver!(No symbol) [0x93d606]
+E   	chromedriver!(No symbol) [0x910039]
+E   	chromedriver!(No symbol) [0x910df4]
+E   	chromedriver!GetHandleVerifier [0xd4ddb4+292f94]
+E   	chromedriver!GetHandleVerifier [0xd4937d+28e55d]
+E   	chromedriver!GetHandleVerifier [0xd68215+2ad3f5]
+E   	chromedriver!GetHandleVerifier [0xae4c18+29df8]
+E   	chromedriver!GetHandleVerifier [0xaec6fd+318dd]
+E   	chromedriver!GetHandleVerifier [0xad3c78+18e58]
+E   	chromedriver!GetHandleVerifier [0xad3e42+19022]
+E   	chromedriver!GetHandleVerifier [0xabd45f+263f]
+E   	KERNEL32!BaseThreadInitThunk [0x75e85d49+19]
+E   	ntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]
+E   	ntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]</failure></testcase><testcase classname="tests.test_F_003_ajout_au_panier" name="test_cart_counter_visible" time="35.231" /></testsuite></testsuites>

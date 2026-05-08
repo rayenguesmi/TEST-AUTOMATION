@@ -1,0 +1,91 @@
+{
+  "summary": {
+    "project_name": "Demo Web Shop \u2013 Module Electronics",
+    "url_cible": "https://demowebshop.tricentis.com/electronics",
+    "total_tests": 18,
+    "passed": 12,
+    "failed": 6,
+    "errors": 0,
+    "duration_seconds": 156.12,
+    "timestamp": "2026-04-28 21:59:33"
+  },
+  "features_with_results": [
+    {
+      "id": "F-001",
+      "title": "Affichage des produits Electronics",
+      "description": "L'utilisateur visualise la liste des produits \u00e9lectroniques.",
+      "status": "UNKNOWN",
+      "tests": []
+    },
+    {
+      "id": "F-002",
+      "title": "Tri des produits par prix",
+      "description": "L'utilisateur trie les produits par prix croissant.",
+      "status": "PASS",
+      "tests": [
+        {
+          "id": "F-002",
+          "name": "test_sort_price_low_to_high",
+          "classname": "tests.test_F_002_tri_des_produits_par_prix",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 6.615,
+          "message_erreur": null,
+          "screenshot_path": null
+        },
+        {
+          "id": "F-002",
+          "name": "test_sort_price_high_to_low",
+          "classname": "tests.test_F_002_tri_des_produits_par_prix",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 6.049,
+          "message_erreur": null,
+          "screenshot_path": null
+        },
+        {
+          "id": "F-002",
+          "name": "test_sort_options_available",
+          "classname": "tests.test_F_002_tri_des_produits_par_prix",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 5.558,
+          "message_erreur": null,
+          "screenshot_path": null
+        }
+      ]
+    },
+    {
+      "id": "F-003",
+      "title": "Ajout au panier",
+      "description": "L'utilisateur ajoute un produit au panier depuis la page Electronics.",
+      "status": "PASS",
+      "tests": [
+        {
+          "id": "F-003",
+          "name": "test_add_to_cart_updates_counter",
+          "classname": "tests.test_F_003_ajout_au_panier",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 6.285,
+          "message_erreur": null,
+          "screenshot_path": null
+        },
+        {
+          "id": "F-003",
+          "name": "test_add_to_cart_button_visible",
+          "classname": "tests.test_F_003_ajout_au_panier",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 5.31,
+          "message_erreur": null,
+          "screenshot_path": null
+        },
+        {
+          "id": "F-003",
+          "name": "test_cart_counter_visible",
+          "classname": "tests.test_F_003_ajout_au_panier",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 6.001,
+          "message_erreur": null,
+          "screenshot_path": null
+        }
+      ]
+    }
+  ]
+}

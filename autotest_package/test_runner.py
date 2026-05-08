@@ -37,20 +37,31 @@ class TestRunner:
         
         # Execute tests via subprocess
         start_time = time.time()
+        proc = None
         try:
             logger.info(f"Executing: {' '.join(cmd)}")
-            result = subprocess.run(
+            proc = subprocess.Popen(
                 cmd,
                 cwd=test_dir,
-                capture_output=True,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
                 text=True,
-                timeout=timeout_sec
             )
-            logger.info("Tests execution completed.")
+            stdout, stderr = proc.communicate(timeout=timeout_sec)
+            logger.info(f"Tests terminés (exit code {proc.returncode})")
+            if stdout:
+                logger.info(f"pytest stdout:\n{stdout[-3000:]}")
+            if stderr:
+                logger.warning(f"pytest stderr:\n{stderr[-2000:]}")
         except subprocess.TimeoutExpired:
-            logger.error(f"Tests execution timed out after {timeout_sec} seconds.")
-            # Maybe some results were already written? 
-        
+            logger.error(f"Timeout atteint ({timeout_sec}s) — arrêt de pytest.")
+            if proc is not None:
+                proc.kill()
+                try:
+                    proc.communicate(timeout=5)
+                except Exception:
+                    pass
+
         duration = time.time() - start_time
         
         # Parse result XML to get detailed report
@@ -83,13 +94,12 @@ class TestRunner:
             full_name = testcase.get('name', '')
             class_name = testcase.get('classname', '')
             
-            # Extract Feature ID (e.g., F_001 -> F-001)
+            # Extract Feature ID — normalise to zero-padded form (e.g. F-003)
             test_id = "TC-Unknown"
-            match = re.search(r'F_(\d+)', full_name + class_name)
+            match = re.search(r'[Ff]_?(\d+)', full_name + class_name)
             if match:
-                test_id = f"F-{match.group(1)}"
+                test_id = f"F-{match.group(1).zfill(3)}"
             else:
-                # Fallback to old logic if no F-number found
                 test_id = full_name.split('_')[1] if '_' in full_name else full_name
             
             name = full_name

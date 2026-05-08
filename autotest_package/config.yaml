@@ -1,8 +1,12 @@
 llm:
   provider: "groq"
   model: "llama-3.3-70b-versatile"
-  temperature: 0.1          # Lower = more deterministic code
+  temperature: 0.1
   max_tokens: 8192
+
+  # ── Ollama (local, no API key required) ──────────────────────────────────────
+  ollama_model: "qwen2.5-coder:7b-instruct"
+  ollama_base_url: "http://localhost:11434"
 
 prompts:
   spec_parsing: |
@@ -35,8 +39,19 @@ prompts:
     Tu es un expert en automatisation Selenium Python 3.12.
     Génère un script pytest complet et robuste pour le cas de test fourni.
 
+    ════ SÉLECTEURS CSS ════
+    Un bloc DOM SNAPSHOT contenant les vrais sélecteurs du site t'est fourni
+    en début de contexte système. UTILISE IMPÉRATIVEMENT ces sélecteurs.
+    N'invente JAMAIS un sélecteur CSS — s'il n'est pas dans le snapshot,
+    utilise By.XPATH avec le texte visible comme dernier recours.
+
     ════ RÈGLES OBLIGATOIRES ════
-    1. TARGET URL: {url_cible} — Use this URL for all navigation.
+    1. URL DE RÉFÉRENCE: {url_cible}
+       PRIORITÉ ABSOLUE : si le DOM SNAPSHOT contient une ligne
+       "► Pour accéder aux éléments ci-dessous, naviguer vers : <URL>"
+       tu DOIS utiliser CETTE URL dans driver.get(), même si elle diffère
+       de l'URL de référence ci-dessus. La ligne du snapshot a TOUJOURS
+       la priorité sur l'URL de référence.
     2. INTERDICTION ABSOLUE d'utiliser driver.find_element() directement.
     3. Utilise WebDriverWait(driver, 20) avec EC.element_to_be_clickable AVANT tout clic.
     4. Protocole d'interaction OBLIGATOIRE pour chaque élément :
@@ -46,17 +61,71 @@ prompts:
        d. try: element.click()
           except (ElementClickInterceptedException, StaleElementReferenceException):
               driver.execute_script("arguments[0].click();", element)
-    5. OU utilise directement safe_click(locator) / safe_send_keys(locator, text) de la Page Object.
-    6. Imports obligatoires au début du fichier :
+    5. Imports obligatoires au début du fichier :
        from selenium.webdriver.common.by import By
        from selenium.webdriver.remote.webdriver import WebDriver
        from selenium.webdriver.support.ui import WebDriverWait
        from selenium.webdriver.support import expected_conditions as EC
        from selenium.common.exceptions import ElementClickInterceptedException, StaleElementReferenceException
-    7. NE PAS importer 'from selenium.webdriver import WebDriver'.
-    8. NE PAS créer d'instance WebDriver — utilise la fixture 'driver' de conftest.py.
-    9. LOCATORS: Use robust CSS Selectors or XPATH. Use the 'By' class (By.CSS_SELECTOR, By.ID, etc.).
-    10. GENERATE ONLY the code between ```python ... ```.
+    6. NE PAS importer 'from selenium.webdriver import WebDriver'.
+    7. NE PAS créer d'instance WebDriver — utilise la fixture 'driver' de conftest.py.
+    8. LOCATORS — Priorité des sélecteurs (du plus robuste au moins robuste) :
+       1er choix : attribut id         → By.ID, "login-button"
+       2ème choix : data-test/data-cy  → By.CSS_SELECTOR, "[data-test='add-to-cart']"
+       3ème choix : name               → By.NAME, "username"
+       4ème choix : CSS classe stable  → By.CSS_SELECTOR, ".shopping_cart_badge"
+       Dernier recours : XPATH          → By.XPATH, "//button[text()='Login']"
+    9. SLEEP INTERDIT : N'utilise JAMAIS time.sleep() de plus de 2 secondes.
+       Pour attendre un état, utilise TOUJOURS WebDriverWait avec une condition EC.
+       EXEMPLE CORRECT   : WebDriverWait(driver, 20).until(EC.url_contains("inventory"))
+       EXEMPLE INTERDIT  : time.sleep(60)
+    10. SCÉNARIOS IMPOSSIBLES : Si le cas de test décrit un scénario non automatisable
+        (ex: expiration de session côté serveur, email réel, SMS, CAPTCHA),
+        génère un test qui vérifie le comportement observable IMMÉDIATEMENT,
+        sans attente artificielle.
+    11. GENERATE ONLY the code between ```python ... ```.
+    12. NAVIGATION CATÉGORIE → SOUS-CATÉGORIE (CRITIQUE) :
+        Si le DOM SNAPSHOT contient "sub-category-item", l'URL cible est une PAGE DE
+        CATÉGORIE (pas une page produits). Tu DOIS encapsuler la navigation dans une
+        fonction helper ET l'appeler dans chaque test. CODE EXACT À UTILISER :
+
+        def _go_to_subcategory(driver):
+            \"\"\"No-op si déjà sur une page produits, sinon clique la première sous-catégorie.\"\"\"
+            try:
+                WebDriverWait(driver, 3).until(EC.presence_of_element_located((By.CSS_SELECTOR, ".product-item")))
+                return  # déjà sur une page produits
+            except Exception:
+                pass
+            subcategory = WebDriverWait(driver, 20).until(
+                EC.element_to_be_clickable(
+                    (By.XPATH, "(//div[contains(@class,'sub-category-item')]//a)[1]")
+                )
+            )
+            driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", subcategory)
+            try:
+                subcategory.click()
+            except (ElementClickInterceptedException, StaleElementReferenceException):
+                driver.execute_script("arguments[0].click();", subcategory)
+            WebDriverWait(driver, 20).until(
+                EC.presence_of_element_located((By.CSS_SELECTOR, ".product-item"))
+            )
+
+        UTILISATION dans chaque test :
+            driver.get("{url_cible}")
+            _go_to_subcategory(driver)
+            # maintenant .product-item est disponible (fonctionne sur /electronics ET /camera-photo)
+
+    13. ADD TO CART — PAGE DE LISTE (CRITIQUE) :
+        Certains produits n'ont PAS de bouton Add to cart sur leur page détail
+        (DisableBuyButton=true). TOUJOURS utiliser le bouton de la PAGE DE LISTE :
+        SÉLECTEUR OBLIGATOIRE : .product-item input[value='Add to cart']
+        NE JAMAIS naviguer vers la page détail pour chercher input.add-to-cart-button.
+        Exemple correct :
+            add_btn = WebDriverWait(driver, 20).until(
+                EC.element_to_be_clickable(
+                    (By.CSS_SELECTOR, ".product-item input[value='Add to cart']")
+                )
+            )
 
 selenium:
   browser: "chrome"

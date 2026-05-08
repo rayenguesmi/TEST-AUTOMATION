@@ -1,0 +1,520 @@
+{
+  "summary": {
+    "project_name": "Demo Web Shop \u2013 Module Electronics",
+    "url_cible": "https://demowebshop.tricentis.com/electronics",
+    "total_tests": 51,
+    "passed": 29,
+    "failed": 22,
+    "errors": 0,
+    "duration_seconds": 486.26,
+    "timestamp": "2026-04-30 20:25:50"
+  },
+  "features_with_results": [
+    {
+      "id": "F-001",
+      "title": "Affichage des produits Electronics",
+      "description": "L'utilisateur peut visualiser la liste des produits \u00e9lectroniques disponibles.",
+      "status": "PARTIAL",
+      "tests": [
+        {
+          "id": "products",
+          "name": "test_products_list_is_displayed",
+          "classname": "tests.test_CT_001_cas_positif___navigation_entre_les_pages",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 9.997,
+          "message_erreur": "tests\\test_CT_001_cas_positif___navigation_entre_les_pages.py:54: in test_products_list_is_displayed\n    assert name_text, \"Nom produit vide\"\nE   AssertionError: Nom produit vide\nE   assert ''",
+          "screenshot_path": "../screenshots/products_failure.png"
+        },
+        {
+          "id": "product",
+          "name": "test_product_image_present",
+          "classname": "tests.test_CT_001_cas_positif___navigation_entre_les_pages",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 8.841,
+          "message_erreur": null,
+          "screenshot_path": null
+        },
+        {
+          "id": "invalid",
+          "name": "test_invalid_url_shows_no_products",
+          "classname": "tests.test_CT_001_cas_positif___navigation_entre_les_pages",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 14.49,
+          "message_erreur": null,
+          "screenshot_path": null
+        },
+        {
+          "id": "products",
+          "name": "test_products_list_is_displayed",
+          "classname": "tests.test_CT_001_generated_test_case",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 9.984,
+          "message_erreur": "tests\\test_CT_001_generated_test_case.py:54: in test_products_list_is_displayed\n    assert name_text, \"Nom produit vide\"\nE   AssertionError: Nom produit vide\nE   assert ''",
+          "screenshot_path": "../screenshots/products_failure.png"
+        },
+        {
+          "id": "product",
+          "name": "test_product_image_present",
+          "classname": "tests.test_CT_001_generated_test_case",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 9.473,
+          "message_erreur": null,
+          "screenshot_path": null
+        },
+        {
+          "id": "invalid",
+          "name": "test_invalid_url_shows_no_products",
+          "classname": "tests.test_CT_001_generated_test_case",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 13.945,
+          "message_erreur": null,
+          "screenshot_path": null
+        },
+        {
+          "id": "search",
+          "name": "test_search_returns_results",
+          "classname": "tests.test_CT_001_recherche_produit_existant",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 10.154,
+          "message_erreur": "tests\\test_CT_001_recherche_produit_existant.py:51: in test_search_returns_results\n    btn = driver.find_element(By.CSS_SELECTOR, \".search-box button[type='submit']\")\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\remote\\webdriver.py:823: in find_element\n    return self.execute(Command.FIND_ELEMENT, {\"using\": by, \"value\": value})[\"value\"]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\remote\\webdriver.py:450: in execute\n    self.error_handler.check_response(response)\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\remote\\errorhandler.py:232: in check_response\n    raise exception_class(message, screen, stacktrace)\nE   selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\".search-box button[type='submit']\"}\nE     (Session info: chrome=147.0.7727.137); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception\nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0xfbb373+10553]\nE   \tchromedriver!GetHandleVerifier [0xfbb4a4+10684]\nE   \tchromedriver!(No symbol) [0xdc1e10]\nE   \tchromedriver!(No symbol) [0xe0a9da]\nE   \tchromedriver!(No symbol) [0xe0ac7b]\nE   \tchromedriver!(No symbol) [0xe4d162]\nE   \tchromedriver!(No symbol) [0xe2d8b4]\nE   \tchromedriver!(No symbol) [0xe4aa36]\nE   \tchromedriver!(No symbol) [0xe2d606]\nE   \tchromedriver!(No symbol) [0xe00039]\nE   \tchromedriver!(No symbol) [0xe00df4]\nE   \tchromedriver!GetHandleVerifier [0x123ddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x123937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x1258215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0xfd4c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0xfdc6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0xfc3c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0xfc3e42+19022]\nE   \tchromedriver!GetHandleVerifier [0xfad45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/search_failure.png"
+        },
+        {
+          "id": "search",
+          "name": "test_search_no_results",
+          "classname": "tests.test_CT_001_recherche_produit_existant",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 9.032,
+          "message_erreur": "tests\\test_CT_001_recherche_produit_existant.py:70: in test_search_no_results\n    btn = driver.find_element(By.CSS_SELECTOR, \".search-box button[type='submit']\")\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\remote\\webdriver.py:823: in find_element\n    return self.execute(Command.FIND_ELEMENT, {\"using\": by, \"value\": value})[\"value\"]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\remote\\webdriver.py:450: in execute\n    self.error_handler.check_response(response)\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\remote\\errorhandler.py:232: in check_response\n    raise exception_class(message, screen, stacktrace)\nE   selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\".search-box button[type='submit']\"}\nE     (Session info: chrome=147.0.7727.137); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception\nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0xfbb373+10553]\nE   \tchromedriver!GetHandleVerifier [0xfbb4a4+10684]\nE   \tchromedriver!(No symbol) [0xdc1e10]\nE   \tchromedriver!(No symbol) [0xe0a9da]\nE   \tchromedriver!(No symbol) [0xe0ac7b]\nE   \tchromedriver!(No symbol) [0xe4d162]\nE   \tchromedriver!(No symbol) [0xe2d8b4]\nE   \tchromedriver!(No symbol) [0xe4aa36]\nE   \tchromedriver!(No symbol) [0xe2d606]\nE   \tchromedriver!(No symbol) [0xe00039]\nE   \tchromedriver!(No symbol) [0xe00df4]\nE   \tchromedriver!GetHandleVerifier [0x123ddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x123937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x1258215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0xfd4c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0xfdc6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0xfc3c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0xfc3e42+19022]\nE   \tchromedriver!GetHandleVerifier [0xfad45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/search_failure.png"
+        },
+        {
+          "id": "search",
+          "name": "test_search_with_partial_keyword",
+          "classname": "tests.test_CT_001_recherche_produit_existant",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 5.521,
+          "message_erreur": "tests\\test_CT_001_recherche_produit_existant.py:88: in test_search_with_partial_keyword\n    btn = driver.find_element(By.CSS_SELECTOR, \".search-box button[type='submit']\")\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\remote\\webdriver.py:823: in find_element\n    return self.execute(Command.FIND_ELEMENT, {\"using\": by, \"value\": value})[\"value\"]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\remote\\webdriver.py:450: in execute\n    self.error_handler.check_response(response)\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\remote\\errorhandler.py:232: in check_response\n    raise exception_class(message, screen, stacktrace)\nE   selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\".search-box button[type='submit']\"}\nE     (Session info: chrome=147.0.7727.137); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception\nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0xfbb373+10553]\nE   \tchromedriver!GetHandleVerifier [0xfbb4a4+10684]\nE   \tchromedriver!(No symbol) [0xdc1e10]\nE   \tchromedriver!(No symbol) [0xe0a9da]\nE   \tchromedriver!(No symbol) [0xe0ac7b]\nE   \tchromedriver!(No symbol) [0xe4d162]\nE   \tchromedriver!(No symbol) [0xe2d8b4]\nE   \tchromedriver!(No symbol) [0xe4aa36]\nE   \tchromedriver!(No symbol) [0xe2d606]\nE   \tchromedriver!(No symbol) [0xe00039]\nE   \tchromedriver!(No symbol) [0xe00df4]\nE   \tchromedriver!GetHandleVerifier [0x123ddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x123937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x1258215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0xfd4c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0xfdc6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0xfc3c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0xfc3e42+19022]\nE   \tchromedriver!GetHandleVerifier [0xfad45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/search_failure.png"
+        },
+        {
+          "id": "sort",
+          "name": "test_sort_price_low_to_high",
+          "classname": "tests.test_CT_001_tri_par_prix_ascendant",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 6.236,
+          "message_erreur": null,
+          "screenshot_path": null
+        },
+        {
+          "id": "sort",
+          "name": "test_sort_price_high_to_low",
+          "classname": "tests.test_CT_001_tri_par_prix_ascendant",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 6.591,
+          "message_erreur": null,
+          "screenshot_path": null
+        },
+        {
+          "id": "sort",
+          "name": "test_sort_options_available",
+          "classname": "tests.test_CT_001_tri_par_prix_ascendant",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 5.93,
+          "message_erreur": null,
+          "screenshot_path": null
+        }
+      ]
+    },
+    {
+      "id": "F-002",
+      "title": "Navigation vers d\u00e9tail produit",
+      "description": "L'utilisateur peut consulter les d\u00e9tails d\u2019un produit.",
+      "status": "PARTIAL",
+      "tests": [
+        {
+          "id": "products",
+          "name": "test_products_list_is_displayed",
+          "classname": "tests.test_CT_002_cas_n\u00e9gatif___acc\u00e8s_\u00e0_une_page_inexistan",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 10.685,
+          "message_erreur": "tests\\test_CT_002_cas_n\u00e9gatif___acc\u00e8s_\u00e0_une_page_inexistan.py:54: in test_products_list_is_displayed\n    assert name_text, \"Nom produit vide\"\nE   AssertionError: Nom produit vide\nE   assert ''",
+          "screenshot_path": "../screenshots/products_failure.png"
+        },
+        {
+          "id": "product",
+          "name": "test_product_image_present",
+          "classname": "tests.test_CT_002_cas_n\u00e9gatif___acc\u00e8s_\u00e0_une_page_inexistan",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 9.259,
+          "message_erreur": null,
+          "screenshot_path": null
+        },
+        {
+          "id": "invalid",
+          "name": "test_invalid_url_shows_no_products",
+          "classname": "tests.test_CT_002_cas_n\u00e9gatif___acc\u00e8s_\u00e0_une_page_inexistan",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 14.027,
+          "message_erreur": null,
+          "screenshot_path": null
+        },
+        {
+          "id": "products",
+          "name": "test_products_list_is_displayed",
+          "classname": "tests.test_CT_002_generated_test_case",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 10.789,
+          "message_erreur": "tests\\test_CT_002_generated_test_case.py:54: in test_products_list_is_displayed\n    assert name_text, \"Nom produit vide\"\nE   AssertionError: Nom produit vide\nE   assert ''",
+          "screenshot_path": "../screenshots/products_failure.png"
+        },
+        {
+          "id": "product",
+          "name": "test_product_image_present",
+          "classname": "tests.test_CT_002_generated_test_case",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 9.526,
+          "message_erreur": null,
+          "screenshot_path": null
+        },
+        {
+          "id": "invalid",
+          "name": "test_invalid_url_shows_no_products",
+          "classname": "tests.test_CT_002_generated_test_case",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 13.975,
+          "message_erreur": null,
+          "screenshot_path": null
+        },
+        {
+          "id": "search",
+          "name": "test_search_returns_results",
+          "classname": "tests.test_CT_002_recherche_produit_inexistant",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 5.753,
+          "message_erreur": "tests\\test_CT_002_recherche_produit_inexistant.py:51: in test_search_returns_results\n    btn = driver.find_element(By.CSS_SELECTOR, \".search-box button[type='submit']\")\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\remote\\webdriver.py:823: in find_element\n    return self.execute(Command.FIND_ELEMENT, {\"using\": by, \"value\": value})[\"value\"]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\remote\\webdriver.py:450: in execute\n    self.error_handler.check_response(response)\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\remote\\errorhandler.py:232: in check_response\n    raise exception_class(message, screen, stacktrace)\nE   selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\".search-box button[type='submit']\"}\nE     (Session info: chrome=147.0.7727.137); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception\nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0xfbb373+10553]\nE   \tchromedriver!GetHandleVerifier [0xfbb4a4+10684]\nE   \tchromedriver!(No symbol) [0xdc1e10]\nE   \tchromedriver!(No symbol) [0xe0a9da]\nE   \tchromedriver!(No symbol) [0xe0ac7b]\nE   \tchromedriver!(No symbol) [0xe4d162]\nE   \tchromedriver!(No symbol) [0xe2d8b4]\nE   \tchromedriver!(No symbol) [0xe4aa36]\nE   \tchromedriver!(No symbol) [0xe2d606]\nE   \tchromedriver!(No symbol) [0xe00039]\nE   \tchromedriver!(No symbol) [0xe00df4]\nE   \tchromedriver!GetHandleVerifier [0x123ddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x123937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x1258215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0xfd4c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0xfdc6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0xfc3c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0xfc3e42+19022]\nE   \tchromedriver!GetHandleVerifier [0xfad45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/search_failure.png"
+        },
+        {
+          "id": "search",
+          "name": "test_search_no_results",
+          "classname": "tests.test_CT_002_recherche_produit_inexistant",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 5.987,
+          "message_erreur": "tests\\test_CT_002_recherche_produit_inexistant.py:70: in test_search_no_results\n    btn = driver.find_element(By.CSS_SELECTOR, \".search-box button[type='submit']\")\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\remote\\webdriver.py:823: in find_element\n    return self.execute(Command.FIND_ELEMENT, {\"using\": by, \"value\": value})[\"value\"]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\remote\\webdriver.py:450: in execute\n    self.error_handler.check_response(response)\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\remote\\errorhandler.py:232: in check_response\n    raise exception_class(message, screen, stacktrace)\nE   selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\".search-box button[type='submit']\"}\nE     (Session info: chrome=147.0.7727.137); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception\nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0xfbb373+10553]\nE   \tchromedriver!GetHandleVerifier [0xfbb4a4+10684]\nE   \tchromedriver!(No symbol) [0xdc1e10]\nE   \tchromedriver!(No symbol) [0xe0a9da]\nE   \tchromedriver!(No symbol) [0xe0ac7b]\nE   \tchromedriver!(No symbol) [0xe4d162]\nE   \tchromedriver!(No symbol) [0xe2d8b4]\nE   \tchromedriver!(No symbol) [0xe4aa36]\nE   \tchromedriver!(No symbol) [0xe2d606]\nE   \tchromedriver!(No symbol) [0xe00039]\nE   \tchromedriver!(No symbol) [0xe00df4]\nE   \tchromedriver!GetHandleVerifier [0x123ddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x123937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x1258215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0xfd4c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0xfdc6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0xfc3c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0xfc3e42+19022]\nE   \tchromedriver!GetHandleVerifier [0xfad45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/search_failure.png"
+        },
+        {
+          "id": "search",
+          "name": "test_search_with_partial_keyword",
+          "classname": "tests.test_CT_002_recherche_produit_inexistant",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 5.329,
+          "message_erreur": "tests\\test_CT_002_recherche_produit_inexistant.py:88: in test_search_with_partial_keyword\n    btn = driver.find_element(By.CSS_SELECTOR, \".search-box button[type='submit']\")\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\remote\\webdriver.py:823: in find_element\n    return self.execute(Command.FIND_ELEMENT, {\"using\": by, \"value\": value})[\"value\"]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\remote\\webdriver.py:450: in execute\n    self.error_handler.check_response(response)\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\remote\\errorhandler.py:232: in check_response\n    raise exception_class(message, screen, stacktrace)\nE   selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\".search-box button[type='submit']\"}\nE     (Session info: chrome=147.0.7727.137); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception\nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0xfbb373+10553]\nE   \tchromedriver!GetHandleVerifier [0xfbb4a4+10684]\nE   \tchromedriver!(No symbol) [0xdc1e10]\nE   \tchromedriver!(No symbol) [0xe0a9da]\nE   \tchromedriver!(No symbol) [0xe0ac7b]\nE   \tchromedriver!(No symbol) [0xe4d162]\nE   \tchromedriver!(No symbol) [0xe2d8b4]\nE   \tchromedriver!(No symbol) [0xe4aa36]\nE   \tchromedriver!(No symbol) [0xe2d606]\nE   \tchromedriver!(No symbol) [0xe00039]\nE   \tchromedriver!(No symbol) [0xe00df4]\nE   \tchromedriver!GetHandleVerifier [0x123ddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x123937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x1258215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0xfd4c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0xfdc6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0xfc3c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0xfc3e42+19022]\nE   \tchromedriver!GetHandleVerifier [0xfad45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/search_failure.png"
+        },
+        {
+          "id": "sort",
+          "name": "test_sort_price_low_to_high",
+          "classname": "tests.test_CT_002_tri_par_prix_descendant",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 6.445,
+          "message_erreur": null,
+          "screenshot_path": null
+        },
+        {
+          "id": "sort",
+          "name": "test_sort_price_high_to_low",
+          "classname": "tests.test_CT_002_tri_par_prix_descendant",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 6.746,
+          "message_erreur": null,
+          "screenshot_path": null
+        },
+        {
+          "id": "sort",
+          "name": "test_sort_options_available",
+          "classname": "tests.test_CT_002_tri_par_prix_descendant",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 6.563,
+          "message_erreur": null,
+          "screenshot_path": null
+        }
+      ]
+    },
+    {
+      "id": "F-003",
+      "title": "Ajout au panier",
+      "description": "L'utilisateur peut ajouter un produit \u00e9lectronique au panier.",
+      "status": "PARTIAL",
+      "tests": [
+        {
+          "id": "products",
+          "name": "test_products_list_is_displayed",
+          "classname": "tests.test_CT_003_cas_n\u00e9gatif___utilisation_de_caract\u00e8res_",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 9.629,
+          "message_erreur": "tests\\test_CT_003_cas_n\u00e9gatif___utilisation_de_caract\u00e8res_.py:54: in test_products_list_is_displayed\n    assert name_text, \"Nom produit vide\"\nE   AssertionError: Nom produit vide\nE   assert ''",
+          "screenshot_path": "../screenshots/products_failure.png"
+        },
+        {
+          "id": "product",
+          "name": "test_product_image_present",
+          "classname": "tests.test_CT_003_cas_n\u00e9gatif___utilisation_de_caract\u00e8res_",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 8.952,
+          "message_erreur": null,
+          "screenshot_path": null
+        },
+        {
+          "id": "invalid",
+          "name": "test_invalid_url_shows_no_products",
+          "classname": "tests.test_CT_003_cas_n\u00e9gatif___utilisation_de_caract\u00e8res_",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 14.039,
+          "message_erreur": null,
+          "screenshot_path": null
+        },
+        {
+          "id": "products",
+          "name": "test_products_list_is_displayed",
+          "classname": "tests.test_CT_003_generated_test_case",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 8.858,
+          "message_erreur": "tests\\test_CT_003_generated_test_case.py:54: in test_products_list_is_displayed\n    assert name_text, \"Nom produit vide\"\nE   AssertionError: Nom produit vide\nE   assert ''",
+          "screenshot_path": "../screenshots/products_failure.png"
+        },
+        {
+          "id": "product",
+          "name": "test_product_image_present",
+          "classname": "tests.test_CT_003_generated_test_case",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 9.787,
+          "message_erreur": null,
+          "screenshot_path": null
+        },
+        {
+          "id": "invalid",
+          "name": "test_invalid_url_shows_no_products",
+          "classname": "tests.test_CT_003_generated_test_case",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 14.244,
+          "message_erreur": null,
+          "screenshot_path": null
+        },
+        {
+          "id": "search",
+          "name": "test_search_returns_results",
+          "classname": "tests.test_CT_003_recherche_avec_des_caract\u00e8res_sp\u00e9ciaux",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 5.822,
+          "message_erreur": "tests\\test_CT_003_recherche_avec_des_caract\u00e8res_sp\u00e9ciaux.py:51: in test_search_returns_results\n    btn = driver.find_element(By.CSS_SELECTOR, \".search-box button[type='submit']\")\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\remote\\webdriver.py:823: in find_element\n    return self.execute(Command.FIND_ELEMENT, {\"using\": by, \"value\": value})[\"value\"]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\remote\\webdriver.py:450: in execute\n    self.error_handler.check_response(response)\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\remote\\errorhandler.py:232: in check_response\n    raise exception_class(message, screen, stacktrace)\nE   selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\".search-box button[type='submit']\"}\nE     (Session info: chrome=147.0.7727.137); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception\nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0xfbb373+10553]\nE   \tchromedriver!GetHandleVerifier [0xfbb4a4+10684]\nE   \tchromedriver!(No symbol) [0xdc1e10]\nE   \tchromedriver!(No symbol) [0xe0a9da]\nE   \tchromedriver!(No symbol) [0xe0ac7b]\nE   \tchromedriver!(No symbol) [0xe4d162]\nE   \tchromedriver!(No symbol) [0xe2d8b4]\nE   \tchromedriver!(No symbol) [0xe4aa36]\nE   \tchromedriver!(No symbol) [0xe2d606]\nE   \tchromedriver!(No symbol) [0xe00039]\nE   \tchromedriver!(No symbol) [0xe00df4]\nE   \tchromedriver!GetHandleVerifier [0x123ddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x123937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x1258215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0xfd4c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0xfdc6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0xfc3c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0xfc3e42+19022]\nE   \tchromedriver!GetHandleVerifier [0xfad45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/search_failure.png"
+        },
+        {
+          "id": "search",
+          "name": "test_search_no_results",
+          "classname": "tests.test_CT_003_recherche_avec_des_caract\u00e8res_sp\u00e9ciaux",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 5.788,
+          "message_erreur": "tests\\test_CT_003_recherche_avec_des_caract\u00e8res_sp\u00e9ciaux.py:70: in test_search_no_results\n    btn = driver.find_element(By.CSS_SELECTOR, \".search-box button[type='submit']\")\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\remote\\webdriver.py:823: in find_element\n    return self.execute(Command.FIND_ELEMENT, {\"using\": by, \"value\": value})[\"value\"]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\remote\\webdriver.py:450: in execute\n    self.error_handler.check_response(response)\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\remote\\errorhandler.py:232: in check_response\n    raise exception_class(message, screen, stacktrace)\nE   selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\".search-box button[type='submit']\"}\nE     (Session info: chrome=147.0.7727.137); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception\nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0xfbb373+10553]\nE   \tchromedriver!GetHandleVerifier [0xfbb4a4+10684]\nE   \tchromedriver!(No symbol) [0xdc1e10]\nE   \tchromedriver!(No symbol) [0xe0a9da]\nE   \tchromedriver!(No symbol) [0xe0ac7b]\nE   \tchromedriver!(No symbol) [0xe4d162]\nE   \tchromedriver!(No symbol) [0xe2d8b4]\nE   \tchromedriver!(No symbol) [0xe4aa36]\nE   \tchromedriver!(No symbol) [0xe2d606]\nE   \tchromedriver!(No symbol) [0xe00039]\nE   \tchromedriver!(No symbol) [0xe00df4]\nE   \tchromedriver!GetHandleVerifier [0x123ddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x123937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x1258215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0xfd4c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0xfdc6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0xfc3c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0xfc3e42+19022]\nE   \tchromedriver!GetHandleVerifier [0xfad45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/search_failure.png"
+        },
+        {
+          "id": "search",
+          "name": "test_search_with_partial_keyword",
+          "classname": "tests.test_CT_003_recherche_avec_des_caract\u00e8res_sp\u00e9ciaux",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 6.63,
+          "message_erreur": "tests\\test_CT_003_recherche_avec_des_caract\u00e8res_sp\u00e9ciaux.py:88: in test_search_with_partial_keyword\n    btn = driver.find_element(By.CSS_SELECTOR, \".search-box button[type='submit']\")\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\remote\\webdriver.py:823: in find_element\n    return self.execute(Command.FIND_ELEMENT, {\"using\": by, \"value\": value})[\"value\"]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\remote\\webdriver.py:450: in execute\n    self.error_handler.check_response(response)\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\remote\\errorhandler.py:232: in check_response\n    raise exception_class(message, screen, stacktrace)\nE   selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\".search-box button[type='submit']\"}\nE     (Session info: chrome=147.0.7727.137); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception\nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0xfbb373+10553]\nE   \tchromedriver!GetHandleVerifier [0xfbb4a4+10684]\nE   \tchromedriver!(No symbol) [0xdc1e10]\nE   \tchromedriver!(No symbol) [0xe0a9da]\nE   \tchromedriver!(No symbol) [0xe0ac7b]\nE   \tchromedriver!(No symbol) [0xe4d162]\nE   \tchromedriver!(No symbol) [0xe2d8b4]\nE   \tchromedriver!(No symbol) [0xe4aa36]\nE   \tchromedriver!(No symbol) [0xe2d606]\nE   \tchromedriver!(No symbol) [0xe00039]\nE   \tchromedriver!(No symbol) [0xe00df4]\nE   \tchromedriver!GetHandleVerifier [0x123ddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x123937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x1258215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0xfd4c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0xfdc6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0xfc3c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0xfc3e42+19022]\nE   \tchromedriver!GetHandleVerifier [0xfad45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/search_failure.png"
+        },
+        {
+          "id": "sort",
+          "name": "test_sort_price_low_to_high",
+          "classname": "tests.test_CT_003_tri_par_nom",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 6.578,
+          "message_erreur": null,
+          "screenshot_path": null
+        },
+        {
+          "id": "sort",
+          "name": "test_sort_price_high_to_low",
+          "classname": "tests.test_CT_003_tri_par_nom",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 34.522,
+          "message_erreur": "tests\\test_CT_003_tri_par_nom.py:83: in test_sort_price_high_to_low\n    _go_to_sort_page(driver)\ntests\\test_CT_003_tri_par_nom.py:48: in _go_to_sort_page\n    driver.get(SORT_PAGE)\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\remote\\webdriver.py:470: in get\n    self.execute(Command.GET, {\"url\": url})\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\remote\\webdriver.py:450: in execute\n    self.error_handler.check_response(response)\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\remote\\errorhandler.py:232: in check_response\n    raise exception_class(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: timeout: Timed out receiving message from renderer: -0.008\nE     (Session info: chrome=147.0.7727.137)\nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0xfbb373+10553]\nE   \tchromedriver!GetHandleVerifier [0xfbb4a4+10684]\nE   \tchromedriver!(No symbol) [0xdc1e10]\nE   \tchromedriver!(No symbol) [0xdb21b3]\nE   \tchromedriver!(No symbol) [0xdb1ee5]\nE   \tchromedriver!(No symbol) [0xdafff8]\nE   \tchromedriver!(No symbol) [0xdb0846]\nE   \tchromedriver!(No symbol) [0xdbd6bb]\nE   \tchromedriver!(No symbol) [0xdcf45e]\nE   \tchromedriver!(No symbol) [0xdd4eb6]\nE   \tchromedriver!(No symbol) [0xdb0ecc]\nE   \tchromedriver!(No symbol) [0xdcf1be]\nE   \tchromedriver!(No symbol) [0xe4a946]\nE   \tchromedriver!(No symbol) [0xe2d606]\nE   \tchromedriver!(No symbol) [0xe00039]\nE   \tchromedriver!(No symbol) [0xe00df4]\nE   \tchromedriver!GetHandleVerifier [0x123ddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x123937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x1258215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0xfd4c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0xfdc6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0xfc3c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0xfc3e42+19022]\nE   \tchromedriver!GetHandleVerifier [0xfad45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/sort_failure.png"
+        },
+        {
+          "id": "sort",
+          "name": "test_sort_options_available",
+          "classname": "tests.test_CT_003_tri_par_nom",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 6.35,
+          "message_erreur": null,
+          "screenshot_path": null
+        }
+      ]
+    },
+    {
+      "id": "F-004",
+      "title": "Filtrage / Tri des produits",
+      "description": "L'utilisateur peut trier les produits.",
+      "status": "PARTIAL",
+      "tests": [
+        {
+          "id": "products",
+          "name": "test_products_list_is_displayed",
+          "classname": "tests.test_CT_004_cas_edge_case___navigation_\u00e0_la_premi\u00e8re",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 9.431,
+          "message_erreur": "tests\\test_CT_004_cas_edge_case___navigation_\u00e0_la_premi\u00e8re.py:54: in test_products_list_is_displayed\n    assert name_text, \"Nom produit vide\"\nE   AssertionError: Nom produit vide\nE   assert ''",
+          "screenshot_path": "../screenshots/products_failure.png"
+        },
+        {
+          "id": "product",
+          "name": "test_product_image_present",
+          "classname": "tests.test_CT_004_cas_edge_case___navigation_\u00e0_la_premi\u00e8re",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 9.367,
+          "message_erreur": null,
+          "screenshot_path": null
+        },
+        {
+          "id": "invalid",
+          "name": "test_invalid_url_shows_no_products",
+          "classname": "tests.test_CT_004_cas_edge_case___navigation_\u00e0_la_premi\u00e8re",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 14.199,
+          "message_erreur": null,
+          "screenshot_path": null
+        },
+        {
+          "id": "products",
+          "name": "test_products_list_is_displayed",
+          "classname": "tests.test_CT_004_generated_test_case",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 10.048,
+          "message_erreur": "tests\\test_CT_004_generated_test_case.py:54: in test_products_list_is_displayed\n    assert name_text, \"Nom produit vide\"\nE   AssertionError: Nom produit vide\nE   assert ''",
+          "screenshot_path": "../screenshots/products_failure.png"
+        },
+        {
+          "id": "product",
+          "name": "test_product_image_present",
+          "classname": "tests.test_CT_004_generated_test_case",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 10.408,
+          "message_erreur": null,
+          "screenshot_path": null
+        },
+        {
+          "id": "invalid",
+          "name": "test_invalid_url_shows_no_products",
+          "classname": "tests.test_CT_004_generated_test_case",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 13.824,
+          "message_erreur": null,
+          "screenshot_path": null
+        },
+        {
+          "id": "sort",
+          "name": "test_sort_price_low_to_high",
+          "classname": "tests.test_CT_004_option_de_tri_invalide",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 9.558,
+          "message_erreur": null,
+          "screenshot_path": null
+        },
+        {
+          "id": "sort",
+          "name": "test_sort_price_high_to_low",
+          "classname": "tests.test_CT_004_option_de_tri_invalide",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 6.293,
+          "message_erreur": null,
+          "screenshot_path": null
+        },
+        {
+          "id": "sort",
+          "name": "test_sort_options_available",
+          "classname": "tests.test_CT_004_option_de_tri_invalide",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 5.274,
+          "message_erreur": null,
+          "screenshot_path": null
+        },
+        {
+          "id": "search",
+          "name": "test_search_returns_results",
+          "classname": "tests.test_CT_004_recherche_avec_des_espaces",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 5.534,
+          "message_erreur": "tests\\test_CT_004_recherche_avec_des_espaces.py:51: in test_search_returns_results\n    btn = driver.find_element(By.CSS_SELECTOR, \".search-box button[type='submit']\")\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\remote\\webdriver.py:823: in find_element\n    return self.execute(Command.FIND_ELEMENT, {\"using\": by, \"value\": value})[\"value\"]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\remote\\webdriver.py:450: in execute\n    self.error_handler.check_response(response)\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\remote\\errorhandler.py:232: in check_response\n    raise exception_class(message, screen, stacktrace)\nE   selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\".search-box button[type='submit']\"}\nE     (Session info: chrome=147.0.7727.137); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception\nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0xfbb373+10553]\nE   \tchromedriver!GetHandleVerifier [0xfbb4a4+10684]\nE   \tchromedriver!(No symbol) [0xdc1e10]\nE   \tchromedriver!(No symbol) [0xe0a9da]\nE   \tchromedriver!(No symbol) [0xe0ac7b]\nE   \tchromedriver!(No symbol) [0xe4d162]\nE   \tchromedriver!(No symbol) [0xe2d8b4]\nE   \tchromedriver!(No symbol) [0xe4aa36]\nE   \tchromedriver!(No symbol) [0xe2d606]\nE   \tchromedriver!(No symbol) [0xe00039]\nE   \tchromedriver!(No symbol) [0xe00df4]\nE   \tchromedriver!GetHandleVerifier [0x123ddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x123937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x1258215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0xfd4c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0xfdc6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0xfc3c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0xfc3e42+19022]\nE   \tchromedriver!GetHandleVerifier [0xfad45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/search_failure.png"
+        },
+        {
+          "id": "search",
+          "name": "test_search_no_results",
+          "classname": "tests.test_CT_004_recherche_avec_des_espaces",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 5.797,
+          "message_erreur": "tests\\test_CT_004_recherche_avec_des_espaces.py:70: in test_search_no_results\n    btn = driver.find_element(By.CSS_SELECTOR, \".search-box button[type='submit']\")\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\remote\\webdriver.py:823: in find_element\n    return self.execute(Command.FIND_ELEMENT, {\"using\": by, \"value\": value})[\"value\"]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\remote\\webdriver.py:450: in execute\n    self.error_handler.check_response(response)\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\remote\\errorhandler.py:232: in check_response\n    raise exception_class(message, screen, stacktrace)\nE   selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\".search-box button[type='submit']\"}\nE     (Session info: chrome=147.0.7727.137); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception\nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0xfbb373+10553]\nE   \tchromedriver!GetHandleVerifier [0xfbb4a4+10684]\nE   \tchromedriver!(No symbol) [0xdc1e10]\nE   \tchromedriver!(No symbol) [0xe0a9da]\nE   \tchromedriver!(No symbol) [0xe0ac7b]\nE   \tchromedriver!(No symbol) [0xe4d162]\nE   \tchromedriver!(No symbol) [0xe2d8b4]\nE   \tchromedriver!(No symbol) [0xe4aa36]\nE   \tchromedriver!(No symbol) [0xe2d606]\nE   \tchromedriver!(No symbol) [0xe00039]\nE   \tchromedriver!(No symbol) [0xe00df4]\nE   \tchromedriver!GetHandleVerifier [0x123ddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x123937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x1258215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0xfd4c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0xfdc6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0xfc3c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0xfc3e42+19022]\nE   \tchromedriver!GetHandleVerifier [0xfad45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/search_failure.png"
+        },
+        {
+          "id": "search",
+          "name": "test_search_with_partial_keyword",
+          "classname": "tests.test_CT_004_recherche_avec_des_espaces",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 6.24,
+          "message_erreur": "tests\\test_CT_004_recherche_avec_des_espaces.py:88: in test_search_with_partial_keyword\n    btn = driver.find_element(By.CSS_SELECTOR, \".search-box button[type='submit']\")\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\remote\\webdriver.py:823: in find_element\n    return self.execute(Command.FIND_ELEMENT, {\"using\": by, \"value\": value})[\"value\"]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\remote\\webdriver.py:450: in execute\n    self.error_handler.check_response(response)\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\remote\\errorhandler.py:232: in check_response\n    raise exception_class(message, screen, stacktrace)\nE   selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\".search-box button[type='submit']\"}\nE     (Session info: chrome=147.0.7727.137); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception\nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0xfbb373+10553]\nE   \tchromedriver!GetHandleVerifier [0xfbb4a4+10684]\nE   \tchromedriver!(No symbol) [0xdc1e10]\nE   \tchromedriver!(No symbol) [0xe0a9da]\nE   \tchromedriver!(No symbol) [0xe0ac7b]\nE   \tchromedriver!(No symbol) [0xe4d162]\nE   \tchromedriver!(No symbol) [0xe2d8b4]\nE   \tchromedriver!(No symbol) [0xe4aa36]\nE   \tchromedriver!(No symbol) [0xe2d606]\nE   \tchromedriver!(No symbol) [0xe00039]\nE   \tchromedriver!(No symbol) [0xe00df4]\nE   \tchromedriver!GetHandleVerifier [0x123ddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x123937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x1258215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0xfd4c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0xfdc6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0xfc3c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0xfc3e42+19022]\nE   \tchromedriver!GetHandleVerifier [0xfad45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/search_failure.png"
+        }
+      ]
+    },
+    {
+      "id": "F-005",
+      "title": "Pagination",
+      "description": "L'utilisateur peut naviguer entre les pages produits.",
+      "status": "PARTIAL",
+      "tests": [
+        {
+          "id": "products",
+          "name": "test_products_list_is_displayed",
+          "classname": "tests.test_CT_005_cas_edge_case___liste_vide",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 9.058,
+          "message_erreur": "tests\\test_CT_005_cas_edge_case___liste_vide.py:54: in test_products_list_is_displayed\n    assert name_text, \"Nom produit vide\"\nE   AssertionError: Nom produit vide\nE   assert ''",
+          "screenshot_path": "../screenshots/products_failure.png"
+        },
+        {
+          "id": "product",
+          "name": "test_product_image_present",
+          "classname": "tests.test_CT_005_cas_edge_case___liste_vide",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 9.393,
+          "message_erreur": null,
+          "screenshot_path": null
+        },
+        {
+          "id": "invalid",
+          "name": "test_invalid_url_shows_no_products",
+          "classname": "tests.test_CT_005_cas_edge_case___liste_vide",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 13.474,
+          "message_erreur": null,
+          "screenshot_path": null
+        }
+      ]
+    },
+    {
+      "id": "F-006",
+      "title": "Recherche produit (globale li\u00e9e)",
+      "description": "L'utilisateur peut rechercher un produit \u00e9lectronique.",
+      "status": "UNKNOWN",
+      "tests": []
+    }
+  ]
+}

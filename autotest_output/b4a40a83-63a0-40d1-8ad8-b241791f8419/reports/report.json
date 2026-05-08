@@ -1,0 +1,84 @@
+{
+  "summary": {
+    "project_name": "Demo Web Shop \u2013 Module Electronics",
+    "url_cible": "https://demowebshop.tricentis.com/electronics",
+    "total_tests": 18,
+    "passed": 12,
+    "failed": 6,
+    "errors": 0,
+    "duration_seconds": 226.3,
+    "timestamp": "2026-04-30 21:47:45"
+  },
+  "features_with_results": [
+    {
+      "id": "F-001",
+      "title": "Affichage des produits Electronics",
+      "description": "L'utilisateur peut visualiser la liste des produits \u00e9lectroniques disponibles.",
+      "status": "PARTIAL",
+      "tests": [
+        {
+          "id": "F-001",
+          "name": "test_products_list_is_displayed",
+          "classname": "tests.test_F_001_affichage_des_produits_electronics",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 10.372,
+          "message_erreur": "tests\\test_F_001_affichage_des_produits_electronics.py:54: in test_products_list_is_displayed\n    assert name_text, \"Nom produit vide\"\nE   AssertionError: Nom produit vide\nE   assert ''",
+          "screenshot_path": "../screenshots/F-001_failure.png"
+        },
+        {
+          "id": "F-001",
+          "name": "test_product_image_present",
+          "classname": "tests.test_F_001_affichage_des_produits_electronics",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 10.235,
+          "message_erreur": null,
+          "screenshot_path": null
+        },
+        {
+          "id": "F-001",
+          "name": "test_invalid_url_shows_no_products",
+          "classname": "tests.test_F_001_affichage_des_produits_electronics",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 14.861,
+          "message_erreur": null,
+          "screenshot_path": null
+        }
+      ]
+    },
+    {
+      "id": "F-002",
+      "title": "Navigation vers d\u00e9tail produit",
+      "description": "L'utilisateur peut consulter les d\u00e9tails d\u2019un produit.",
+      "status": "UNKNOWN",
+      "tests": []
+    },
+    {
+      "id": "F-003",
+      "title": "Ajout au panier",
+      "description": "L'utilisateur peut ajouter un produit \u00e9lectronique au panier.",
+      "status": "UNKNOWN",
+      "tests": []
+    },
+    {
+      "id": "F-004",
+      "title": "Filtrage / Tri des produits",
+      "description": "L'utilisateur peut trier les produits.",
+      "status": "UNKNOWN",
+      "tests": []
+    },
+    {
+      "id": "F-005",
+      "title": "Pagination",
+      "description": "L'utilisateur peut naviguer entre les pages produits.",
+      "status": "UNKNOWN",
+      "tests": []
+    },
+    {
+      "id": "F-006",
+      "title": "Recherche produit (globale li\u00e9e)",
+      "description": "L'utilisateur peut rechercher un produit \u00e9lectronique.",
+      "status": "UNKNOWN",
+      "tests": []
+    }
+  ]
+}

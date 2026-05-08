@@ -1,45 +1,45 @@
 {
   "summary": {
     "project_name": "Demo Web Shop \u2013 Module Electronics",
-    "url_cible": "https://demowebshop.tricentis.com/",
-    "total_tests": 15,
-    "passed": 12,
-    "failed": 2,
+    "url_cible": "https://demowebshop.tricentis.com/electronics",
+    "total_tests": 9,
+    "passed": 6,
+    "failed": 3,
     "errors": 0,
-    "duration_seconds": 251.29,
-    "timestamp": "2026-04-24 11:05:07"
+    "duration_seconds": 195.65,
+    "timestamp": "2026-04-28 21:01:19"
   },
   "features_with_results": [
     {
       "id": "F-001",
       "title": "Affichage des produits Electronics",
-      "description": "L'utilisateur peut visualiser la liste des produits \u00e9lectroniques disponibles.",
-      "status": "PASS",
+      "description": "L'utilisateur visualise la liste des produits \u00e9lectroniques.",
+      "status": "FAIL",
       "tests": [
         {
-          "id": "electronics",
-          "name": "test_electronics_page_loads",
-          "classname": "tests.test_CT_001_F001_generated_test_case.TestAffichageProduits",
+          "id": "F-001",
+          "name": "test_products_list_is_displayed",
+          "classname": "tests.test_F_001_affichage_des_produits_electronics",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 10.294,
+          "message_erreur": "tests\\test_F_001_affichage_des_produits_electronics.py:54: in test_products_list_is_displayed\n    assert name_text, \"Nom produit vide\"\nE   AssertionError: Nom produit vide\nE   assert ''",
+          "screenshot_path": "../screenshots/F-001_failure.png"
+        },
+        {
+          "id": "F-001",
+          "name": "test_product_image_present",
+          "classname": "tests.test_F_001_affichage_des_produits_electronics",
           "statut": "PASS",
-          "dur\u00e9e_secondes": 78.644,
+          "dur\u00e9e_secondes": 9.559,
           "message_erreur": null,
           "screenshot_path": null
         },
         {
-          "id": "subcategory",
-          "name": "test_subcategory_links_are_clickable",
-          "classname": "tests.test_CT_001_F001_generated_test_case.TestAffichageProduits",
+          "id": "F-001",
+          "name": "test_invalid_url_shows_no_products",
+          "classname": "tests.test_F_001_affichage_des_produits_electronics",
           "statut": "PASS",
-          "dur\u00e9e_secondes": 12.018,
-          "message_erreur": null,
-          "screenshot_path": null
-        },
-        {
-          "id": "cell",
-          "name": "test_cell_phones_products_listed",
-          "classname": "tests.test_CT_001_F001_generated_test_case.TestAffichageProduits",
-          "statut": "PASS",
-          "dur\u00e9e_secondes": 8.734,
+          "dur\u00e9e_secondes": 14.531,
           "message_erreur": null,
           "screenshot_path": null
         }
@@ -47,25 +47,34 @@
     },
     {
       "id": "F-002",
-      "title": "Navigation vers d\u00e9tail produit",
-      "description": "L'utilisateur peut consulter les d\u00e9tails d\u2019un produit.",
+      "title": "Tri des produits par prix",
+      "description": "L'utilisateur trie les produits par prix croissant.",
       "status": "PASS",
       "tests": [
         {
-          "id": "click",
-          "name": "test_click_product_shows_detail",
-          "classname": "tests.test_CT_001_F002_generated_test_case.TestNavigationDetailProduit",
+          "id": "F-002",
+          "name": "test_sort_price_low_to_high",
+          "classname": "tests.test_F_002_tri_des_produits_par_prix",
           "statut": "PASS",
-          "dur\u00e9e_secondes": 10.943,
+          "dur\u00e9e_secondes": 6.568,
           "message_erreur": null,
           "screenshot_path": null
         },
         {
-          "id": "product",
-          "name": "test_product_detail_has_add_to_cart",
-          "classname": "tests.test_CT_001_F002_generated_test_case.TestNavigationDetailProduit",
+          "id": "F-002",
+          "name": "test_sort_price_high_to_low",
+          "classname": "tests.test_F_002_tri_des_produits_par_prix",
           "statut": "PASS",
-          "dur\u00e9e_secondes": 8.481,
+          "dur\u00e9e_secondes": 6.712,
+          "message_erreur": null,
+          "screenshot_path": null
+        },
+        {
+          "id": "F-002",
+          "name": "test_sort_options_available",
+          "classname": "tests.test_F_002_tri_des_produits_par_prix",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 6.558,
           "message_erreur": null,
           "screenshot_path": null
         }
@@ -74,102 +83,33 @@
     {
       "id": "F-003",
       "title": "Ajout au panier",
-      "description": "L'utilisateur peut ajouter un produit \u00e9lectronique au panier.",
-      "status": "PASS",
+      "description": "L'utilisateur ajoute un produit au panier depuis la page Electronics.",
+      "status": "FAIL",
       "tests": [
         {
-          "id": "add",
-          "name": "test_add_product_to_cart",
-          "classname": "tests.test_CT_001_F003_ajout_au_panier___flux_nominal.TestAjoutAuPanier",
-          "statut": "PASS",
-          "dur\u00e9e_secondes": 9.067,
-          "message_erreur": null,
-          "screenshot_path": null
+          "id": "F-003",
+          "name": "test_add_to_cart_updates_counter",
+          "classname": "tests.test_F_003_ajout_au_panier",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 51.688,
+          "message_erreur": "tests\\test_F_003_ajout_au_panier.py:63: in test_add_to_cart_updates_counter\n    add_btn = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Roaming\\Python\\Python314\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0xacb373+10553]\nE   \tchromedriver!GetHandleVerifier [0xacb4a4+10684]\nE   \tchromedriver!(No symbol) [0x8d1e10]\nE   \tchromedriver!(No symbol) [0x91a9da]\nE   \tchromedriver!(No symbol) [0x91ac7b]\nE   \tchromedriver!(No symbol) [0x95d162]\nE   \tchromedriver!(No symbol) [0x93d8b4]\nE   \tchromedriver!(No symbol) [0x95aa36]\nE   \tchromedriver!(No symbol) [0x93d606]\nE   \tchromedriver!(No symbol) [0x910039]\nE   \tchromedriver!(No symbol) [0x910df4]\nE   \tchromedriver!GetHandleVerifier [0xd4ddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0xd4937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0xd68215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0xae4c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0xaec6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0xad3c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0xad3e42+19022]\nE   \tchromedriver!GetHandleVerifier [0xabd45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/F-003_failure.png"
         },
         {
-          "id": "cart",
-          "name": "test_cart_link_visible_after_add",
-          "classname": "tests.test_CT_001_F003_ajout_au_panier___flux_nominal.TestAjoutAuPanier",
-          "statut": "PASS",
-          "dur\u00e9e_secondes": 10.926,
-          "message_erreur": null,
-          "screenshot_path": null
-        }
-      ]
-    },
-    {
-      "id": "F-004",
-      "title": "Filtrage / Tri des produits",
-      "description": "L'utilisateur peut trier les produits.",
-      "status": "PASS",
-      "tests": [
-        {
-          "id": "sort",
-          "name": "test_sort_by_price_ascending",
-          "classname": "tests.test_CT_001_F004_tri_par_prix_ascendant.TestFiltrageTriProduits",
-          "statut": "PASS",
-          "dur\u00e9e_secondes": 8.018,
-          "message_erreur": null,
-          "screenshot_path": null
+          "id": "F-003",
+          "name": "test_add_to_cart_button_visible",
+          "classname": "tests.test_F_003_ajout_au_panier",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 52.163,
+          "message_erreur": "tests\\test_F_003_ajout_au_panier.py:93: in test_add_to_cart_button_visible\n    add_btn = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Roaming\\Python\\Python314\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0xacb373+10553]\nE   \tchromedriver!GetHandleVerifier [0xacb4a4+10684]\nE   \tchromedriver!(No symbol) [0x8d1e10]\nE   \tchromedriver!(No symbol) [0x91a9da]\nE   \tchromedriver!(No symbol) [0x91ac7b]\nE   \tchromedriver!(No symbol) [0x95d162]\nE   \tchromedriver!(No symbol) [0x93d8b4]\nE   \tchromedriver!(No symbol) [0x95aa36]\nE   \tchromedriver!(No symbol) [0x93d606]\nE   \tchromedriver!(No symbol) [0x910039]\nE   \tchromedriver!(No symbol) [0x910df4]\nE   \tchromedriver!GetHandleVerifier [0xd4ddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0xd4937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0xd68215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0xae4c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0xaec6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0xad3c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0xad3e42+19022]\nE   \tchromedriver!GetHandleVerifier [0xabd45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/F-003_failure.png"
         },
         {
-          "id": "sort",
-          "name": "test_sort_by_name",
-          "classname": "tests.test_CT_001_F004_tri_par_prix_ascendant.TestFiltrageTriProduits",
+          "id": "F-003",
+          "name": "test_cart_counter_visible",
+          "classname": "tests.test_F_003_ajout_au_panier",
           "statut": "PASS",
-          "dur\u00e9e_secondes": 9.865,
-          "message_erreur": null,
-          "screenshot_path": null
-        }
-      ]
-    },
-    {
-      "id": "F-005",
-      "title": "Pagination",
-      "description": "L'utilisateur peut naviguer entre les pages produits.",
-      "status": "PASS",
-      "tests": [
-        {
-          "id": "next",
-          "name": "test_next_button_navigates",
-          "classname": "tests.test_CT_001_F005_generated_test_case.TestPagination",
-          "statut": "PASS",
-          "dur\u00e9e_secondes": 27.983,
-          "message_erreur": null,
-          "screenshot_path": null
-        },
-        {
-          "id": "invalid",
-          "name": "test_invalid_page_url",
-          "classname": "tests.test_CT_001_F005_generated_test_case.TestPagination",
-          "statut": "PASS",
-          "dur\u00e9e_secondes": 7.486,
-          "message_erreur": null,
-          "screenshot_path": null
-        }
-      ]
-    },
-    {
-      "id": "F-006",
-      "title": "Recherche produit (globale li\u00e9e)",
-      "description": "L'utilisateur peut rechercher un produit \u00e9lectronique.",
-      "status": "PASS",
-      "tests": [
-        {
-          "id": "search",
-          "name": "test_search_existing_product",
-          "classname": "tests.test_CT_001_F006_recherche_produit_existant.TestRechercheProduit",
-          "statut": "PASS",
-          "dur\u00e9e_secondes": 8.21,
-          "message_erreur": null,
-          "screenshot_path": null
-        },
-        {
-          "id": "search",
-          "name": "test_search_nonexistent_product",
-          "classname": "tests.test_CT_001_F006_recherche_produit_existant.TestRechercheProduit",
-          "statut": "PASS",
-          "dur\u00e9e_secondes": 9.598,
+          "dur\u00e9e_secondes": 35.231,
           "message_erreur": null,
           "screenshot_path": null
         }

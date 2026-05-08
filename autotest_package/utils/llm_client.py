@@ -22,7 +22,7 @@ class LLMClient:
 
     def __init__(self, config_path: str, provider_override: str = None, api_key_override: str = None):
         """Initializes the LLM based on config."""
-        with open(config_path, 'r', encoding='utf-8') as f:
+        with open(config_path, 'r', encoding='utf-8-sig') as f:
             config = yaml.safe_load(f)
         
         self.llm_config = config.get('llm', {})
@@ -74,10 +74,12 @@ class LLMClient:
                 api_key=api_key
             )
         elif self.provider == "ollama":
+            ollama_model = self.llm_config.get('ollama_model', 'llama3.2')
+            ollama_base  = self.llm_config.get('ollama_base_url', 'http://localhost:11434')
             self.llm = ChatOllama(
-                model=self.model,
+                model=ollama_model,
                 temperature=self.temperature,
-                base_url=self.llm_config.get('base_url', 'http://localhost:11434')
+                base_url=ollama_base,
             )
         else:
             raise ValueError(f"Unsupported provider: {self.provider}")

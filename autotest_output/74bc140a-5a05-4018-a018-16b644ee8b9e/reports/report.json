@@ -1,0 +1,35 @@
+{
+  "summary": {
+    "project_name": "Demo Web Shop \u2013 Module Electronics",
+    "url_cible": "https://demowebshop.tricentis.com/electronics",
+    "total_tests": 0,
+    "passed": 0,
+    "failed": 0,
+    "errors": 0,
+    "duration_seconds": 180.02,
+    "timestamp": "2026-04-30 13:56:24"
+  },
+  "features_with_results": [
+    {
+      "id": "F-001",
+      "title": "Affichage des produits Electronics",
+      "description": "L'utilisateur visualise la liste des produits \u00e9lectroniques.",
+      "status": "UNKNOWN",
+      "tests": []
+    },
+    {
+      "id": "F-002",
+      "title": "Tri des produits par prix",
+      "description": "L'utilisateur trie les produits par prix croissant.",
+      "status": "UNKNOWN",
+      "tests": []
+    },
+    {
+      "id": "F-003",
+      "title": "Ajout au panier",
+      "description": "L'utilisateur ajoute un produit au panier depuis la page Electronics.",
+      "status": "UNKNOWN",
+      "tests": []
+    }
+  ]
+}

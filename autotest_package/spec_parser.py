@@ -35,13 +35,13 @@ SPEC_SCHEMA = {
 class SpecParser:
     """Parses functional spec files into structured JSON."""
 
-    def __init__(self, config_path: str):
+    def __init__(self, config_path: str, provider: str = None, api_key: str = None):
         """Initializes parser with config and prompts."""
         with open(config_path, 'r', encoding='utf-8') as f:
             self.config = yaml.safe_load(f)
-        
+
         self.system_prompt = self.config['prompts']['spec_parsing']
-        self.llm_client = LLMClient(config_path)
+        self.llm_client = LLMClient(config_path, provider_override=provider, api_key_override=api_key)
 
     def parse(self, spec_file_path: str) -> Dict[str, Any]:
         """Loads spec file, extracts content with LLM, and validates."""

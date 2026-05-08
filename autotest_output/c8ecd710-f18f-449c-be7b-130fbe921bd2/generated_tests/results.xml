@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="11" skipped="0" tests="15" time="431.276" timestamp="2026-04-30T20:35:41.353636+01:00" hostname="DESKTOP-E5NKSEU"><testcase classname="tests.test_CT_001_generated_test_case" name="test_products_list_is_displayed" time="28.939"><failure message="selenium.common.exceptions.TimeoutException: Message: &#10;Stacktrace:&#10;&#09;chromedriver!GetHandleVerifier [0xfbb373+10553]&#10;&#09;chromedriver!GetHandleVerifier [0xfbb4a4+10684]&#10;&#09;chromedriver!(No symbol) [0xdc1e10]&#10;&#09;chromedriver!(No symbol) [0xe0a9da]&#10;&#09;chromedriver!(No symbol) [0xe0ac7b]&#10;&#09;chromedriver!(No symbol) [0xe4d162]&#10;&#09;chromedriver!(No symbol) [0xe2d8b4]&#10;&#09;chromedriver!(No symbol) [0xe4aa36]&#10;&#09;chromedriver!(No symbol) [0xe2d606]&#10;&#09;chromedriver!(No symbol) [0xe00039]&#10;&#09;chromedriver!(No symbol) [0xe00df4]&#10;&#09;chromedriver!GetHandleVerifier [0x123ddb4+292f94]&#10;&#09;chromedriver!GetHandleVerifier [0x123937d+28e55d]&#10;&#09;chromedriver!GetHandleVerifier [0x1258215+2ad3f5]&#10;&#09;chromedriver!GetHandleVerifier [0xfd4c18+29df8]&#10;&#09;chromedriver!GetHandleVerifier [0xfdc6fd+318dd]&#10;&#09;chromedriver!GetHandleVerifier [0xfc3c78+18e58]&#10;&#09;chromedriver!GetHandleVerifier [0xfc3e42+19022]&#10;&#09;chromedriver!GetHandleVerifier [0xfad45f+263f]&#10;&#09;KERNEL32!BaseThreadInitThunk [0x75e85d49+19]&#10;&#09;ntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]&#10;&#09;ntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]">tests\test_CT_001_generated_test_case.py:45: in test_products_list_is_displayed
+    _go_to_listing(driver, BASE_URL)
+tests\test_CT_001_generated_test_case.py:25: in _go_to_listing
+    sub = WebDriverWait(driver, 20).until(
+C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py:121: in until
+    raise TimeoutException(message, screen, stacktrace)
+E   selenium.common.exceptions.TimeoutException: Message: 
+E   Stacktrace:
+E   	chromedriver!GetHandleVerifier [0xfbb373+10553]
+E   	chromedriver!GetHandleVerifier [0xfbb4a4+10684]
+E   	chromedriver!(No symbol) [0xdc1e10]
+E   	chromedriver!(No symbol) [0xe0a9da]
+E   	chromedriver!(No symbol) [0xe0ac7b]
+E   	chromedriver!(No symbol) [0xe4d162]
+E   	chromedriver!(No symbol) [0xe2d8b4]
+E   	chromedriver!(No symbol) [0xe4aa36]
+E   	chromedriver!(No symbol) [0xe2d606]
+E   	chromedriver!(No symbol) [0xe00039]
+E   	chromedriver!(No symbol) [0xe00df4]
+E   	chromedriver!GetHandleVerifier [0x123ddb4+292f94]
+E   	chromedriver!GetHandleVerifier [0x123937d+28e55d]
+E   	chromedriver!GetHandleVerifier [0x1258215+2ad3f5]
+E   	chromedriver!GetHandleVerifier [0xfd4c18+29df8]
+E   	chromedriver!GetHandleVerifier [0xfdc6fd+318dd]
+E   	chromedriver!GetHandleVerifier [0xfc3c78+18e58]
+E   	chromedriver!GetHandleVerifier [0xfc3e42+19022]
+E   	chromedriver!GetHandleVerifier [0xfad45f+263f]
+E   	KERNEL32!BaseThreadInitThunk [0x75e85d49+19]
+E   	ntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]
+E   	ntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]</failure></testcase><testcase classname="tests.test_CT_001_generated_test_case" name="test_product_image_present" time="28.221"><failure message="selenium.common.exceptions.TimeoutException: Message: &#10;Stacktrace:&#10;&#09;chromedriver!GetHandleVerifier [0xfbb373+10553]&#10;&#09;chromedriver!GetHandleVerifier [0xfbb4a4+10684]&#10;&#09;chromedriver!(No symbol) [0xdc1e10]&#10;&#09;chromedriver!(No symbol) [0xe0a9da]&#10;&#09;chromedriver!(No symbol) [0xe0ac7b]&#10;&#09;chromedriver!(No symbol) [0xe4d162]&#10;&#09;chromedriver!(No symbol) [0xe2d8b4]&#10;&#09;chromedriver!(No symbol) [0xe4aa36]&#10;&#09;chromedriver!(No symbol) [0xe2d606]&#10;&#09;chromedriver!(No symbol) [0xe00039]&#10;&#09;chromedriver!(No symbol) [0xe00df4]&#10;&#09;chromedriver!GetHandleVerifier [0x123ddb4+292f94]&#10;&#09;chromedriver!GetHandleVerifier [0x123937d+28e55d]&#10;&#09;chromedriver!GetHandleVerifier [0x1258215+2ad3f5]&#10;&#09;chromedriver!GetHandleVerifier [0xfd4c18+29df8]&#10;&#09;chromedriver!GetHandleVerifier [0xfdc6fd+318dd]&#10;&#09;chromedriver!GetHandleVerifier [0xfc3c78+18e58]&#10;&#09;chromedriver!GetHandleVerifier [0xfc3e42+19022]&#10;&#09;chromedriver!GetHandleVerifier [0xfad45f+263f]&#10;&#09;KERNEL32!BaseThreadInitThunk [0x75e85d49+19]&#10;&#09;ntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]&#10;&#09;ntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]">tests\test_CT_001_generated_test_case.py:60: in test_product_image_present
+    _go_to_listing(driver, BASE_URL)
+tests\test_CT_001_generated_test_case.py:25: in _go_to_listing
+    sub = WebDriverWait(driver, 20).until(
+C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py:121: in until
+    raise TimeoutException(message, screen, stacktrace)
+E   selenium.common.exceptions.TimeoutException: Message: 
+E   Stacktrace:
+E   	chromedriver!GetHandleVerifier [0xfbb373+10553]
+E   	chromedriver!GetHandleVerifier [0xfbb4a4+10684]
+E   	chromedriver!(No symbol) [0xdc1e10]
+E   	chromedriver!(No symbol) [0xe0a9da]
+E   	chromedriver!(No symbol) [0xe0ac7b]
+E   	chromedriver!(No symbol) [0xe4d162]
+E   	chromedriver!(No symbol) [0xe2d8b4]
+E   	chromedriver!(No symbol) [0xe4aa36]
+E   	chromedriver!(No symbol) [0xe2d606]
+E   	chromedriver!(No symbol) [0xe00039]
+E   	chromedriver!(No symbol) [0xe00df4]
+E   	chromedriver!GetHandleVerifier [0x123ddb4+292f94]
+E   	chromedriver!GetHandleVerifier [0x123937d+28e55d]
+E   	chromedriver!GetHandleVerifier [0x1258215+2ad3f5]
+E   	chromedriver!GetHandleVerifier [0xfd4c18+29df8]
+E   	chromedriver!GetHandleVerifier [0xfdc6fd+318dd]
+E   	chromedriver!GetHandleVerifier [0xfc3c78+18e58]
+E   	chromedriver!GetHandleVerifier [0xfc3e42+19022]
+E   	chromedriver!GetHandleVerifier [0xfad45f+263f]
+E   	KERNEL32!BaseThreadInitThunk [0x75e85d49+19]
+E   	ntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]
+E   	ntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]</failure></testcase><testcase classname="tests.test_CT_001_generated_test_case" name="test_invalid_url_shows_no_products" time="14.218" /><testcase classname="tests.test_CT_002_generated_test_case" name="test_products_list_is_displayed" time="29.002"><failure message="selenium.common.exceptions.TimeoutException: Message: &#10;Stacktrace:&#10;&#09;chromedriver!GetHandleVerifier [0xfbb373+10553]&#10;&#09;chromedriver!GetHandleVerifier [0xfbb4a4+10684]&#10;&#09;chromedriver!(No symbol) [0xdc1e10]&#10;&#09;chromedriver!(No symbol) [0xe0a9da]&#10;&#09;chromedriver!(No symbol) [0xe0ac7b]&#10;&#09;chromedriver!(No symbol) [0xe4d162]&#10;&#09;chromedriver!(No symbol) [0xe2d8b4]&#10;&#09;chromedriver!(No symbol) [0xe4aa36]&#10;&#09;chromedriver!(No symbol) [0xe2d606]&#10;&#09;chromedriver!(No symbol) [0xe00039]&#10;&#09;chromedriver!(No symbol) [0xe00df4]&#10;&#09;chromedriver!GetHandleVerifier [0x123ddb4+292f94]&#10;&#09;chromedriver!GetHandleVerifier [0x123937d+28e55d]&#10;&#09;chromedriver!GetHandleVerifier [0x1258215+2ad3f5]&#10;&#09;chromedriver!GetHandleVerifier [0xfd4c18+29df8]&#10;&#09;chromedriver!GetHandleVerifier [0xfdc6fd+318dd]&#10;&#09;chromedriver!GetHandleVerifier [0xfc3c78+18e58]&#10;&#09;chromedriver!GetHandleVerifier [0xfc3e42+19022]&#10;&#09;chromedriver!GetHandleVerifier [0xfad45f+263f]&#10;&#09;KERNEL32!BaseThreadInitThunk [0x75e85d49+19]&#10;&#09;ntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]&#10;&#09;ntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]">tests\test_CT_002_generated_test_case.py:45: in test_products_list_is_displayed
+    _go_to_listing(driver, BASE_URL)
+tests\test_CT_002_generated_test_case.py:25: in _go_to_listing
+    sub = WebDriverWait(driver, 20).until(
+C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py:121: in until
+    raise TimeoutException(message, screen, stacktrace)
+E   selenium.common.exceptions.TimeoutException: Message: 
+E   Stacktrace:
+E   	chromedriver!GetHandleVerifier [0xfbb373+10553]
+E   	chromedriver!GetHandleVerifier [0xfbb4a4+10684]
+E   	chromedriver!(No symbol) [0xdc1e10]
+E   	chromedriver!(No symbol) [0xe0a9da]
+E   	chromedriver!(No symbol) [0xe0ac7b]
+E   	chromedriver!(No symbol) [0xe4d162]
+E   	chromedriver!(No symbol) [0xe2d8b4]
+E   	chromedriver!(No symbol) [0xe4aa36]
+E   	chromedriver!(No symbol) [0xe2d606]
+E   	chromedriver!(No symbol) [0xe00039]
+E   	chromedriver!(No symbol) [0xe00df4]
+E   	chromedriver!GetHandleVerifier [0x123ddb4+292f94]
+E   	chromedriver!GetHandleVerifier [0x123937d+28e55d]
+E   	chromedriver!GetHandleVerifier [0x1258215+2ad3f5]
+E   	chromedriver!GetHandleVerifier [0xfd4c18+29df8]
+E   	chromedriver!GetHandleVerifier [0xfdc6fd+318dd]
+E   	chromedriver!GetHandleVerifier [0xfc3c78+18e58]
+E   	chromedriver!GetHandleVerifier [0xfc3e42+19022]
+E   	chromedriver!GetHandleVerifier [0xfad45f+263f]
+E   	KERNEL32!BaseThreadInitThunk [0x75e85d49+19]
+E   	ntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]
+E   	ntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]</failure></testcase><testcase classname="tests.test_CT_002_generated_test_case" name="test_product_image_present" time="28.966"><failure message="selenium.common.exceptions.TimeoutException: Message: &#10;Stacktrace:&#10;&#09;chromedriver!GetHandleVerifier [0xfbb373+10553]&#10;&#09;chromedriver!GetHandleVerifier [0xfbb4a4+10684]&#10;&#09;chromedriver!(No symbol) [0xdc1e10]&#10;&#09;chromedriver!(No symbol) [0xe0a9da]&#10;&#09;chromedriver!(No symbol) [0xe0ac7b]&#10;&#09;chromedriver!(No symbol) [0xe4d162]&#10;&#09;chromedriver!(No symbol) [0xe2d8b4]&#10;&#09;chromedriver!(No symbol) [0xe4aa36]&#10;&#09;chromedriver!(No symbol) [0xe2d606]&#10;&#09;chromedriver!(No symbol) [0xe00039]&#10;&#09;chromedriver!(No symbol) [0xe00df4]&#10;&#09;chromedriver!GetHandleVerifier [0x123ddb4+292f94]&#10;&#09;chromedriver!GetHandleVerifier [0x123937d+28e55d]&#10;&#09;chromedriver!GetHandleVerifier [0x1258215+2ad3f5]&#10;&#09;chromedriver!GetHandleVerifier [0xfd4c18+29df8]&#10;&#09;chromedriver!GetHandleVerifier [0xfdc6fd+318dd]&#10;&#09;chromedriver!GetHandleVerifier [0xfc3c78+18e58]&#10;&#09;chromedriver!GetHandleVerifier [0xfc3e42+19022]&#10;&#09;chromedriver!GetHandleVerifier [0xfad45f+263f]&#10;&#09;KERNEL32!BaseThreadInitThunk [0x75e85d49+19]&#10;&#09;ntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]&#10;&#09;ntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]">tests\test_CT_002_generated_test_case.py:60: in test_product_image_present
+    _go_to_listing(driver, BASE_URL)
+tests\test_CT_002_generated_test_case.py:25: in _go_to_listing
+    sub = WebDriverWait(driver, 20).until(
+C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py:121: in until
+    raise TimeoutException(message, screen, stacktrace)
+E   selenium.common.exceptions.TimeoutException: Message: 
+E   Stacktrace:
+E   	chromedriver!GetHandleVerifier [0xfbb373+10553]
+E   	chromedriver!GetHandleVerifier [0xfbb4a4+10684]
+E   	chromedriver!(No symbol) [0xdc1e10]
+E   	chromedriver!(No symbol) [0xe0a9da]
+E   	chromedriver!(No symbol) [0xe0ac7b]
+E   	chromedriver!(No symbol) [0xe4d162]
+E   	chromedriver!(No symbol) [0xe2d8b4]
+E   	chromedriver!(No symbol) [0xe4aa36]
+E   	chromedriver!(No symbol) [0xe2d606]
+E   	chromedriver!(No symbol) [0xe00039]
+E   	chromedriver!(No symbol) [0xe00df4]
+E   	chromedriver!GetHandleVerifier [0x123ddb4+292f94]
+E   	chromedriver!GetHandleVerifier [0x123937d+28e55d]
+E   	chromedriver!GetHandleVerifier [0x1258215+2ad3f5]
+E   	chromedriver!GetHandleVerifier [0xfd4c18+29df8]
+E   	chromedriver!GetHandleVerifier [0xfdc6fd+318dd]
+E   	chromedriver!GetHandleVerifier [0xfc3c78+18e58]
+E   	chromedriver!GetHandleVerifier [0xfc3e42+19022]
+E   	chromedriver!GetHandleVerifier [0xfad45f+263f]
+E   	KERNEL32!BaseThreadInitThunk [0x75e85d49+19]
+E   	ntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]
+E   	ntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]</failure></testcase><testcase classname="tests.test_CT_002_generated_test_case" name="test_invalid_url_shows_no_products" time="13.716" /><testcase classname="tests.test_CT_003_generated_test_case" name="test_products_list_is_displayed" time="29.010"><failure message="selenium.common.exceptions.TimeoutException: Message: &#10;Stacktrace:&#10;&#09;chromedriver!GetHandleVerifier [0xfbb373+10553]&#10;&#09;chromedriver!GetHandleVerifier [0xfbb4a4+10684]&#10;&#09;chromedriver!(No symbol) [0xdc1e10]&#10;&#09;chromedriver!(No symbol) [0xe0a9da]&#10;&#09;chromedriver!(No symbol) [0xe0ac7b]&#10;&#09;chromedriver!(No symbol) [0xe4d162]&#10;&#09;chromedriver!(No symbol) [0xe2d8b4]&#10;&#09;chromedriver!(No symbol) [0xe4aa36]&#10;&#09;chromedriver!(No symbol) [0xe2d606]&#10;&#09;chromedriver!(No symbol) [0xe00039]&#10;&#09;chromedriver!(No symbol) [0xe00df4]&#10;&#09;chromedriver!GetHandleVerifier [0x123ddb4+292f94]&#10;&#09;chromedriver!GetHandleVerifier [0x123937d+28e55d]&#10;&#09;chromedriver!GetHandleVerifier [0x1258215+2ad3f5]&#10;&#09;chromedriver!GetHandleVerifier [0xfd4c18+29df8]&#10;&#09;chromedriver!GetHandleVerifier [0xfdc6fd+318dd]&#10;&#09;chromedriver!GetHandleVerifier [0xfc3c78+18e58]&#10;&#09;chromedriver!GetHandleVerifier [0xfc3e42+19022]&#10;&#09;chromedriver!GetHandleVerifier [0xfad45f+263f]&#10;&#09;KERNEL32!BaseThreadInitThunk [0x75e85d49+19]&#10;&#09;ntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]&#10;&#09;ntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]">tests\test_CT_003_generated_test_case.py:45: in test_products_list_is_displayed
+    _go_to_listing(driver, BASE_URL)
+tests\test_CT_003_generated_test_case.py:25: in _go_to_listing
+    sub = WebDriverWait(driver, 20).until(
+C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py:121: in until
+    raise TimeoutException(message, screen, stacktrace)
+E   selenium.common.exceptions.TimeoutException: Message: 
+E   Stacktrace:
+E   	chromedriver!GetHandleVerifier [0xfbb373+10553]
+E   	chromedriver!GetHandleVerifier [0xfbb4a4+10684]
+E   	chromedriver!(No symbol) [0xdc1e10]
+E   	chromedriver!(No symbol) [0xe0a9da]
+E   	chromedriver!(No symbol) [0xe0ac7b]
+E   	chromedriver!(No symbol) [0xe4d162]
+E   	chromedriver!(No symbol) [0xe2d8b4]
+E   	chromedriver!(No symbol) [0xe4aa36]
+E   	chromedriver!(No symbol) [0xe2d606]
+E   	chromedriver!(No symbol) [0xe00039]
+E   	chromedriver!(No symbol) [0xe00df4]
+E   	chromedriver!GetHandleVerifier [0x123ddb4+292f94]
+E   	chromedriver!GetHandleVerifier [0x123937d+28e55d]
+E   	chromedriver!GetHandleVerifier [0x1258215+2ad3f5]
+E   	chromedriver!GetHandleVerifier [0xfd4c18+29df8]
+E   	chromedriver!GetHandleVerifier [0xfdc6fd+318dd]
+E   	chromedriver!GetHandleVerifier [0xfc3c78+18e58]
+E   	chromedriver!GetHandleVerifier [0xfc3e42+19022]
+E   	chromedriver!GetHandleVerifier [0xfad45f+263f]
+E   	KERNEL32!BaseThreadInitThunk [0x75e85d49+19]
+E   	ntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]
+E   	ntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]</failure></testcase><testcase classname="tests.test_CT_003_generated_test_case" name="test_product_image_present" time="28.518"><failure message="selenium.common.exceptions.TimeoutException: Message: &#10;Stacktrace:&#10;&#09;chromedriver!GetHandleVerifier [0xfbb373+10553]&#10;&#09;chromedriver!GetHandleVerifier [0xfbb4a4+10684]&#10;&#09;chromedriver!(No symbol) [0xdc1e10]&#10;&#09;chromedriver!(No symbol) [0xe0a9da]&#10;&#09;chromedriver!(No symbol) [0xe0ac7b]&#10;&#09;chromedriver!(No symbol) [0xe4d162]&#10;&#09;chromedriver!(No symbol) [0xe2d8b4]&#10;&#09;chromedriver!(No symbol) [0xe4aa36]&#10;&#09;chromedriver!(No symbol) [0xe2d606]&#10;&#09;chromedriver!(No symbol) [0xe00039]&#10;&#09;chromedriver!(No symbol) [0xe00df4]&#10;&#09;chromedriver!GetHandleVerifier [0x123ddb4+292f94]&#10;&#09;chromedriver!GetHandleVerifier [0x123937d+28e55d]&#10;&#09;chromedriver!GetHandleVerifier [0x1258215+2ad3f5]&#10;&#09;chromedriver!GetHandleVerifier [0xfd4c18+29df8]&#10;&#09;chromedriver!GetHandleVerifier [0xfdc6fd+318dd]&#10;&#09;chromedriver!GetHandleVerifier [0xfc3c78+18e58]&#10;&#09;chromedriver!GetHandleVerifier [0xfc3e42+19022]&#10;&#09;chromedriver!GetHandleVerifier [0xfad45f+263f]&#10;&#09;KERNEL32!BaseThreadInitThunk [0x75e85d49+19]&#10;&#09;ntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]&#10;&#09;ntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]">tests\test_CT_003_generated_test_case.py:60: in test_product_image_present
+    _go_to_listing(driver, BASE_URL)
+tests\test_CT_003_generated_test_case.py:25: in _go_to_listing
+    sub = WebDriverWait(driver, 20).until(
+C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py:121: in until
+    raise TimeoutException(message, screen, stacktrace)
+E   selenium.common.exceptions.TimeoutException: Message: 
+E   Stacktrace:
+E   	chromedriver!GetHandleVerifier [0xfbb373+10553]
+E   	chromedriver!GetHandleVerifier [0xfbb4a4+10684]
+E   	chromedriver!(No symbol) [0xdc1e10]
+E   	chromedriver!(No symbol) [0xe0a9da]
+E   	chromedriver!(No symbol) [0xe0ac7b]
+E   	chromedriver!(No symbol) [0xe4d162]
+E   	chromedriver!(No symbol) [0xe2d8b4]
+E   	chromedriver!(No symbol) [0xe4aa36]
+E   	chromedriver!(No symbol) [0xe2d606]
+E   	chromedriver!(No symbol) [0xe00039]
+E   	chromedriver!(No symbol) [0xe00df4]
+E   	chromedriver!GetHandleVerifier [0x123ddb4+292f94]
+E   	chromedriver!GetHandleVerifier [0x123937d+28e55d]
+E   	chromedriver!GetHandleVerifier [0x1258215+2ad3f5]
+E   	chromedriver!GetHandleVerifier [0xfd4c18+29df8]
+E   	chromedriver!GetHandleVerifier [0xfdc6fd+318dd]
+E   	chromedriver!GetHandleVerifier [0xfc3c78+18e58]
+E   	chromedriver!GetHandleVerifier [0xfc3e42+19022]
+E   	chromedriver!GetHandleVerifier [0xfad45f+263f]
+E   	KERNEL32!BaseThreadInitThunk [0x75e85d49+19]
+E   	ntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]
+E   	ntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]</failure></testcase><testcase classname="tests.test_CT_003_generated_test_case" name="test_invalid_url_shows_no_products" time="13.219" /><testcase classname="tests.test_CT_004_generated_test_case" name="test_products_list_is_displayed" time="28.618"><failure message="selenium.common.exceptions.TimeoutException: Message: &#10;Stacktrace:&#10;&#09;chromedriver!GetHandleVerifier [0xfbb373+10553]&#10;&#09;chromedriver!GetHandleVerifier [0xfbb4a4+10684]&#10;&#09;chromedriver!(No symbol) [0xdc1e10]&#10;&#09;chromedriver!(No symbol) [0xe0a9da]&#10;&#09;chromedriver!(No symbol) [0xe0ac7b]&#10;&#09;chromedriver!(No symbol) [0xe4d162]&#10;&#09;chromedriver!(No symbol) [0xe2d8b4]&#10;&#09;chromedriver!(No symbol) [0xe4aa36]&#10;&#09;chromedriver!(No symbol) [0xe2d606]&#10;&#09;chromedriver!(No symbol) [0xe00039]&#10;&#09;chromedriver!(No symbol) [0xe00df4]&#10;&#09;chromedriver!GetHandleVerifier [0x123ddb4+292f94]&#10;&#09;chromedriver!GetHandleVerifier [0x123937d+28e55d]&#10;&#09;chromedriver!GetHandleVerifier [0x1258215+2ad3f5]&#10;&#09;chromedriver!GetHandleVerifier [0xfd4c18+29df8]&#10;&#09;chromedriver!GetHandleVerifier [0xfdc6fd+318dd]&#10;&#09;chromedriver!GetHandleVerifier [0xfc3c78+18e58]&#10;&#09;chromedriver!GetHandleVerifier [0xfc3e42+19022]&#10;&#09;chromedriver!GetHandleVerifier [0xfad45f+263f]&#10;&#09;KERNEL32!BaseThreadInitThunk [0x75e85d49+19]&#10;&#09;ntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]&#10;&#09;ntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]">tests\test_CT_004_generated_test_case.py:45: in test_products_list_is_displayed
+    _go_to_listing(driver, BASE_URL)
+tests\test_CT_004_generated_test_case.py:25: in _go_to_listing
+    sub = WebDriverWait(driver, 20).until(
+C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py:121: in until
+    raise TimeoutException(message, screen, stacktrace)
+E   selenium.common.exceptions.TimeoutException: Message: 
+E   Stacktrace:
+E   	chromedriver!GetHandleVerifier [0xfbb373+10553]
+E   	chromedriver!GetHandleVerifier [0xfbb4a4+10684]
+E   	chromedriver!(No symbol) [0xdc1e10]
+E   	chromedriver!(No symbol) [0xe0a9da]
+E   	chromedriver!(No symbol) [0xe0ac7b]
+E   	chromedriver!(No symbol) [0xe4d162]
+E   	chromedriver!(No symbol) [0xe2d8b4]
+E   	chromedriver!(No symbol) [0xe4aa36]
+E   	chromedriver!(No symbol) [0xe2d606]
+E   	chromedriver!(No symbol) [0xe00039]
+E   	chromedriver!(No symbol) [0xe00df4]
+E   	chromedriver!GetHandleVerifier [0x123ddb4+292f94]
+E   	chromedriver!GetHandleVerifier [0x123937d+28e55d]
+E   	chromedriver!GetHandleVerifier [0x1258215+2ad3f5]
+E   	chromedriver!GetHandleVerifier [0xfd4c18+29df8]
+E   	chromedriver!GetHandleVerifier [0xfdc6fd+318dd]
+E   	chromedriver!GetHandleVerifier [0xfc3c78+18e58]
+E   	chromedriver!GetHandleVerifier [0xfc3e42+19022]
+E   	chromedriver!GetHandleVerifier [0xfad45f+263f]
+E   	KERNEL32!BaseThreadInitThunk [0x75e85d49+19]
+E   	ntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]
+E   	ntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]</failure></testcase><testcase classname="tests.test_CT_004_generated_test_case" name="test_product_image_present" time="28.659"><failure message="selenium.common.exceptions.TimeoutException: Message: &#10;Stacktrace:&#10;&#09;chromedriver!GetHandleVerifier [0xfbb373+10553]&#10;&#09;chromedriver!GetHandleVerifier [0xfbb4a4+10684]&#10;&#09;chromedriver!(No symbol) [0xdc1e10]&#10;&#09;chromedriver!(No symbol) [0xe0a9da]&#10;&#09;chromedriver!(No symbol) [0xe0ac7b]&#10;&#09;chromedriver!(No symbol) [0xe4d162]&#10;&#09;chromedriver!(No symbol) [0xe2d8b4]&#10;&#09;chromedriver!(No symbol) [0xe4aa36]&#10;&#09;chromedriver!(No symbol) [0xe2d606]&#10;&#09;chromedriver!(No symbol) [0xe00039]&#10;&#09;chromedriver!(No symbol) [0xe00df4]&#10;&#09;chromedriver!GetHandleVerifier [0x123ddb4+292f94]&#10;&#09;chromedriver!GetHandleVerifier [0x123937d+28e55d]&#10;&#09;chromedriver!GetHandleVerifier [0x1258215+2ad3f5]&#10;&#09;chromedriver!GetHandleVerifier [0xfd4c18+29df8]&#10;&#09;chromedriver!GetHandleVerifier [0xfdc6fd+318dd]&#10;&#09;chromedriver!GetHandleVerifier [0xfc3c78+18e58]&#10;&#09;chromedriver!GetHandleVerifier [0xfc3e42+19022]&#10;&#09;chromedriver!GetHandleVerifier [0xfad45f+263f]&#10;&#09;KERNEL32!BaseThreadInitThunk [0x75e85d49+19]&#10;&#09;ntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]&#10;&#09;ntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]">tests\test_CT_004_generated_test_case.py:60: in test_product_image_present
+    _go_to_listing(driver, BASE_URL)
+tests\test_CT_004_generated_test_case.py:25: in _go_to_listing
+    sub = WebDriverWait(driver, 20).until(
+C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py:121: in until
+    raise TimeoutException(message, screen, stacktrace)
+E   selenium.common.exceptions.TimeoutException: Message: 
+E   Stacktrace:
+E   	chromedriver!GetHandleVerifier [0xfbb373+10553]
+E   	chromedriver!GetHandleVerifier [0xfbb4a4+10684]
+E   	chromedriver!(No symbol) [0xdc1e10]
+E   	chromedriver!(No symbol) [0xe0a9da]
+E   	chromedriver!(No symbol) [0xe0ac7b]
+E   	chromedriver!(No symbol) [0xe4d162]
+E   	chromedriver!(No symbol) [0xe2d8b4]
+E   	chromedriver!(No symbol) [0xe4aa36]
+E   	chromedriver!(No symbol) [0xe2d606]
+E   	chromedriver!(No symbol) [0xe00039]
+E   	chromedriver!(No symbol) [0xe00df4]
+E   	chromedriver!GetHandleVerifier [0x123ddb4+292f94]
+E   	chromedriver!GetHandleVerifier [0x123937d+28e55d]
+E   	chromedriver!GetHandleVerifier [0x1258215+2ad3f5]
+E   	chromedriver!GetHandleVerifier [0xfd4c18+29df8]
+E   	chromedriver!GetHandleVerifier [0xfdc6fd+318dd]
+E   	chromedriver!GetHandleVerifier [0xfc3c78+18e58]
+E   	chromedriver!GetHandleVerifier [0xfc3e42+19022]
+E   	chromedriver!GetHandleVerifier [0xfad45f+263f]
+E   	KERNEL32!BaseThreadInitThunk [0x75e85d49+19]
+E   	ntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]
+E   	ntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]</failure></testcase><testcase classname="tests.test_CT_004_generated_test_case" name="test_invalid_url_shows_no_products" time="13.362" /><testcase classname="tests.test_F_002_ajout_au_panier__après_connexion_" name="test_add_to_cart_updates_counter" time="48.839"><failure message="selenium.common.exceptions.TimeoutException: Message: &#10;Stacktrace:&#10;&#09;chromedriver!GetHandleVerifier [0xfbb373+10553]&#10;&#09;chromedriver!GetHandleVerifier [0xfbb4a4+10684]&#10;&#09;chromedriver!(No symbol) [0xdc1e10]&#10;&#09;chromedriver!(No symbol) [0xe0a9da]&#10;&#09;chromedriver!(No symbol) [0xe0ac7b]&#10;&#09;chromedriver!(No symbol) [0xe4d162]&#10;&#09;chromedriver!(No symbol) [0xe2d8b4]&#10;&#09;chromedriver!(No symbol) [0xe4aa36]&#10;&#09;chromedriver!(No symbol) [0xe2d606]&#10;&#09;chromedriver!(No symbol) [0xe00039]&#10;&#09;chromedriver!(No symbol) [0xe00df4]&#10;&#09;chromedriver!GetHandleVerifier [0x123ddb4+292f94]&#10;&#09;chromedriver!GetHandleVerifier [0x123937d+28e55d]&#10;&#09;chromedriver!GetHandleVerifier [0x1258215+2ad3f5]&#10;&#09;chromedriver!GetHandleVerifier [0xfd4c18+29df8]&#10;&#09;chromedriver!GetHandleVerifier [0xfdc6fd+318dd]&#10;&#09;chromedriver!GetHandleVerifier [0xfc3c78+18e58]&#10;&#09;chromedriver!GetHandleVerifier [0xfc3e42+19022]&#10;&#09;chromedriver!GetHandleVerifier [0xfad45f+263f]&#10;&#09;KERNEL32!BaseThreadInitThunk [0x75e85d49+19]&#10;&#09;ntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]&#10;&#09;ntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]">tests\test_F_002_ajout_au_panier__après_connexion_.py:63: in test_add_to_cart_updates_counter
+    _go_to_cart_page(driver)
+tests\test_F_002_ajout_au_panier__après_connexion_.py:58: in _go_to_cart_page
+    _go_to_listing(driver, BASE_URL)
+tests\test_F_002_ajout_au_panier__après_connexion_.py:25: in _go_to_listing
+    sub = WebDriverWait(driver, 20).until(
+C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py:121: in until
+    raise TimeoutException(message, screen, stacktrace)
+E   selenium.common.exceptions.TimeoutException: Message: 
+E   Stacktrace:
+E   	chromedriver!GetHandleVerifier [0xfbb373+10553]
+E   	chromedriver!GetHandleVerifier [0xfbb4a4+10684]
+E   	chromedriver!(No symbol) [0xdc1e10]
+E   	chromedriver!(No symbol) [0xe0a9da]
+E   	chromedriver!(No symbol) [0xe0ac7b]
+E   	chromedriver!(No symbol) [0xe4d162]
+E   	chromedriver!(No symbol) [0xe2d8b4]
+E   	chromedriver!(No symbol) [0xe4aa36]
+E   	chromedriver!(No symbol) [0xe2d606]
+E   	chromedriver!(No symbol) [0xe00039]
+E   	chromedriver!(No symbol) [0xe00df4]
+E   	chromedriver!GetHandleVerifier [0x123ddb4+292f94]
+E   	chromedriver!GetHandleVerifier [0x123937d+28e55d]
+E   	chromedriver!GetHandleVerifier [0x1258215+2ad3f5]
+E   	chromedriver!GetHandleVerifier [0xfd4c18+29df8]
+E   	chromedriver!GetHandleVerifier [0xfdc6fd+318dd]
+E   	chromedriver!GetHandleVerifier [0xfc3c78+18e58]
+E   	chromedriver!GetHandleVerifier [0xfc3e42+19022]
+E   	chromedriver!GetHandleVerifier [0xfad45f+263f]
+E   	KERNEL32!BaseThreadInitThunk [0x75e85d49+19]
+E   	ntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]
+E   	ntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]</failure></testcase><testcase classname="tests.test_F_002_ajout_au_panier__après_connexion_" name="test_add_to_cart_button_visible" time="48.510"><failure message="selenium.common.exceptions.TimeoutException: Message: &#10;Stacktrace:&#10;&#09;chromedriver!GetHandleVerifier [0xfbb373+10553]&#10;&#09;chromedriver!GetHandleVerifier [0xfbb4a4+10684]&#10;&#09;chromedriver!(No symbol) [0xdc1e10]&#10;&#09;chromedriver!(No symbol) [0xe0a9da]&#10;&#09;chromedriver!(No symbol) [0xe0ac7b]&#10;&#09;chromedriver!(No symbol) [0xe4d162]&#10;&#09;chromedriver!(No symbol) [0xe2d8b4]&#10;&#09;chromedriver!(No symbol) [0xe4aa36]&#10;&#09;chromedriver!(No symbol) [0xe2d606]&#10;&#09;chromedriver!(No symbol) [0xe00039]&#10;&#09;chromedriver!(No symbol) [0xe00df4]&#10;&#09;chromedriver!GetHandleVerifier [0x123ddb4+292f94]&#10;&#09;chromedriver!GetHandleVerifier [0x123937d+28e55d]&#10;&#09;chromedriver!GetHandleVerifier [0x1258215+2ad3f5]&#10;&#09;chromedriver!GetHandleVerifier [0xfd4c18+29df8]&#10;&#09;chromedriver!GetHandleVerifier [0xfdc6fd+318dd]&#10;&#09;chromedriver!GetHandleVerifier [0xfc3c78+18e58]&#10;&#09;chromedriver!GetHandleVerifier [0xfc3e42+19022]&#10;&#09;chromedriver!GetHandleVerifier [0xfad45f+263f]&#10;&#09;KERNEL32!BaseThreadInitThunk [0x75e85d49+19]&#10;&#09;ntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]&#10;&#09;ntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]">tests\test_F_002_ajout_au_panier__après_connexion_.py:93: in test_add_to_cart_button_visible
+    _go_to_cart_page(driver)
+tests\test_F_002_ajout_au_panier__après_connexion_.py:58: in _go_to_cart_page
+    _go_to_listing(driver, BASE_URL)
+tests\test_F_002_ajout_au_panier__après_connexion_.py:25: in _go_to_listing
+    sub = WebDriverWait(driver, 20).until(
+C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py:121: in until
+    raise TimeoutException(message, screen, stacktrace)
+E   selenium.common.exceptions.TimeoutException: Message: 
+E   Stacktrace:
+E   	chromedriver!GetHandleVerifier [0xfbb373+10553]
+E   	chromedriver!GetHandleVerifier [0xfbb4a4+10684]
+E   	chromedriver!(No symbol) [0xdc1e10]
+E   	chromedriver!(No symbol) [0xe0a9da]
+E   	chromedriver!(No symbol) [0xe0ac7b]
+E   	chromedriver!(No symbol) [0xe4d162]
+E   	chromedriver!(No symbol) [0xe2d8b4]
+E   	chromedriver!(No symbol) [0xe4aa36]
+E   	chromedriver!(No symbol) [0xe2d606]
+E   	chromedriver!(No symbol) [0xe00039]
+E   	chromedriver!(No symbol) [0xe00df4]
+E   	chromedriver!GetHandleVerifier [0x123ddb4+292f94]
+E   	chromedriver!GetHandleVerifier [0x123937d+28e55d]
+E   	chromedriver!GetHandleVerifier [0x1258215+2ad3f5]
+E   	chromedriver!GetHandleVerifier [0xfd4c18+29df8]
+E   	chromedriver!GetHandleVerifier [0xfdc6fd+318dd]
+E   	chromedriver!GetHandleVerifier [0xfc3c78+18e58]
+E   	chromedriver!GetHandleVerifier [0xfc3e42+19022]
+E   	chromedriver!GetHandleVerifier [0xfad45f+263f]
+E   	KERNEL32!BaseThreadInitThunk [0x75e85d49+19]
+E   	ntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]
+E   	ntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]</failure></testcase><testcase classname="tests.test_F_002_ajout_au_panier__après_connexion_" name="test_cart_counter_visible" time="49.166"><failure message="selenium.common.exceptions.TimeoutException: Message: &#10;Stacktrace:&#10;&#09;chromedriver!GetHandleVerifier [0xfbb373+10553]&#10;&#09;chromedriver!GetHandleVerifier [0xfbb4a4+10684]&#10;&#09;chromedriver!(No symbol) [0xdc1e10]&#10;&#09;chromedriver!(No symbol) [0xe0a9da]&#10;&#09;chromedriver!(No symbol) [0xe0ac7b]&#10;&#09;chromedriver!(No symbol) [0xe4d162]&#10;&#09;chromedriver!(No symbol) [0xe2d8b4]&#10;&#09;chromedriver!(No symbol) [0xe4aa36]&#10;&#09;chromedriver!(No symbol) [0xe2d606]&#10;&#09;chromedriver!(No symbol) [0xe00039]&#10;&#09;chromedriver!(No symbol) [0xe00df4]&#10;&#09;chromedriver!GetHandleVerifier [0x123ddb4+292f94]&#10;&#09;chromedriver!GetHandleVerifier [0x123937d+28e55d]&#10;&#09;chromedriver!GetHandleVerifier [0x1258215+2ad3f5]&#10;&#09;chromedriver!GetHandleVerifier [0xfd4c18+29df8]&#10;&#09;chromedriver!GetHandleVerifier [0xfdc6fd+318dd]&#10;&#09;chromedriver!GetHandleVerifier [0xfc3c78+18e58]&#10;&#09;chromedriver!GetHandleVerifier [0xfc3e42+19022]&#10;&#09;chromedriver!GetHandleVerifier [0xfad45f+263f]&#10;&#09;KERNEL32!BaseThreadInitThunk [0x75e85d49+19]&#10;&#09;ntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]&#10;&#09;ntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]">tests\test_F_002_ajout_au_panier__après_connexion_.py:102: in test_cart_counter_visible
+    _go_to_cart_page(driver)
+tests\test_F_002_ajout_au_panier__après_connexion_.py:58: in _go_to_cart_page
+    _go_to_listing(driver, BASE_URL)
+tests\test_F_002_ajout_au_panier__après_connexion_.py:25: in _go_to_listing
+    sub = WebDriverWait(driver, 20).until(
+C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py:121: in until
+    raise TimeoutException(message, screen, stacktrace)
+E   selenium.common.exceptions.TimeoutException: Message: 
+E   Stacktrace:
+E   	chromedriver!GetHandleVerifier [0xfbb373+10553]
+E   	chromedriver!GetHandleVerifier [0xfbb4a4+10684]
+E   	chromedriver!(No symbol) [0xdc1e10]
+E   	chromedriver!(No symbol) [0xe0a9da]
+E   	chromedriver!(No symbol) [0xe0ac7b]
+E   	chromedriver!(No symbol) [0xe4d162]
+E   	chromedriver!(No symbol) [0xe2d8b4]
+E   	chromedriver!(No symbol) [0xe4aa36]
+E   	chromedriver!(No symbol) [0xe2d606]
+E   	chromedriver!(No symbol) [0xe00039]
+E   	chromedriver!(No symbol) [0xe00df4]
+E   	chromedriver!GetHandleVerifier [0x123ddb4+292f94]
+E   	chromedriver!GetHandleVerifier [0x123937d+28e55d]
+E   	chromedriver!GetHandleVerifier [0x1258215+2ad3f5]
+E   	chromedriver!GetHandleVerifier [0xfd4c18+29df8]
+E   	chromedriver!GetHandleVerifier [0xfdc6fd+318dd]
+E   	chromedriver!GetHandleVerifier [0xfc3c78+18e58]
+E   	chromedriver!GetHandleVerifier [0xfc3e42+19022]
+E   	chromedriver!GetHandleVerifier [0xfad45f+263f]
+E   	KERNEL32!BaseThreadInitThunk [0x75e85d49+19]
+E   	ntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]
+E   	ntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]</failure></testcase></testsuite></testsuites>

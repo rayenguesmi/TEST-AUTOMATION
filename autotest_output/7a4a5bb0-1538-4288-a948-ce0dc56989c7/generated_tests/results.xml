@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="6" skipped="0" tests="18" time="171.139" timestamp="2026-04-30T00:35:35.758409+01:00" hostname="DESKTOP-E5NKSEU"><testcase classname="tests.test_CT_001_generated_test_case" name="test_products_list_is_displayed" time="10.214"><failure message="AssertionError: Nom produit vide&#10;assert ''">tests\test_CT_001_generated_test_case.py:54: in test_products_list_is_displayed
+    assert name_text, "Nom produit vide"
+E   AssertionError: Nom produit vide
+E   assert ''</failure></testcase><testcase classname="tests.test_CT_001_generated_test_case" name="test_product_image_present" time="10.359" /><testcase classname="tests.test_CT_001_generated_test_case" name="test_invalid_url_shows_no_products" time="13.794" /><testcase classname="tests.test_CT_002_generated_test_case" name="test_products_list_is_displayed" time="10.003"><failure message="AssertionError: Nom produit vide&#10;assert ''">tests\test_CT_002_generated_test_case.py:54: in test_products_list_is_displayed
+    assert name_text, "Nom produit vide"
+E   AssertionError: Nom produit vide
+E   assert ''</failure></testcase><testcase classname="tests.test_CT_002_generated_test_case" name="test_product_image_present" time="9.888" /><testcase classname="tests.test_CT_002_generated_test_case" name="test_invalid_url_shows_no_products" time="13.689" /><testcase classname="tests.test_CT_003_generated_test_case" name="test_products_list_is_displayed" time="10.044"><failure message="AssertionError: Nom produit vide&#10;assert ''">tests\test_CT_003_generated_test_case.py:54: in test_products_list_is_displayed
+    assert name_text, "Nom produit vide"
+E   AssertionError: Nom produit vide
+E   assert ''</failure></testcase><testcase classname="tests.test_CT_003_generated_test_case" name="test_product_image_present" time="10.058" /><testcase classname="tests.test_CT_003_generated_test_case" name="test_invalid_url_shows_no_products" time="17.827" /><testcase classname="tests.test_CT_004_generated_test_case" name="test_search_returns_results" time="6.604"><failure message="selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;.search-box button[type='submit']&quot;}&#10;  (Session info: chrome=147.0.7727.137); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception&#10;Stacktrace:&#10;&#09;chromedriver!GetHandleVerifier [0x10ab373+10553]&#10;&#09;chromedriver!GetHandleVerifier [0x10ab4a4+10684]&#10;&#09;chromedriver!(No symbol) [0xeb1e10]&#10;&#09;chromedriver!(No symbol) [0xefa9da]&#10;&#09;chromedriver!(No symbol) [0xefac7b]&#10;&#09;chromedriver!(No symbol) [0xf3d162]&#10;&#09;chromedriver!(No symbol) [0xf1d8b4]&#10;&#09;chromedriver!(No symbol) [0xf3aa36]&#10;&#09;chromedriver!(No symbol) [0xf1d606]&#10;&#09;chromedriver!(No symbol) [0xef0039]&#10;&#09;chromedriver!(No symbol) [0xef0df4]&#10;&#09;chromedriver!GetHandleVerifier [0x132ddb4+292f94]&#10;&#09;chromedriver!GetHandleVerifier [0x132937d+28e55d]&#10;&#09;chromedriver!GetHandleVerifier [0x1348215+2ad3f5]&#10;&#09;chromedriver!GetHandleVerifier [0x10c4c18+29df8]&#10;&#09;chromedriver!GetHandleVerifier [0x10cc6fd+318dd]&#10;&#09;chromedriver!GetHandleVerifier [0x10b3c78+18e58]&#10;&#09;chromedriver!GetHandleVerifier [0x10b3e42+19022]&#10;&#09;chromedriver!GetHandleVerifier [0x109d45f+263f]&#10;&#09;KERNEL32!BaseThreadInitThunk [0x75e85d49+19]&#10;&#09;ntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]&#10;&#09;ntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]">tests\test_CT_004_generated_test_case.py:51: in test_search_returns_results
+    btn = driver.find_element(By.CSS_SELECTOR, ".search-box button[type='submit']")
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\remote\webdriver.py:823: in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\remote\webdriver.py:450: in execute
+    self.error_handler.check_response(response)
+C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\remote\errorhandler.py:232: in check_response
+    raise exception_class(message, screen, stacktrace)
+E   selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"css selector","selector":".search-box button[type='submit']"}
+E     (Session info: chrome=147.0.7727.137); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+E   Stacktrace:
+E   	chromedriver!GetHandleVerifier [0x10ab373+10553]
+E   	chromedriver!GetHandleVerifier [0x10ab4a4+10684]
+E   	chromedriver!(No symbol) [0xeb1e10]
+E   	chromedriver!(No symbol) [0xefa9da]
+E   	chromedriver!(No symbol) [0xefac7b]
+E   	chromedriver!(No symbol) [0xf3d162]
+E   	chromedriver!(No symbol) [0xf1d8b4]
+E   	chromedriver!(No symbol) [0xf3aa36]
+E   	chromedriver!(No symbol) [0xf1d606]
+E   	chromedriver!(No symbol) [0xef0039]
+E   	chromedriver!(No symbol) [0xef0df4]
+E   	chromedriver!GetHandleVerifier [0x132ddb4+292f94]
+E   	chromedriver!GetHandleVerifier [0x132937d+28e55d]
+E   	chromedriver!GetHandleVerifier [0x1348215+2ad3f5]
+E   	chromedriver!GetHandleVerifier [0x10c4c18+29df8]
+E   	chromedriver!GetHandleVerifier [0x10cc6fd+318dd]
+E   	chromedriver!GetHandleVerifier [0x10b3c78+18e58]
+E   	chromedriver!GetHandleVerifier [0x10b3e42+19022]
+E   	chromedriver!GetHandleVerifier [0x109d45f+263f]
+E   	KERNEL32!BaseThreadInitThunk [0x75e85d49+19]
+E   	ntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]
+E   	ntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]</failure></testcase><testcase classname="tests.test_CT_004_generated_test_case" name="test_search_no_results" time="6.169"><failure message="selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;.search-box button[type='submit']&quot;}&#10;  (Session info: chrome=147.0.7727.137); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception&#10;Stacktrace:&#10;&#09;chromedriver!GetHandleVerifier [0x10ab373+10553]&#10;&#09;chromedriver!GetHandleVerifier [0x10ab4a4+10684]&#10;&#09;chromedriver!(No symbol) [0xeb1e10]&#10;&#09;chromedriver!(No symbol) [0xefa9da]&#10;&#09;chromedriver!(No symbol) [0xefac7b]&#10;&#09;chromedriver!(No symbol) [0xf3d162]&#10;&#09;chromedriver!(No symbol) [0xf1d8b4]&#10;&#09;chromedriver!(No symbol) [0xf3aa36]&#10;&#09;chromedriver!(No symbol) [0xf1d606]&#10;&#09;chromedriver!(No symbol) [0xef0039]&#10;&#09;chromedriver!(No symbol) [0xef0df4]&#10;&#09;chromedriver!GetHandleVerifier [0x132ddb4+292f94]&#10;&#09;chromedriver!GetHandleVerifier [0x132937d+28e55d]&#10;&#09;chromedriver!GetHandleVerifier [0x1348215+2ad3f5]&#10;&#09;chromedriver!GetHandleVerifier [0x10c4c18+29df8]&#10;&#09;chromedriver!GetHandleVerifier [0x10cc6fd+318dd]&#10;&#09;chromedriver!GetHandleVerifier [0x10b3c78+18e58]&#10;&#09;chromedriver!GetHandleVerifier [0x10b3e42+19022]&#10;&#09;chromedriver!GetHandleVerifier [0x109d45f+263f]&#10;&#09;KERNEL32!BaseThreadInitThunk [0x75e85d49+19]&#10;&#09;ntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]&#10;&#09;ntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]">tests\test_CT_004_generated_test_case.py:70: in test_search_no_results
+    btn = driver.find_element(By.CSS_SELECTOR, ".search-box button[type='submit']")
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\remote\webdriver.py:823: in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\remote\webdriver.py:450: in execute
+    self.error_handler.check_response(response)
+C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\remote\errorhandler.py:232: in check_response
+    raise exception_class(message, screen, stacktrace)
+E   selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"css selector","selector":".search-box button[type='submit']"}
+E     (Session info: chrome=147.0.7727.137); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+E   Stacktrace:
+E   	chromedriver!GetHandleVerifier [0x10ab373+10553]
+E   	chromedriver!GetHandleVerifier [0x10ab4a4+10684]
+E   	chromedriver!(No symbol) [0xeb1e10]
+E   	chromedriver!(No symbol) [0xefa9da]
+E   	chromedriver!(No symbol) [0xefac7b]
+E   	chromedriver!(No symbol) [0xf3d162]
+E   	chromedriver!(No symbol) [0xf1d8b4]
+E   	chromedriver!(No symbol) [0xf3aa36]
+E   	chromedriver!(No symbol) [0xf1d606]
+E   	chromedriver!(No symbol) [0xef0039]
+E   	chromedriver!(No symbol) [0xef0df4]
+E   	chromedriver!GetHandleVerifier [0x132ddb4+292f94]
+E   	chromedriver!GetHandleVerifier [0x132937d+28e55d]
+E   	chromedriver!GetHandleVerifier [0x1348215+2ad3f5]
+E   	chromedriver!GetHandleVerifier [0x10c4c18+29df8]
+E   	chromedriver!GetHandleVerifier [0x10cc6fd+318dd]
+E   	chromedriver!GetHandleVerifier [0x10b3c78+18e58]
+E   	chromedriver!GetHandleVerifier [0x10b3e42+19022]
+E   	chromedriver!GetHandleVerifier [0x109d45f+263f]
+E   	KERNEL32!BaseThreadInitThunk [0x75e85d49+19]
+E   	ntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]
+E   	ntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]</failure></testcase><testcase classname="tests.test_CT_004_generated_test_case" name="test_search_with_partial_keyword" time="5.899"><failure message="selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;.search-box button[type='submit']&quot;}&#10;  (Session info: chrome=147.0.7727.137); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception&#10;Stacktrace:&#10;&#09;chromedriver!GetHandleVerifier [0x10ab373+10553]&#10;&#09;chromedriver!GetHandleVerifier [0x10ab4a4+10684]&#10;&#09;chromedriver!(No symbol) [0xeb1e10]&#10;&#09;chromedriver!(No symbol) [0xefa9da]&#10;&#09;chromedriver!(No symbol) [0xefac7b]&#10;&#09;chromedriver!(No symbol) [0xf3d162]&#10;&#09;chromedriver!(No symbol) [0xf1d8b4]&#10;&#09;chromedriver!(No symbol) [0xf3aa36]&#10;&#09;chromedriver!(No symbol) [0xf1d606]&#10;&#09;chromedriver!(No symbol) [0xef0039]&#10;&#09;chromedriver!(No symbol) [0xef0df4]&#10;&#09;chromedriver!GetHandleVerifier [0x132ddb4+292f94]&#10;&#09;chromedriver!GetHandleVerifier [0x132937d+28e55d]&#10;&#09;chromedriver!GetHandleVerifier [0x1348215+2ad3f5]&#10;&#09;chromedriver!GetHandleVerifier [0x10c4c18+29df8]&#10;&#09;chromedriver!GetHandleVerifier [0x10cc6fd+318dd]&#10;&#09;chromedriver!GetHandleVerifier [0x10b3c78+18e58]&#10;&#09;chromedriver!GetHandleVerifier [0x10b3e42+19022]&#10;&#09;chromedriver!GetHandleVerifier [0x109d45f+263f]&#10;&#09;KERNEL32!BaseThreadInitThunk [0x75e85d49+19]&#10;&#09;ntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]&#10;&#09;ntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]">tests\test_CT_004_generated_test_case.py:88: in test_search_with_partial_keyword
+    btn = driver.find_element(By.CSS_SELECTOR, ".search-box button[type='submit']")
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\remote\webdriver.py:823: in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\remote\webdriver.py:450: in execute
+    self.error_handler.check_response(response)
+C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\remote\errorhandler.py:232: in check_response
+    raise exception_class(message, screen, stacktrace)
+E   selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"css selector","selector":".search-box button[type='submit']"}
+E     (Session info: chrome=147.0.7727.137); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+E   Stacktrace:
+E   	chromedriver!GetHandleVerifier [0x10ab373+10553]
+E   	chromedriver!GetHandleVerifier [0x10ab4a4+10684]
+E   	chromedriver!(No symbol) [0xeb1e10]
+E   	chromedriver!(No symbol) [0xefa9da]
+E   	chromedriver!(No symbol) [0xefac7b]
+E   	chromedriver!(No symbol) [0xf3d162]
+E   	chromedriver!(No symbol) [0xf1d8b4]
+E   	chromedriver!(No symbol) [0xf3aa36]
+E   	chromedriver!(No symbol) [0xf1d606]
+E   	chromedriver!(No symbol) [0xef0039]
+E   	chromedriver!(No symbol) [0xef0df4]
+E   	chromedriver!GetHandleVerifier [0x132ddb4+292f94]
+E   	chromedriver!GetHandleVerifier [0x132937d+28e55d]
+E   	chromedriver!GetHandleVerifier [0x1348215+2ad3f5]
+E   	chromedriver!GetHandleVerifier [0x10c4c18+29df8]
+E   	chromedriver!GetHandleVerifier [0x10cc6fd+318dd]
+E   	chromedriver!GetHandleVerifier [0x10b3c78+18e58]
+E   	chromedriver!GetHandleVerifier [0x10b3e42+19022]
+E   	chromedriver!GetHandleVerifier [0x109d45f+263f]
+E   	KERNEL32!BaseThreadInitThunk [0x75e85d49+19]
+E   	ntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]
+E   	ntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]</failure></testcase><testcase classname="tests.test_F_002_tri_des_produits_par_prix" name="test_sort_price_low_to_high" time="7.252" /><testcase classname="tests.test_F_002_tri_des_produits_par_prix" name="test_sort_price_high_to_low" time="7.274" /><testcase classname="tests.test_F_002_tri_des_produits_par_prix" name="test_sort_options_available" time="6.050" /><testcase classname="tests.test_F_003_ajout_au_panier" name="test_add_to_cart_updates_counter" time="7.439" /><testcase classname="tests.test_F_003_ajout_au_panier" name="test_add_to_cart_button_visible" time="9.717" /><testcase classname="tests.test_F_003_ajout_au_panier" name="test_cart_counter_visible" time="8.399" /></testsuite></testsuites>

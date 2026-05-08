@@ -12,6 +12,8 @@ autotest_package/test_scripts
 autotest_package/logs
 autotest_package/autotest/db/autotest.db
 logs
+node_modules/
+autotest_package/output/
 __pycache__/
 *.py[cod]
 *$py.class

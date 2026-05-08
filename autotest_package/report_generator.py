@@ -70,32 +70,44 @@ class ReportGenerator:
 
         features_list = []
         features = spec.get('features', [])
-        # Distribute tests across features by template key (F001->F-001, etc.)
-        # Template keys: F001, F002, F003, F004, F005, F006
-        feature_key_map = {
-            f"F-{str(i+1).zfill(3)}": f"F{str(i+1).zfill(3)}"
-            for i in range(len(features))
-        }
 
-        for feature in features:
+        for feat_idx, feature in enumerate(features):
             fid = feature.get('id')           # e.g. 'F-001'
-            tkey = feature_key_map.get(fid)   # e.g. 'F001'
+            # Numeric part with and without leading zeros: '001', '1'
+            num_padded = fid.replace('F-', '')          # '001'
+            num_bare   = num_padded.lstrip('0') or '0'  # '1'
 
-            # Match tests by classname which contains template key (e.g. 'test_F001_...')
-            feature_tests = [
-                t for t in all_tests
-                if tkey and tkey.lower() in t.get('classname', '').lower()
-            ]
+            # 1. Exact match on extracted id (test_runner already normalises to 'F-001')
+            feature_tests = [t for t in all_tests if t.get('id') == fid]
 
-            # Fallback: match by test name containing template key
+            # 2. Classname contains F_001 or F_1 (underscore variants)
             if not feature_tests:
+                patterns_f = [f"f_{num_padded}", f"f_{num_bare}",
+                              f"_f{num_padded}_",  f"_f{num_bare}_"]
                 feature_tests = [
                     t for t in all_tests
-                    if tkey and tkey.lower() in t.get('name', '').lower()
+                    if any(p in t.get('classname', '').lower() or
+                           p in t.get('name', '').lower()
+                           for p in patterns_f)
                 ]
 
-            all_passed = all(t['statut'] == "PASS" for t in feature_tests) if feature_tests else False
-            status = "PASS" if all_passed else "FAIL"
+            # 3. Classname contains CT_NNN where NNN maps positionally to feature index
+            #    e.g. first feature (idx=0) → CT_001, second (idx=1) → CT_002 …
+            if not feature_tests:
+                ct_tag = f"ct_{str(feat_idx + 1).zfill(3)}"
+                feature_tests = [
+                    t for t in all_tests
+                    if ct_tag in t.get('classname', '').lower()
+                ]
+
+            if not feature_tests:
+                status = "UNKNOWN"
+            elif all(t['statut'] == "PASS" for t in feature_tests):
+                status = "PASS"
+            elif any(t['statut'] == "PASS" for t in feature_tests):
+                status = "PARTIAL"
+            else:
+                status = "FAIL"
 
             features_list.append({
                 "id": fid,

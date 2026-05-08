@@ -1,0 +1,119 @@
+{
+  "summary": {
+    "project_name": "Demo Web Shop \u2013 Module Electronics",
+    "url_cible": "https://demowebshop.tricentis.com/electronics",
+    "total_tests": 9,
+    "passed": 8,
+    "failed": 1,
+    "errors": 0,
+    "duration_seconds": 68.62,
+    "timestamp": "2026-05-01 12:56:47"
+  },
+  "features_with_results": [
+    {
+      "id": "F-001",
+      "title": "Affichage des produits Electronics",
+      "description": "L'utilisateur visualise la liste des produits \u00e9lectroniques.",
+      "status": "PARTIAL",
+      "tests": [
+        {
+          "id": "F-001",
+          "name": "test_products_list_is_displayed",
+          "classname": "tests.test_F_001_affichage_des_produits_electronics",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 9.305,
+          "message_erreur": "tests\\test_F_001_affichage_des_produits_electronics.py:54: in test_products_list_is_displayed\n    assert name_text, \"Nom produit vide\"\nE   AssertionError: Nom produit vide\nE   assert ''",
+          "screenshot_path": "../screenshots/F-001_failure.png"
+        },
+        {
+          "id": "F-001",
+          "name": "test_product_image_present",
+          "classname": "tests.test_F_001_affichage_des_produits_electronics",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 9.207,
+          "message_erreur": null,
+          "screenshot_path": null
+        },
+        {
+          "id": "F-001",
+          "name": "test_invalid_url_shows_no_products",
+          "classname": "tests.test_F_001_affichage_des_produits_electronics",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 13.52,
+          "message_erreur": null,
+          "screenshot_path": null
+        }
+      ]
+    },
+    {
+      "id": "F-002",
+      "title": "Tri des produits par prix",
+      "description": "L'utilisateur trie les produits par prix croissant.",
+      "status": "PASS",
+      "tests": [
+        {
+          "id": "F-002",
+          "name": "test_sort_price_low_to_high",
+          "classname": "tests.test_F_002_tri_des_produits_par_prix",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 6.006,
+          "message_erreur": null,
+          "screenshot_path": null
+        },
+        {
+          "id": "F-002",
+          "name": "test_sort_price_high_to_low",
+          "classname": "tests.test_F_002_tri_des_produits_par_prix",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 5.992,
+          "message_erreur": null,
+          "screenshot_path": null
+        },
+        {
+          "id": "F-002",
+          "name": "test_sort_options_available",
+          "classname": "tests.test_F_002_tri_des_produits_par_prix",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 5.586,
+          "message_erreur": null,
+          "screenshot_path": null
+        }
+      ]
+    },
+    {
+      "id": "F-003",
+      "title": "Ajout au panier",
+      "description": "L'utilisateur ajoute un produit au panier depuis la page Electronics.",
+      "status": "PASS",
+      "tests": [
+        {
+          "id": "F-003",
+          "name": "test_add_to_cart_updates_counter",
+          "classname": "tests.test_F_003_ajout_au_panier",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 6.244,
+          "message_erreur": null,
+          "screenshot_path": null
+        },
+        {
+          "id": "F-003",
+          "name": "test_add_to_cart_button_visible",
+          "classname": "tests.test_F_003_ajout_au_panier",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 5.44,
+          "message_erreur": null,
+          "screenshot_path": null
+        },
+        {
+          "id": "F-003",
+          "name": "test_cart_counter_visible",
+          "classname": "tests.test_F_003_ajout_au_panier",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 5.398,
+          "message_erreur": null,
+          "screenshot_path": null
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="6" skipped="0" tests="18" time="224.064" timestamp="2026-04-30T21:44:01.057725+01:00" hostname="DESKTOP-E5NKSEU"><testcase classname="tests.test_F_001_affichage_des_produits_electronics" name="test_products_list_is_displayed" time="10.372"><failure message="AssertionError: Nom produit vide&#10;assert ''">tests\test_F_001_affichage_des_produits_electronics.py:54: in test_products_list_is_displayed
+    assert name_text, "Nom produit vide"
+E   AssertionError: Nom produit vide
+E   assert ''</failure></testcase><testcase classname="tests.test_F_001_affichage_des_produits_electronics" name="test_product_image_present" time="10.235" /><testcase classname="tests.test_F_001_affichage_des_produits_electronics" name="test_invalid_url_shows_no_products" time="14.861" /><testcase classname="tests.test_TC_002_generated_test_case" name="test_products_list_is_displayed" time="10.147"><failure message="AssertionError: Nom produit vide&#10;assert ''">tests\test_TC_002_generated_test_case.py:54: in test_products_list_is_displayed
+    assert name_text, "Nom produit vide"
+E   AssertionError: Nom produit vide
+E   assert ''</failure></testcase><testcase classname="tests.test_TC_002_generated_test_case" name="test_product_image_present" time="10.896" /><testcase classname="tests.test_TC_002_generated_test_case" name="test_invalid_url_shows_no_products" time="15.642" /><testcase classname="tests.test_TC_003_generated_test_case" name="test_products_list_is_displayed" time="17.515"><failure message="AssertionError: Nom produit vide&#10;assert ''">tests\test_TC_003_generated_test_case.py:54: in test_products_list_is_displayed
+    assert name_text, "Nom produit vide"
+E   AssertionError: Nom produit vide
+E   assert ''</failure></testcase><testcase classname="tests.test_TC_003_generated_test_case" name="test_product_image_present" time="10.453" /><testcase classname="tests.test_TC_003_generated_test_case" name="test_invalid_url_shows_no_products" time="14.241" /><testcase classname="tests.test_TC_004_generated_test_case" name="test_products_list_is_displayed" time="10.471"><failure message="AssertionError: Nom produit vide&#10;assert ''">tests\test_TC_004_generated_test_case.py:54: in test_products_list_is_displayed
+    assert name_text, "Nom produit vide"
+E   AssertionError: Nom produit vide
+E   assert ''</failure></testcase><testcase classname="tests.test_TC_004_generated_test_case" name="test_product_image_present" time="10.664" /><testcase classname="tests.test_TC_004_generated_test_case" name="test_invalid_url_shows_no_products" time="15.087" /><testcase classname="tests.test_TC_005_generated_test_case" name="test_products_list_is_displayed" time="11.136"><failure message="AssertionError: Nom produit vide&#10;assert ''">tests\test_TC_005_generated_test_case.py:54: in test_products_list_is_displayed
+    assert name_text, "Nom produit vide"
+E   AssertionError: Nom produit vide
+E   assert ''</failure></testcase><testcase classname="tests.test_TC_005_generated_test_case" name="test_product_image_present" time="10.280" /><testcase classname="tests.test_TC_005_generated_test_case" name="test_invalid_url_shows_no_products" time="15.157" /><testcase classname="tests.test_TC_006_generated_test_case" name="test_products_list_is_displayed" time="10.867"><failure message="AssertionError: Nom produit vide&#10;assert ''">tests\test_TC_006_generated_test_case.py:54: in test_products_list_is_displayed
+    assert name_text, "Nom produit vide"
+E   AssertionError: Nom produit vide
+E   assert ''</failure></testcase><testcase classname="tests.test_TC_006_generated_test_case" name="test_product_image_present" time="10.687" /><testcase classname="tests.test_TC_006_generated_test_case" name="test_invalid_url_shows_no_products" time="14.955" /></testsuite></testsuites>

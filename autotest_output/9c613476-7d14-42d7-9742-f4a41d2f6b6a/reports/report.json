@@ -1,0 +1,138 @@
+{
+  "summary": {
+    "project_name": "Demo Web Shop \u2013 Module Electronics",
+    "url_cible": "https://demowebshop.tricentis.com/electronics",
+    "total_tests": 24,
+    "passed": 16,
+    "failed": 8,
+    "errors": 0,
+    "duration_seconds": 336.91,
+    "timestamp": "2026-05-06 14:12:01"
+  },
+  "features_with_results": [
+    {
+      "id": "F-001",
+      "title": "Affichage des produits Electronics",
+      "description": "L'utilisateur peut visualiser la liste des produits \u00e9lectroniques disponibles.",
+      "status": "PARTIAL",
+      "tests": [
+        {
+          "id": "products",
+          "name": "test_products_list_is_displayed",
+          "classname": "tests.test_CT_001_generated_test_case",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 9.627,
+          "message_erreur": "tests\\test_CT_001_generated_test_case.py:54: in test_products_list_is_displayed\n    assert name_text, \"Nom produit vide\"\nE   AssertionError: Nom produit vide\nE   assert ''",
+          "screenshot_path": "../screenshots/products_failure.png"
+        },
+        {
+          "id": "product",
+          "name": "test_product_image_present",
+          "classname": "tests.test_CT_001_generated_test_case",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 9.502,
+          "message_erreur": null,
+          "screenshot_path": null
+        },
+        {
+          "id": "invalid",
+          "name": "test_invalid_url_shows_no_products",
+          "classname": "tests.test_CT_001_generated_test_case",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 13.889,
+          "message_erreur": null,
+          "screenshot_path": null
+        },
+        {
+          "id": "navigate",
+          "name": "test_navigate_to_product_detail",
+          "classname": "tests.test_CT_001_navigation_vers_d\u00e9tail_produit___flux_no",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 10.085,
+          "message_erreur": null,
+          "screenshot_path": null
+        },
+        {
+          "id": "product",
+          "name": "test_product_detail_has_price",
+          "classname": "tests.test_CT_001_navigation_vers_d\u00e9tail_produit___flux_no",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 10.127,
+          "message_erreur": null,
+          "screenshot_path": null
+        },
+        {
+          "id": "detail",
+          "name": "test_detail_page_has_product_name",
+          "classname": "tests.test_CT_001_navigation_vers_d\u00e9tail_produit___flux_no",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 30.267,
+          "message_erreur": "tests\\test_CT_001_navigation_vers_d\u00e9tail_produit___flux_no.py:88: in test_detail_page_has_product_name\n    h1 = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0xe1b373+10553]\nE   \tchromedriver!GetHandleVerifier [0xe1b4a4+10684]\nE   \tchromedriver!(No symbol) [0xc21e10]\nE   \tchromedriver!(No symbol) [0xc6a9da]\nE   \tchromedriver!(No symbol) [0xc6ac7b]\nE   \tchromedriver!(No symbol) [0xcad162]\nE   \tchromedriver!(No symbol) [0xc8d8b4]\nE   \tchromedriver!(No symbol) [0xcaaa36]\nE   \tchromedriver!(No symbol) [0xc8d606]\nE   \tchromedriver!(No symbol) [0xc60039]\nE   \tchromedriver!(No symbol) [0xc60df4]\nE   \tchromedriver!GetHandleVerifier [0x109ddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x109937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x10b8215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0xe34c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0xe3c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0xe23c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0xe23e42+19022]\nE   \tchromedriver!GetHandleVerifier [0xe0d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/detail_failure.png"
+        }
+      ]
+    },
+    {
+      "id": "F-002",
+      "title": "Navigation vers d\u00e9tail produit",
+      "description": "L'utilisateur peut consulter les d\u00e9tails d\u2019un produit.",
+      "status": "PARTIAL",
+      "tests": [
+        {
+          "id": "products",
+          "name": "test_products_list_is_displayed",
+          "classname": "tests.test_CT_002_generated_test_case",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 9.238,
+          "message_erreur": "tests\\test_CT_002_generated_test_case.py:54: in test_products_list_is_displayed\n    assert name_text, \"Nom produit vide\"\nE   AssertionError: Nom produit vide\nE   assert ''",
+          "screenshot_path": "../screenshots/products_failure.png"
+        },
+        {
+          "id": "product",
+          "name": "test_product_image_present",
+          "classname": "tests.test_CT_002_generated_test_case",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 9.297,
+          "message_erreur": null,
+          "screenshot_path": null
+        },
+        {
+          "id": "invalid",
+          "name": "test_invalid_url_shows_no_products",
+          "classname": "tests.test_CT_002_generated_test_case",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 13.721,
+          "message_erreur": null,
+          "screenshot_path": null
+        },
+        {
+          "id": "navigate",
+          "name": "test_navigate_to_product_detail",
+          "classname": "tests.test_CT_002_navigation_vers_d\u00e9tail_produit___produit",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 9.575,
+          "message_erreur": null,
+          "screenshot_path": null
+        },
+        {
+          "id": "product",
+          "name": "test_product_detail_has_price",
+          "classname": "tests.test_CT_002_navigation_vers_d\u00e9tail_produit___produit",
+          "statut": "PASS",
+          "dur\u00e9e_secondes": 9.52,
+          "message_erreur": null,
+          "screenshot_path": null
+        },
+        {
+          "id": "detail",
+          "name": "test_detail_page_has_product_name",
+          "classname": "tests.test_CT_002_navigation_vers_d\u00e9tail_produit___produit",
+          "statut": "FAIL",
+          "dur\u00e9e_secondes": 30.685,
+          "message_erreur": "tests\\test_CT_002_navigation_vers_d\u00e9tail_produit___produit.py:88: in test_detail_page_has_product_name\n    h1 = WebDriverWait(driver, 20).until(\nC:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: in until\n    raise TimeoutException(message, screen, stacktrace)\nE   selenium.common.exceptions.TimeoutException: Message: \nE   Stacktrace:\nE   \tchromedriver!GetHandleVerifier [0xe1b373+10553]\nE   \tchromedriver!GetHandleVerifier [0xe1b4a4+10684]\nE   \tchromedriver!(No symbol) [0xc21e10]\nE   \tchromedriver!(No symbol) [0xc6a9da]\nE   \tchromedriver!(No symbol) [0xc6ac7b]\nE   \tchromedriver!(No symbol) [0xcad162]\nE   \tchromedriver!(No symbol) [0xc8d8b4]\nE   \tchromedriver!(No symbol) [0xcaaa36]\nE   \tchromedriver!(No symbol) [0xc8d606]\nE   \tchromedriver!(No symbol) [0xc60039]\nE   \tchromedriver!(No symbol) [0xc60df4]\nE   \tchromedriver!GetHandleVerifier [0x109ddb4+292f94]\nE   \tchromedriver!GetHandleVerifier [0x109937d+28e55d]\nE   \tchromedriver!GetHandleVerifier [0x10b8215+2ad3f5]\nE   \tchromedriver!GetHandleVerifier [0xe34c18+29df8]\nE   \tchromedriver!GetHandleVerifier [0xe3c6fd+318dd]\nE   \tchromedriver!GetHandleVerifier [0xe23c78+18e58]\nE   \tchromedriver!GetHandleVerifier [0xe23e42+19022]\nE   \tchromedriver!GetHandleVerifier [0xe0d45f+263f]\nE   \tKERNEL32!BaseThreadInitThunk [0x75e85d49+19]\nE   \tntdll!RtlInitializeExceptionChain [0x76f1d83b+6b]\nE   \tntdll!RtlGetAppContainerNamedObjectPath [0x76f1d7c1+231]",
+          "screenshot_path": "../screenshots/detail_failure.png"
+        }
+      ]
+    }
+  ]
+}
